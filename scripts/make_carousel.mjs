@@ -52,6 +52,17 @@ async function createCarousel() {
         bgImage = await pdfDoc.embedJpg(bgBytes);
     }
 
+    // Sanitize function to replace non-WinAnsi characters (smart quotes, em-dashes, etc.)
+    const sanitizeText = (txt) => {
+        if (!txt) return '';
+        return txt
+            .replace(/[\u2018\u2019]/g, "'") // smart single quotes
+            .replace(/[\u201C\u201D]/g, '"') // smart double quotes
+            .replace(/[\u2010\u2011\u2012\u2013\u2014\u2015]/g, "-") // all dashes
+            .replace(/[\u2026]/g, "...") // ellipsis
+            .replace(/[^\x00-\xFF]/g, ""); // strip any remaining non-WinAnsi characters
+    };
+
     // ─── SLIDE 1: COVER (hook + logo) ───
     const coverPage = pdfDoc.addPage([SLIDE_W, SLIDE_H]);
     coverPage.drawRectangle({ x: 0, y: 0, width: SLIDE_W, height: SLIDE_H, color: rgb(BG_R, BG_G, BG_B) });
@@ -72,11 +83,11 @@ async function createCarousel() {
     coverPage.drawRectangle({ x: (SLIDE_W - 80) / 2, y: SLIDE_H - 160, width: 80, height: 4, color: rgb(ACCENT_R, ACCENT_G, ACCENT_B) });
 
     // Hook text (the first script line, wrapped)
-    const hookText = lines[0] || newsTitle;
+    const hookText = sanitizeText(lines[0] || newsTitle);
     drawWrappedText(coverPage, hookText, fontBold, 42, rgb(1, 1, 1), SLIDE_W - 140, 70, SLIDE_H - 220);
 
     // "Swipe →" CTA at bottom
-    coverPage.drawText('SWIPE →', {
+    coverPage.drawText('SWIPE ->', {
         x: SLIDE_W - 200, y: 60, size: 20, font: fontBold,
         color: rgb(ACCENT_R, ACCENT_G, ACCENT_B),
     });
@@ -106,7 +117,7 @@ async function createCarousel() {
         page.drawRectangle({ x: 60, y: SLIDE_H - 300, width: 4, height: 80, color: rgb(ACCENT_R, ACCENT_G, ACCENT_B) });
 
         // Content text
-        drawWrappedText(page, lines[i], fontBold, 38, rgb(1, 1, 1), SLIDE_W - 180, 90, SLIDE_H - 280);
+        drawWrappedText(page, sanitizeText(lines[i]), fontBold, 38, rgb(1, 1, 1), SLIDE_W - 180, 90, SLIDE_H - 280);
 
         // Logo small bottom-left
         if (logoImage) {
