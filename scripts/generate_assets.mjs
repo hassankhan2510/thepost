@@ -4,7 +4,7 @@ import fetch from 'node-fetch';
 
 const SCRIPT_FILE = path.join(process.cwd(), 'data', 'script.json');
 const ASSETS_DIR = path.join(process.cwd(), 'public', 'assets');
-const LOGO_SOURCE = path.join(process.cwd(), '..', 'Youtube_Automation', 'branding', 'cohortzero-logo.png');
+const LOCAL_LOGO = path.join(ASSETS_DIR, 'logo.png');
 
 async function downloadImage(url, dest) {
     const response = await fetch(url);
@@ -37,13 +37,10 @@ async function run() {
         console.error("Error downloading image:", err.message);
     }
 
-    console.log("Copying Cohort Zero logo...");
-    const logoDest = path.join(ASSETS_DIR, 'logo.png');
-    if (fs.existsSync(LOGO_SOURCE)) {
-        fs.copyFileSync(LOGO_SOURCE, logoDest);
-        console.log(`Copied logo to ${logoDest}`);
+    if (fs.existsSync(LOCAL_LOGO)) {
+        console.log(`Logo present at ${LOCAL_LOGO}`);
     } else {
-        console.warn(`Logo not found at ${LOGO_SOURCE}! Make sure the path is correct.`);
+        console.warn(`Logo not found at ${LOCAL_LOGO}! Make sure logo.png is committed to public/assets.`);
     }
 }
 

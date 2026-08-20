@@ -37,10 +37,11 @@ jobs:
       - name: Generate Assets
         run: npm run assets
         
-      - name: Render Video
+      - name: Render Video & PDF Carousel
         run: |
           npm run render:reel
           npm run render:post
+          npm run carousel
           
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
