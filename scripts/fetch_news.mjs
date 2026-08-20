@@ -103,7 +103,9 @@ Output valid JSON:
     }
 
     const data = await response.json();
-    const parsed = JSON.parse(data.choices[0].message.content);
+    let text = data.choices[0].message.content;
+    text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
+    const parsed = JSON.parse(text);
 
     // Normalize: ensure selected_news_titles is always an array for history
     if (!parsed.selected_news_titles) {
