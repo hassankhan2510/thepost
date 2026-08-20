@@ -35,19 +35,27 @@ const Grain: React.FC<{ opacity?: number }> = ({ opacity = 0.06 }) => {
     );
 };
 
-/* ── Ken Burns background ── */
+/* ── Ken Burns background with pulsing/dimming ── */
 const KenBurns: React.FC<{ src: string; durationInFrames: number }> = ({ src, durationInFrames }) => {
     const frame = useCurrentFrame();
     const [failed, setFailed] = React.useState(false);
+    
+    // Slow Ken Burns
     const scale = interpolate(frame, [0, durationInFrames], [1.05, 1.2], { extrapolateRight: 'clamp' });
     const tx = interpolate(frame, [0, durationInFrames], [0, 30], { extrapolateRight: 'clamp' });
     const ty = interpolate(frame, [0, durationInFrames], [0, -20], { extrapolateRight: 'clamp' });
+    
+    // Subtle breathing pulse for retention
+    const pulse = Math.sin(frame / 20) * 0.15; 
+    const opacity = 0.45 + pulse;
+
     if (failed) return null;
     return (
-        <AbsoluteFill>
+        <AbsoluteFill style={{ backgroundColor: BG }}>
             <Img src={src} onError={() => setFailed(true)} style={{
                 width: '100%', height: '100%', objectFit: 'cover',
                 transform: `scale(${scale}) translate(${tx}px, ${ty}px)`,
+                opacity
             }} />
         </AbsoluteFill>
     );
@@ -112,8 +120,9 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
         <AbsoluteFill style={{ backgroundColor: BG }}>
             {/* ─── MAIN CONTENT (starts immediately — no intro!) ─── */}
             <Sequence from={0} durationInFrames={CONTENT_FRAMES}>
-                {/* Background: AI image with Ken Burns */}
-                <AbsoluteFill style={{ opacity: 0.4 }}>
+                
+                {/* Dynamic Background */}
+                <AbsoluteFill>
                     <KenBurns src={staticFile('assets/background.jpg')} durationInFrames={CONTENT_FRAMES} />
                 </AbsoluteFill>
 
@@ -133,7 +142,7 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
                     );
                 })}
 
-                {/* Logo watermark (subtle, top-left) */}
+                {/* Logo watermark */}
                 <LogoWatermark />
 
                 {/* Progress dots at the bottom */}
@@ -157,7 +166,7 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
     );
 };
 
-/* ── Line Card ── */
+/* ── Line Card with Word-by-Word Reveal ── */
 const LineCard: React.FC<{
     text: string; index: number; total: number; width: number; height: number; fps: number; framesPerLine: number;
 }> = ({ text, index, total, width, height, fps, framesPerLine }) => {
@@ -167,13 +176,17 @@ const LineCard: React.FC<{
     const fadeOut = interpolate(frame, [framesPerLine - 10, framesPerLine], [1, 0], {
         extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
     });
-    const fadeIn = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
-    const opacity = Math.min(fadeIn, fadeOut);
-    const translateY = interpolate(slideIn, [0, 1], [50, 0]);
+    const opacity = fadeOut; // Only fade out at the end, slide-in handles the start
+    const translateY = interpolate(slideIn, [0, 1], [40, 0]);
 
     const isHook = index === 0;
     const fontSize = isHook ? Math.round(width * 0.065) : Math.round(width * 0.048);
 
+    // Split text for word-by-word highlight
+    const words = text.split(' ');
+    // Reveal a new word every 3 frames (~10 words a second reading speed)
+    const framesPerWord = 3; 
+    
     return (
         <AbsoluteFill style={{
             justifyContent: 'center', alignItems: 'center',
@@ -208,11 +221,37 @@ const LineCard: React.FC<{
                         fontWeight: isHook ? 800 : 600,
                         color: '#f8fafc',
                         margin: 0,
-                        lineHeight: 1.3,
+                        lineHeight: 1.35,
                         letterSpacing: isHook ? '-1px' : '-0.3px',
                         textShadow: '0 2px 16px rgba(0,0,0,0.95), 0 0 4px rgba(0,0,0,0.9)',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: '0.25em'
                     }}>
-                        {text}
+                        {words.map((word, i) => {
+                            // Calculate opacity for word-by-word reveal
+                            const wordStartFrame = 10 + (i * framesPerWord); // Start after card slide-in
+                            const wordOp = interpolate(
+                                frame,
+                                [wordStartFrame, wordStartFrame + 2], // 2 frames to fade in
+                                [0.3, 1], // Dimmed until read
+                                { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+                            );
+                            
+                            // Emphasize specific words (numbers, ALL CAPS, or quoted words)
+                            const isEmphasized = /^[A-Z0-9$%\-"]+$/.test(word.replace(/[^A-Za-z0-9]/g, '')) && word.length > 2;
+
+                            return (
+                                <span key={i} style={{ 
+                                    opacity: wordOp,
+                                    color: (isEmphasized && wordOp === 1) ? ACCENT : '#f8fafc',
+                                    transition: 'color 0.1s'
+                                }}>
+                                    {word}
+                                </span>
+                            );
+                        })}
                     </p>
                 </div>
 

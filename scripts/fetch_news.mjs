@@ -54,41 +54,81 @@ async function fetchAllNews() {
     return allNews;
 }
 
-async function generateContent(newsItems, customTopic = null) {
-    console.log("Calling OpenRouter to generate content...");
-    
-    let sourceContent = "";
-    let instructions = "";
-    
-    if (customTopic) {
-        sourceContent = `Custom Topic provided by user:\n"${customTopic}"`;
-        instructions = `- Write a script based EXACTLY on the custom topic provided above.`;
-    } else {
-        sourceContent = `News Headlines:\n${newsItems.map((n, i) => `${i + 1}. [${n.source}] ${n.title}`).join('\n')}`;
-        instructions = `- Pick EXACTLY ONE headline from the list below. The single most interesting one from a founder/business perspective. Do NOT combine multiple stories.`;
-    }
+// 1. Ask LLM to pick the best headline
+async function pickBestHeadline(newsItems) {
+    console.log("Picking the best headline...");
+    const prompt = `
+You are a sharp, insider tech editor. Review these headlines and pick EXACTLY ONE that is the most interesting and high-impact for a founder/startup audience. Output ONLY the index number of the chosen headline.
 
+Headlines:
+${newsItems.map((n, i) => `${i}. [${n.source}] ${n.title}`).join('\n')}
+`;
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "model": "openrouter/free",
+            "messages": [{ "role": "user", "content": prompt }]
+        })
+    });
+    if (!response.ok) throw new Error(`OpenRouter API Error: ${await response.text()}`);
+    const data = await response.json();
+    const text = data.choices[0].message.content.trim();
+    const match = text.match(/\d+/);
+    const index = match ? parseInt(match[0], 10) : 0;
+    return newsItems[Math.min(index, newsItems.length - 1)];
+}
+
+// 2. Fetch context via Jina AI
+async function fetchJinaContext(query, isUrl = false) {
+    const baseUrl = isUrl ? `https://r.jina.ai/${query}` : `https://s.jina.ai/${encodeURIComponent(query)}`;
+    console.log(`Fetching deep context via Jina AI: ${baseUrl}`);
+    try {
+        const response = await fetch(baseUrl, {
+            headers: { 'Accept': 'text/plain' }
+        });
+        if (!response.ok) return "";
+        let text = await response.text();
+        // truncate to 8000 chars to avoid overwhelming the free LLM context window
+        return text.slice(0, 8000);
+    } catch (e) {
+        console.error("Jina AI fetch failed:", e.message);
+        return "";
+    }
+}
+
+// 3. Generate script and thread from deep context
+async function generateContent(contextMarkdown, topicOrTitle) {
+    console.log("Generating final script and thread...");
     const prompt = `
 You are a top 1% sharp, insider content creator for "Cohort Zero" — an elite media brand about startups, venture capital, and the mechanics of how companies actually win or collapse. The audience is veteran founders, technical operators, and investors who want high-signal substance, not entry-level motivation.
 
-RULES:
-${instructions}
-- Write 4-5 punchy "script_lines" that break down WHY this news/topic matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
-- The FIRST script_line is the hook. It must grab attention in under 1 second. No intros, no greetings, no "Hey founders". Start with the sharpest, most surprising angle or a bold claim.
-- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian. No guru fluff. No "we turn bold ideas into reality" energy. Think Bloomberg crossed with a highly technical VC memo.
-- Hashtags: 5-8, relevant to the specific topic and the deep-tech/startup ecosystem.
-- image_prompt: a REALISTIC, highly cinematic corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k", "close-up of founder hands on laptop in dark office, warm desk lamp, shallow depth of field". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate, high-status.
+Below is the deep context (facts, quotes, metrics) for the topic: "${topicOrTitle}".
 
-${sourceContent}
+DEEP CONTEXT:
+${contextMarkdown}
+
+RULES:
+- Use the deep context above to write 4-5 punchy "script_lines" that break down WHY this news/topic matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
+- Include specific numbers, metrics, or quotes from the context if relevant. No generic platitudes.
+- The FIRST script_line is the hook. It must grab attention in under 1 second with a bold claim or surprising angle.
+- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian. Think Bloomberg crossed with a highly technical VC memo.
+- Hashtags: 5-8 relevant tags.
+- image_prompt: a REALISTIC, highly cinematic corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate, high-status.
+- twitter_thread: An array of 3-5 tweets (strings) breaking down this topic mechanically.
 
 Output valid JSON:
 {
-  "selected_news_title": "the headline or topic you are writing about",
-  "hook": "the one-sentence hook for the reel (also used as script_lines[0])",
-  "caption": "LinkedIn/Instagram caption. Sharp, analytical, 2-3 sentences.",
-  "hashtags": ["#startup", "#founder", "#venturecapital"],
+  "selected_news_title": "${topicOrTitle}",
+  "hook": "the one-sentence hook for the reel",
+  "caption": "LinkedIn/Instagram caption.",
+  "hashtags": ["#startup", "#founder"],
   "script_lines": ["Hook line", "Context line", "Insight line", "Takeaway line"],
-  "image_prompt": "realistic corporate/startup scene, dark lighting, cinematic 4k, no text no logos"
+  "image_prompt": "realistic corporate/startup scene, dark lighting, cinematic 4k, no text no logos",
+  "twitter_thread": ["Tweet 1", "Tweet 2", "Tweet 3"]
 }
 `;
 
@@ -108,17 +148,13 @@ Output valid JSON:
         })
     });
 
-    if (!response.ok) {
-        const err = await response.text();
-        throw new Error(`OpenRouter API Error: ${err}`);
-    }
+    if (!response.ok) throw new Error(`OpenRouter API Error: ${await response.text()}`);
 
     const data = await response.json();
     let text = data.choices[0].message.content;
     text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
     const parsed = JSON.parse(text);
 
-    // Normalize: ensure selected_news_titles is always an array for history
     if (!parsed.selected_news_titles) {
         parsed.selected_news_titles = [parsed.selected_news_title || ""];
     }
@@ -128,19 +164,17 @@ Output valid JSON:
 
 async function run() {
     const customTopic = process.env.CUSTOM_TOPIC?.trim() || null;
-    
     let history = [];
-    if (!customTopic) {
-        history = await loadHistory();
-    }
-    
-    let topItems = [];
+    let generated;
+    let titleToSave = "";
     
     if (customTopic) {
-        console.log(`Using custom topic from workflow input: "${customTopic}"`);
-        // We pass an empty array for newsItems since we have a custom topic
-        topItems = [];
+        console.log(`Using custom topic: "${customTopic}"`);
+        const context = await fetchJinaContext(customTopic, false);
+        generated = await generateContent(context, customTopic);
+        titleToSave = customTopic;
     } else {
+        history = await loadHistory();
         const rawNews = await fetchAllNews();
         const newItems = rawNews.filter(n => !history.includes(n.title));
         console.log(`Found ${newItems.length} new articles.`);
@@ -149,30 +183,36 @@ async function run() {
             console.log("No new articles found. Exiting.");
             return;
         }
-        topItems = newItems.slice(0, 20);
+        
+        const topItems = newItems.slice(0, 20);
+        const bestStory = await pickBestHeadline(topItems);
+        console.log(`Selected Best Story: ${bestStory.title}`);
+        
+        const context = await fetchJinaContext(bestStory.link, true);
+        generated = await generateContent(context, bestStory.title);
+        titleToSave = bestStory.title;
+        
+        history.push(titleToSave);
+        await saveHistory(history);
     }
 
     try {
-        const generated = await generateContent(topItems, customTopic);
         console.log("Content generated successfully!");
-        console.log("Selected:", generated.selected_news_title || generated.selected_news_titles?.[0]);
         console.log("Hook:", generated.hook);
 
-        if (!customTopic) {
-            // Add selected to history only for RSS
-            const titles = generated.selected_news_titles || [generated.selected_news_title];
-            titles.forEach(title => { if (title) history.push(title); });
-            await saveHistory(history);
-        }
-
+        if (!fs.existsSync(path.dirname(SCRIPT_FILE))) fs.mkdirSync(path.dirname(SCRIPT_FILE), { recursive: true });
+        
         // Save script
-        if (!fs.existsSync(path.dirname(SCRIPT_FILE))) {
-            fs.mkdirSync(path.dirname(SCRIPT_FILE), { recursive: true });
-        }
         fs.writeFileSync(SCRIPT_FILE, JSON.stringify(generated, null, 2));
         console.log(`Saved generated script to ${SCRIPT_FILE}`);
+        
+        // Save thread
+        const threadFile = path.join(process.cwd(), 'data', 'thread.json');
+        fs.writeFileSync(threadFile, JSON.stringify(generated.twitter_thread || [], null, 2));
+        console.log(`Saved twitter thread to ${threadFile}`);
+        
     } catch (err) {
-        console.error("Failed during content generation:", err.message);
+        console.error("Failed during save:", err.message);
     }
 }
 

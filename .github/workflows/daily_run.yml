@@ -64,6 +64,7 @@ jobs:
           path: |
             out/
             data/script.json
+            data/thread.json
             
       - name: Commit Updated History
         run: |
