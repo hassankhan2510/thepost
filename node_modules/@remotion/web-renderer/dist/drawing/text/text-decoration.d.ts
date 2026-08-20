@@ -1,0 +1,29 @@
+type TextDecorationLine = 'underline' | 'overline' | 'line-through';
+export type TextDecorationStyle = 'solid' | 'double' | 'dotted' | 'dashed' | 'wavy';
+export type TextDecoration = {
+    lines: TextDecorationLine[];
+    color: string;
+    thickness: number;
+    style: TextDecorationStyle;
+};
+export declare const parseTextDecoration: ({ onlyBackgroundClipText, style, }: {
+    onlyBackgroundClipText: boolean;
+    style: CSSStyleDeclaration;
+}) => TextDecoration | null;
+export declare const getTextDecorations: ({ computedStyle, onlyBackgroundClipText, span, }: {
+    computedStyle: CSSStyleDeclaration;
+    onlyBackgroundClipText: boolean;
+    span: HTMLSpanElement;
+}) => TextDecoration[];
+export declare const drawTextDecoration: ({ contextToDraw, fontSizePx, measurements, parentRect, textDecorations, token, y, }: {
+    contextToDraw: OffscreenCanvasRenderingContext2D;
+    fontSizePx: number;
+    measurements: TextMetrics;
+    parentRect: DOMRect;
+    textDecorations: TextDecoration[];
+    token: {
+        rect: DOMRect;
+    };
+    y: number;
+}) => void;
+export {};

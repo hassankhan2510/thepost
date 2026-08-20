@@ -1,0 +1,7 @@
+import React from 'react';
+export declare const TimelineFieldLabel: React.FC<{
+    readonly rowDepth: number;
+    readonly selected: boolean;
+    readonly label: string;
+    readonly stacked?: boolean;
+}>;

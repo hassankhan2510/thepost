@@ -1,0 +1,25 @@
+{
+  "name": "cohortzero_daily_run",
+  "version": "1.0.0",
+  "description": "Daily automation for Cohort Zero social media",
+  "main": "index.js",
+  "scripts": {
+    "start": "remotion preview src/index.ts",
+    "fetch": "node scripts/fetch_news.mjs",
+    "assets": "node scripts/generate_assets.mjs",
+    "render:reel": "remotion render src/index.ts Reel out/reel.mp4",
+    "render:post": "remotion render src/index.ts Post out/post.mp4",
+    "carousel": "node scripts/make_carousel.mjs",
+    "run:all": "npm run fetch && npm run assets && npm run render:reel && npm run render:post"
+  },
+  "dependencies": {
+    "feedparser": "^2.2.10",
+    "node-fetch": "^2.6.7",
+    "pdf-lib": "^1.17.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.0",
+    "rss-parser": "^3.13.0"
+  },
+  "type": "module"
+}

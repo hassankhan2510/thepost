@@ -1,0 +1,8 @@
+import React from 'react';
+export declare const SCHEMA_EDITOR_FIELDSET_PADDING = 6;
+export declare const getSchemaEditorFieldsetPadding: () => number;
+export declare const getSchemaEditorRootInset: (contentInset: number) => number;
+export declare const Fieldset: React.FC<{
+    readonly children: React.ReactNode;
+    readonly shouldPad: boolean;
+}>;

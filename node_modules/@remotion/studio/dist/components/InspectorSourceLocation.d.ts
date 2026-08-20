@@ -1,0 +1,9 @@
+import React from 'react';
+import type { OriginalPosition } from '../error-overlay/react-overlay/utils/get-source-map';
+export declare const InspectorSourceLocation: React.FC<{
+    readonly location: OriginalPosition | null;
+    readonly canOpen: boolean;
+    readonly onOpen: () => void;
+    readonly renderIcon?: (color: string) => React.ReactNode;
+    readonly size?: 'default' | 'quick-action';
+}>;

@@ -1,0 +1,51 @@
+name: Cohort Zero Daily Run
+
+on:
+  schedule:
+    - cron: '0 4 * * *' # Runs daily at 4:00 AM UTC
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Fetch News & Generate Content
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: npm run fetch
+        
+      - name: Generate Assets
+        run: npm run assets
+        
+      - name: Render Video
+        run: |
+          npm run render:reel
+          npm run render:post
+          
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-posts
+          path: |
+            out/
+            data/script.json
+            
+      - name: Commit Updated History
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/history.json
+          git commit -m "Auto-update history.json" || echo "No changes to commit"
+          git push

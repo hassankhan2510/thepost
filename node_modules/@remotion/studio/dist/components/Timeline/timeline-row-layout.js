@@ -1,0 +1,29 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getExpandedRowDepth = exports.getTimelineFieldLabelFlexBasis = exports.getTimelineRowLeftChromeWidth = exports.getTimelineRowIndentWidth = exports.TIMELINE_FIELD_LABEL_EXTRA_WIDTH = exports.TIMELINE_KEYFRAME_CONTROLS_WIDTH = exports.TIMELINE_ARROW_COLUMN_WIDTH = exports.TIMELINE_EYE_COLUMN_WIDTH = exports.INSPECTOR_ROW_BASE_PADDING = exports.TIMELINE_ROW_BASE_PADDING = void 0;
+const timeline_indent_1 = require("./timeline-indent");
+exports.TIMELINE_ROW_BASE_PADDING = 10;
+exports.INSPECTOR_ROW_BASE_PADDING = 5;
+exports.TIMELINE_EYE_COLUMN_WIDTH = 22;
+exports.TIMELINE_ARROW_COLUMN_WIDTH = 16;
+exports.TIMELINE_KEYFRAME_CONTROLS_WIDTH = 38;
+exports.TIMELINE_FIELD_LABEL_EXTRA_WIDTH = 15;
+const getTimelineRowIndentWidth = (depth) => {
+    return depth * timeline_indent_1.TIMELINE_INDENT;
+};
+exports.getTimelineRowIndentWidth = getTimelineRowIndentWidth;
+const getTimelineRowLeftChromeWidth = (depth, basePadding = exports.TIMELINE_ROW_BASE_PADDING) => {
+    return (basePadding +
+        exports.TIMELINE_EYE_COLUMN_WIDTH +
+        (0, exports.getTimelineRowIndentWidth)(depth) +
+        exports.TIMELINE_ARROW_COLUMN_WIDTH);
+};
+exports.getTimelineRowLeftChromeWidth = getTimelineRowLeftChromeWidth;
+const getTimelineFieldLabelFlexBasis = (depth, basePadding = exports.TIMELINE_ROW_BASE_PADDING) => {
+    return `calc(50% - ${(0, exports.getTimelineRowLeftChromeWidth)(depth, basePadding) - exports.TIMELINE_FIELD_LABEL_EXTRA_WIDTH}px)`;
+};
+exports.getTimelineFieldLabelFlexBasis = getTimelineFieldLabelFlexBasis;
+const getExpandedRowDepth = ({ nestedDepth, treeDepth, }) => {
+    return nestedDepth + 1 + treeDepth;
+};
+exports.getExpandedRowDepth = getExpandedRowDepth;

@@ -1,0 +1,12 @@
+import React from 'react';
+import { type AnyZodSchema } from './zod-schema-type';
+import type { JSONPath } from './zod-types';
+import type { UpdaterFunction } from './ZodSwitch';
+export declare const ZodBooleanEditor: React.FC<{
+    readonly jsonPath: JSONPath;
+    readonly value: boolean;
+    readonly setValue: UpdaterFunction<boolean>;
+    readonly onRemove: null | (() => void);
+    readonly mayPad: boolean;
+    readonly schema: AnyZodSchema;
+}>;
