@@ -6,6 +6,7 @@ import fetch from 'node-fetch';
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || ''; // Add your key here or via env
 const HISTORY_FILE = path.join(process.cwd(), 'data', 'history.json');
 const SCRIPT_FILE = path.join(process.cwd(), 'data', 'script.json');
+const PUBLIC_SCRIPT_FILE = path.join(process.cwd(), 'public', 'script.json');
 
 const parser = new Parser();
 
@@ -126,12 +127,16 @@ async function run() {
         generated.selected_news_titles.forEach(title => history.push(title));
         await saveHistory(history);
 
-        // Save script
+        // Save script in both data and public directories
         if (!fs.existsSync(path.dirname(SCRIPT_FILE))) {
             fs.mkdirSync(path.dirname(SCRIPT_FILE), { recursive: true });
         }
+        if (!fs.existsSync(path.dirname(PUBLIC_SCRIPT_FILE))) {
+            fs.mkdirSync(path.dirname(PUBLIC_SCRIPT_FILE), { recursive: true });
+        }
         fs.writeFileSync(SCRIPT_FILE, JSON.stringify(generated, null, 2));
-        console.log(`Saved generated script to ${SCRIPT_FILE}`);
+        fs.writeFileSync(PUBLIC_SCRIPT_FILE, JSON.stringify(generated, null, 2));
+        console.log(`Saved generated script to ${SCRIPT_FILE} and ${PUBLIC_SCRIPT_FILE}`);
     } catch (err) {
         console.error("Failed during content generation:", err.message);
     }

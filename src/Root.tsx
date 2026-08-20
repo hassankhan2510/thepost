@@ -1,31 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { Composition, continueRender, delayRender } from 'remotion';
+import { Composition, continueRender, delayRender, staticFile, getInputProps } from 'remotion';
 import { Reel } from './Reel';
-
-// Try to load script data
-const fetchScriptData = async () => {
-    try {
-        const response = await fetch('/data/script.json');
-        return await response.json();
-    } catch (e) {
-        return null;
-    }
-};
 
 export const RemotionRoot: React.FC = () => {
     const [handle] = useState(() => delayRender());
-    const [scriptData, setScriptData] = useState<any>(null);
+    const inputProps = getInputProps();
+    const [scriptData, setScriptData] = useState<any>(inputProps && Object.keys(inputProps).length > 0 ? inputProps : null);
 
     useEffect(() => {
-        fetchScriptData().then(data => {
-            setScriptData(data || {
-                caption: "Sample Caption",
-                script_lines: ["Line 1", "Line 2"],
-                selected_news_titles: ["Sample News"]
-            });
+        if (scriptData) {
             continueRender(handle);
-        });
-    }, [handle]);
+            return;
+        }
+
+        fetch(staticFile('script.json'))
+            .then((res) => res.json())
+            .then((data) => {
+                setScriptData(data);
+                continueRender(handle);
+            })
+            .catch((err) => {
+                console.error("Failed to load script.json:", err);
+                setScriptData({
+                    caption: "Default Caption",
+                    script_lines: ["Welcome to Cohort Zero"],
+                    selected_news_titles: ["News"]
+                });
+                continueRender(handle);
+            });
+    }, [handle, scriptData]);
 
     return (
         <>
@@ -42,7 +45,7 @@ export const RemotionRoot: React.FC = () => {
             />
             <Composition
                 id="Post"
-                component={Reel} // Re-using Reel but with different dimensions
+                component={Reel} // Re-using Reel with square dimensions
                 durationInFrames={300}
                 fps={30}
                 width={1080}

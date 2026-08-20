@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Img, useVideoConfig, useCurrentFrame, spring } from 'remotion';
+import { AbsoluteFill, Img, useVideoConfig, useCurrentFrame, spring, staticFile } from 'remotion';
 
 export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
     const { fps, width } = useVideoConfig();
@@ -14,7 +14,7 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
     return (
         <AbsoluteFill style={{ backgroundColor: 'black' }}>
             <AbsoluteFill style={{ opacity: 0.5 }}>
-                {/* Fallback styling for background if file not found */}
+                {/* Fallback styling for background */}
                 <div style={{
                     width: '100%',
                     height: '100%',
@@ -23,7 +23,7 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
                 }} />
                 {/* Background AI Image */}
                 <Img 
-                    src={`/assets/background.jpg`} 
+                    src={staticFile('assets/background.jpg')} 
                     style={{
                         width: '100%',
                         height: '100%',
@@ -53,7 +53,7 @@ export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
             {/* Logo */}
             <AbsoluteFill style={{ padding: 40, justifyContent: 'flex-start', alignItems: 'center' }}>
                 <Img 
-                    src={`/assets/logo.png`}
+                    src={staticFile('assets/logo.png')}
                     style={{ height: 120, objectFit: 'contain' }}
                     onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />

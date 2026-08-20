@@ -7,10 +7,10 @@
     "start": "remotion preview src/index.ts",
     "fetch": "node scripts/fetch_news.mjs",
     "assets": "node scripts/generate_assets.mjs",
-    "render:reel": "remotion render src/index.ts Reel out/reel.mp4",
-    "render:post": "remotion render src/index.ts Post out/post.mp4",
+    "render:reel": "remotion render src/index.ts Reel out/reel.mp4 --props=public/script.json",
+    "render:post": "remotion render src/index.ts Post out/post.mp4 --props=public/script.json",
     "carousel": "node scripts/make_carousel.mjs",
-    "run:all": "npm run fetch && npm run assets && npm run render:reel && npm run render:post"
+    "run:all": "npm run fetch && npm run assets && npm run render:reel && npm run render:post && npm run carousel"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",
