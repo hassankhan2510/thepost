@@ -2,3 +2,4 @@ node_modules/
 out/
 public/assets/background.jpg
 data/script.json
+data/render_props.json

@@ -2,8 +2,8 @@ name: Cohort Zero Daily Run
 
 on:
   schedule:
-    - cron: '0 4 * * *' # Runs daily at 4:00 AM UTC
-  workflow_dispatch: # Allows manual trigger
+    - cron: '0 4 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -40,11 +40,16 @@ jobs:
       - name: Generate Assets
         run: npm run assets
         
-      - name: Render Video & PDF Carousel
+      - name: Wrap Props for Remotion
+        run: npm run wrap-props
+        
+      - name: Render Reel & Post
         run: |
           npm run render:reel
           npm run render:post
-          npm run carousel
+          
+      - name: Generate Carousel PDF
+        run: npm run carousel
           
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
