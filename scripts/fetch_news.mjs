@@ -112,22 +112,50 @@ DEEP CONTEXT:
 ${contextMarkdown}
 
 RULES:
-- Use the deep context above to write 4-5 punchy "script_lines" that break down WHY this news/topic matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
+- Use the deep context above to write 4-6 dynamic slides that break down WHY this news/topic matters for founders. Each slide is a separate screen in an Instagram reel and a carousel post.
+- The FIRST slide MUST be a "hook" type. It must grab attention in under 1 second with a bold claim or surprising angle.
+- Other slides can be "text", "stat", or "quote".
 - Include specific numbers, metrics, or quotes from the context if relevant. No generic platitudes.
-- The FIRST script_line is the hook. It must grab attention in under 1 second with a bold claim or surprising angle.
-- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian. Think Bloomberg crossed with a highly technical VC memo.
+- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian.
 - Hashtags: 5-8 relevant tags.
-- image_prompt: a REALISTIC, highly cinematic corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate, high-status.
 - twitter_thread: An array of 3-5 tweets (strings) breaking down this topic mechanically.
+- chart_data: If the context contains a compelling comparison or metric (e.g. revenue growth, valuation over time), provide a title, 2-3 labels, and values. Otherwise, return null.
+- image_prompt: For EVERY slide, provide a unique, REALISTIC, highly cinematic corporate/business/startup scene that matches the slide's vibe. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k". NEVER sci-fi, neon, or abstract. The brand is dark, clean, corporate, high-status. No text or logos in images.
 
 Output valid JSON:
 {
   "selected_news_title": "${topicOrTitle}",
-  "hook": "the one-sentence hook for the reel",
   "caption": "LinkedIn/Instagram caption.",
   "hashtags": ["#startup", "#founder"],
-  "script_lines": ["Hook line", "Context line", "Insight line", "Takeaway line"],
-  "image_prompt": "realistic corporate/startup scene, dark lighting, cinematic 4k, no text no logos",
+  "slides": [
+    {
+      "type": "hook",
+      "content": "The one-sentence hook.",
+      "image_prompt": "close-up of founder hands on laptop in dark office, warm desk lamp, cinematic 4k"
+    },
+    {
+      "type": "stat",
+      "highlight_number": "$13M",
+      "content": "They raised their Series A in 48 hours.",
+      "image_prompt": "dark oak boardroom table with financial term sheets, shallow depth of field, 4k"
+    },
+    {
+      "type": "quote",
+      "author": "Sam Altman",
+      "content": "AI will replace the bottom 90% of coding tasks.",
+      "image_prompt": "silhouette of a tech executive speaking on stage, dark moody lighting, cinematic"
+    },
+    {
+      "type": "text",
+      "content": "Here is the takeaway...",
+      "image_prompt": "wide shot of a modern dark mode startup office, minimal desk, cinematic lighting"
+    }
+  ],
+  "chart_data": {
+    "title": "Valuation Growth",
+    "labels": ["2023", "2024"],
+    "values": [100, 450]
+  },
   "twitter_thread": ["Tweet 1", "Tweet 2", "Tweet 3"]
 }
 `;

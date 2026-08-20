@@ -25,16 +25,28 @@ async function run() {
 
     const scriptData = JSON.parse(fs.readFileSync(SCRIPT_FILE, 'utf-8'));
     
-    console.log("Generating background image via Pollinations AI...");
-    const prompt = encodeURIComponent(scriptData.image_prompt || "Abstract neon startup office, cinematic lighting, 4k");
-    const bgUrl = `https://image.pollinations.ai/prompt/${prompt}?width=1080&height=1920&nologo=true`;
-    const bgDest = path.join(ASSETS_DIR, 'background.jpg');
+    console.log("Generating background images via Pollinations AI...");
     
-    try {
-        await downloadImage(bgUrl, bgDest);
-        console.log(`Saved background image to ${bgDest}`);
-    } catch (err) {
-        console.error("Error downloading image:", err.message);
+    const slides = scriptData.slides || [];
+    if (slides.length === 0) {
+        // Fallback for old scripts
+        slides.push({ image_prompt: scriptData.image_prompt || "Abstract neon startup office, cinematic lighting, 4k" });
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+        const slide = slides[i];
+        const promptText = slide.image_prompt || "corporate business scene, dark lighting, cinematic 4k";
+        const prompt = encodeURIComponent(promptText);
+        // Using pollinations AI. Adding seed to avoid caching identical images if prompts are similar
+        const bgUrl = `https://image.pollinations.ai/prompt/${prompt}?width=1080&height=1920&nologo=true&seed=${Math.floor(Math.random() * 100000)}`;
+        const bgDest = path.join(ASSETS_DIR, `bg_${i}.jpg`);
+        
+        try {
+            await downloadImage(bgUrl, bgDest);
+            console.log(`Saved background image ${i} to ${bgDest}`);
+        } catch (err) {
+            console.error(`Error downloading image ${i}:`, err.message);
+        }
     }
 
     if (fs.existsSync(LOCAL_LOGO)) {

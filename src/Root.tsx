@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition, staticFile } from 'remotion';
 import { Reel } from './Reel';
+import { Carousel } from './Carousel';
 
 // Default fallback data — overridden by --props at render time
 const DEFAULT_SCRIPT = {
@@ -36,6 +37,17 @@ export const RemotionRoot: React.FC = () => {
                 fps={30}
                 width={1080}
                 height={1080}
+                defaultProps={{
+                    scriptData: DEFAULT_SCRIPT,
+                }}
+            />
+            <Composition
+                id="Carousel"
+                component={Carousel}
+                durationInFrames={20}
+                fps={30}
+                width={1080}
+                height={1350}
                 defaultProps={{
                     scriptData: DEFAULT_SCRIPT,
                 }}

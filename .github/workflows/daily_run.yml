@@ -54,7 +54,7 @@ jobs:
           npm run render:reel
           npm run render:post
           
-      - name: Generate Carousel PDF
+      - name: Generate Carousel Images
         run: npm run carousel
           
       - name: Upload Artifacts

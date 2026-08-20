@@ -10,14 +10,13 @@
     "wrap-props": "node scripts/wrap_props.mjs",
     "render:reel": "remotion render src/index.ts Reel out/reel.mp4 --props=data/render_props.json",
     "render:post": "remotion render src/index.ts Post out/post.mp4 --props=data/render_props.json",
-    "carousel": "node scripts/make_carousel.mjs",
+    "carousel": "node scripts/render_carousel.mjs",
     "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",
     "feedparser": "^2.6.0",
     "node-fetch": "^3.3.2",
-    "pdf-lib": "^1.17.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remotion": "^4.0.514",
