@@ -13,11 +13,10 @@ import {
 /* ── Cohort Zero Brand Tokens ───────────────────── */
 const ACCENT = '#E11D48';
 const BG = '#0A0A0B';
-const SURFACE = '#16161A';
 const MUTED = '#9AA3AD';
 const FONT = 'Inter, system-ui, -apple-system, sans-serif';
 
-/* ── Film Grain (from Youtube_Automation) ───────── */
+/* ── Film Grain ───────── */
 const Grain: React.FC<{ opacity?: number }> = ({ opacity = 0.06 }) => {
     const frame = useCurrentFrame();
     const seed = frame % 97;
@@ -36,7 +35,7 @@ const Grain: React.FC<{ opacity?: number }> = ({ opacity = 0.06 }) => {
     );
 };
 
-/* ── Ken Burns background (slow pan/zoom like Youtube_Automation) ── */
+/* ── Ken Burns background ── */
 const KenBurns: React.FC<{ src: string; durationInFrames: number }> = ({ src, durationInFrames }) => {
     const frame = useCurrentFrame();
     const [failed, setFailed] = React.useState(false);
@@ -46,261 +45,205 @@ const KenBurns: React.FC<{ src: string; durationInFrames: number }> = ({ src, du
     if (failed) return null;
     return (
         <AbsoluteFill>
-            <Img
-                src={src}
-                onError={() => setFailed(true)}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transform: `scale(${scale}) translate(${tx}px, ${ty}px)`,
-                }}
-            />
+            <Img src={src} onError={() => setFailed(true)} style={{
+                width: '100%', height: '100%', objectFit: 'cover',
+                transform: `scale(${scale}) translate(${tx}px, ${ty}px)`,
+            }} />
         </AbsoluteFill>
     );
 };
 
-/* ── Intro sting (brand name scales in + accent underline) ─── */
-const Intro: React.FC = () => {
-    const frame = useCurrentFrame();
-    const { fps, width } = useVideoConfig();
-    const s = spring({ frame, fps, config: { damping: 200 } });
-    const scale = interpolate(s, [0, 1], [0.82, 1]);
-    const opacity = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
-    const underline = interpolate(s, [0, 1], [0, 1]);
-    const size = width * 0.09;
-
+/* ── Logo watermark (small, top-left, always visible) ── */
+const LogoWatermark: React.FC = () => {
+    const [failed, setFailed] = React.useState(false);
+    if (failed) return null;
     return (
-        <AbsoluteFill style={{ backgroundColor: BG, justifyContent: 'center', alignItems: 'center' }}>
-            <div style={{ transform: `scale(${scale})`, opacity, textAlign: 'center' }}>
-                <div style={{ fontFamily: FONT, fontWeight: 800, letterSpacing: 4, fontSize: size, color: '#fff' }}>
-                    COHORT ZERO
-                </div>
-                <div style={{
-                    height: 5, marginTop: 16, width: width * 0.35, marginLeft: 'auto', marginRight: 'auto',
-                    background: ACCENT, transform: `scaleX(${underline})`, transformOrigin: 'center', borderRadius: 4,
-                }} />
-                <div style={{
-                    marginTop: 16, color: MUTED, fontFamily: FONT, fontWeight: 500, letterSpacing: 4,
-                    textTransform: 'uppercase' as const, fontSize: size * 0.2,
-                }}>
-                    FOUNDERS' FILES
-                </div>
-            </div>
+        <AbsoluteFill style={{ padding: '50px 0 0 50px', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
+            <Img src={staticFile('assets/logo.png')} onError={() => setFailed(true)}
+                style={{ height: 55, objectFit: 'contain', opacity: 0.7 }} />
         </AbsoluteFill>
     );
 };
 
-/* ── Outro end-card (follow CTA + brand) ─── */
+/* ── Outro end-card (short, 2.5s) ─── */
 const Outro: React.FC = () => {
     const frame = useCurrentFrame();
     const { fps, width } = useVideoConfig();
     const s = spring({ frame, fps, config: { damping: 200 } });
     const y = interpolate(s, [0, 1], [34, 0]);
     const op = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
-    const size = width * 0.05;
+    const size = width * 0.045;
 
     return (
         <AbsoluteFill style={{ backgroundColor: BG, justifyContent: 'center', alignItems: 'center' }}>
             <div style={{ transform: `translateY(${y}px)`, opacity: op, textAlign: 'center' }}>
                 <div style={{
-                    display: 'inline-block', padding: '18px 42px', borderRadius: 999, background: ACCENT,
+                    display: 'inline-block', padding: '16px 38px', borderRadius: 999, background: ACCENT,
                     color: BG, fontWeight: 800, fontSize: size, fontFamily: FONT, letterSpacing: 2,
                 }}>
-                    ▶ FOLLOW
+                    ▶ FOLLOW @cohortzero
                 </div>
                 <div style={{
-                    marginTop: 34, color: '#fff', fontWeight: 800, letterSpacing: 4, fontSize: size * 1.3, fontFamily: FONT,
+                    marginTop: 28, color: '#fff', fontWeight: 800, letterSpacing: 4, fontSize: size * 1.2, fontFamily: FONT,
                 }}>
                     COHORT ZERO
                 </div>
                 <div style={{
-                    marginTop: 14, color: MUTED, letterSpacing: 3, textTransform: 'uppercase' as const, fontSize: size * 0.5, fontFamily: FONT,
+                    marginTop: 10, color: MUTED, letterSpacing: 3, textTransform: 'uppercase' as const,
+                    fontSize: size * 0.45, fontFamily: FONT,
                 }}>
-                    @cohortzero
+                    Founders' Files
                 </div>
             </div>
         </AbsoluteFill>
     );
 };
 
-/* ── The main Reel component (professional template) ─── */
+/* ── Main Reel: NO INTRO — hook first, outro last ─── */
 export const Reel: React.FC<{ scriptData: any }> = ({ scriptData }) => {
     const { fps, width, height, durationInFrames } = useVideoConfig();
-    const frame = useCurrentFrame();
     const lines: string[] = scriptData?.script_lines || ['Welcome to Cohort Zero'];
 
-    const INTRO_FRAMES = 60;  // 2s intro
-    const OUTRO_FRAMES = 90;  // 3s outro
-    const CONTENT_FRAMES = durationInFrames - INTRO_FRAMES - OUTRO_FRAMES;
+    const OUTRO_FRAMES = 75; // 2.5s outro
+    const CONTENT_FRAMES = durationInFrames - OUTRO_FRAMES;
     const framesPerLine = Math.floor(CONTENT_FRAMES / lines.length);
 
     return (
         <AbsoluteFill style={{ backgroundColor: BG }}>
-            {/* ─── INTRO ─── */}
-            <Sequence from={0} durationInFrames={INTRO_FRAMES}>
-                <Intro />
-            </Sequence>
-
-            {/* ─── MAIN CONTENT ─── */}
-            <Sequence from={INTRO_FRAMES} durationInFrames={CONTENT_FRAMES}>
-                {/* Background: AI image with Ken Burns pan */}
-                <AbsoluteFill style={{ opacity: 0.45 }}>
+            {/* ─── MAIN CONTENT (starts immediately — no intro!) ─── */}
+            <Sequence from={0} durationInFrames={CONTENT_FRAMES}>
+                {/* Background: AI image with Ken Burns */}
+                <AbsoluteFill style={{ opacity: 0.4 }}>
                     <KenBurns src={staticFile('assets/background.jpg')} durationInFrames={CONTENT_FRAMES} />
                 </AbsoluteFill>
 
-                {/* Dark vignette over the background */}
+                {/* Dark vignette */}
                 <AbsoluteFill style={{
-                    background: `radial-gradient(ellipse at center, transparent 30%, ${BG} 100%)`,
+                    background: `radial-gradient(ellipse at center, transparent 20%, ${BG} 95%)`,
                 }} />
 
-                {/* Lines rendered one at a time with fade transitions */}
+                {/* Lines rendered one at a time */}
                 {lines.map((line, i) => {
                     const lineStart = i * framesPerLine;
                     return (
                         <Sequence key={i} from={lineStart} durationInFrames={framesPerLine}>
-                            <LineCard
-                                text={line}
-                                index={i}
-                                total={lines.length}
-                                width={width}
-                                height={height}
-                                fps={fps}
-                                framesPerLine={framesPerLine}
-                            />
+                            <LineCard text={line} index={i} total={lines.length}
+                                width={width} height={height} fps={fps} framesPerLine={framesPerLine} />
                         </Sequence>
                     );
                 })}
 
-                {/* Logo watermark at top center */}
-                <AbsoluteFill style={{ padding: 50, justifyContent: 'flex-start', alignItems: 'center' }}>
-                    <LogoWatermark />
-                </AbsoluteFill>
+                {/* Logo watermark (subtle, top-left) */}
+                <LogoWatermark />
+
+                {/* Progress dots at the bottom */}
+                {lines.map((_, i) => {
+                    const lineStart = i * framesPerLine;
+                    return (
+                        <Sequence key={`dot-${i}`} from={lineStart} durationInFrames={framesPerLine}>
+                            <ProgressDots current={i} total={lines.length} width={width} height={height} />
+                        </Sequence>
+                    );
+                })}
             </Sequence>
 
-            {/* ─── OUTRO ─── */}
-            <Sequence from={INTRO_FRAMES + CONTENT_FRAMES} durationInFrames={OUTRO_FRAMES}>
+            {/* ─── OUTRO (short CTA) ─── */}
+            <Sequence from={CONTENT_FRAMES} durationInFrames={OUTRO_FRAMES}>
                 <Outro />
             </Sequence>
 
-            {/* Film grain over everything */}
             <Grain />
         </AbsoluteFill>
     );
 };
 
-/* ── A single line card with glassmorphism + slide-in animation ── */
+/* ── Line Card ── */
 const LineCard: React.FC<{
     text: string; index: number; total: number; width: number; height: number; fps: number; framesPerLine: number;
 }> = ({ text, index, total, width, height, fps, framesPerLine }) => {
     const frame = useCurrentFrame();
 
     const slideIn = spring({ frame, fps, config: { mass: 0.6, damping: 14, stiffness: 120 } });
-    const fadeOut = interpolate(frame, [framesPerLine - 12, framesPerLine], [1, 0], {
+    const fadeOut = interpolate(frame, [framesPerLine - 10, framesPerLine], [1, 0], {
         extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
     });
-    const fadeIn = interpolate(frame, [0, 10], [0, 1], { extrapolateRight: 'clamp' });
+    const fadeIn = interpolate(frame, [0, 8], [0, 1], { extrapolateRight: 'clamp' });
     const opacity = Math.min(fadeIn, fadeOut);
+    const translateY = interpolate(slideIn, [0, 1], [50, 0]);
 
-    const floatY = Math.sin(frame / 20) * 4;
-    const translateY = interpolate(slideIn, [0, 1], [60, 0]);
-
-    const fontSize = Math.round(width * 0.048);
-    const isTitle = index === 0;
-    const isLast = index === total - 1;
-
-    // Place text at bottom-third (like a proper lower-third) for body lines,
-    // center for the first hook line
-    const justify = isTitle ? 'center' : 'flex-end';
-    const paddingBottom = isTitle ? 0 : 200;
+    const isHook = index === 0;
+    const fontSize = isHook ? Math.round(width * 0.065) : Math.round(width * 0.048);
 
     return (
         <AbsoluteFill style={{
-            justifyContent: justify,
-            alignItems: 'center',
-            padding: `80px 60px ${paddingBottom}px 60px`,
+            justifyContent: 'center', alignItems: 'center',
+            padding: '120px 60px 200px 60px',
         }}>
             <div style={{
                 opacity,
-                transform: `translateY(${translateY + floatY}px)`,
+                transform: `translateY(${translateY}px)`,
                 maxWidth: width * 0.88,
-                textAlign: isTitle ? 'center' : 'left',
+                textAlign: 'center',
             }}>
-                {/* Accent kicker line for the first card */}
-                {isTitle && (
+                {/* Accent bar above the hook */}
+                {isHook && (
                     <div style={{
-                        display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14, marginBottom: 20,
-                    }}>
-                        <div style={{ height: 2, width: 44 * slideIn, backgroundColor: ACCENT }} />
-                        <span style={{
-                            fontFamily: FONT, fontSize: Math.round(fontSize * 0.35), fontWeight: 700,
-                            letterSpacing: 4, textTransform: 'uppercase' as const, color: ACCENT, opacity: slideIn,
-                        }}>
-                            BREAKING NEWS
-                        </span>
-                        <div style={{ height: 2, width: 44 * slideIn, backgroundColor: ACCENT }} />
-                    </div>
+                        width: 60 * slideIn, height: 4, backgroundColor: ACCENT,
+                        margin: '0 auto 24px', borderRadius: 2, boxShadow: `0 0 20px ${ACCENT}66`,
+                    }} />
                 )}
 
-                {/* The card body — glassmorphism panel */}
+                {/* Glassmorphism card for body lines, clean text for hook */}
                 <div style={{
-                    background: isTitle ? 'none' : 'rgba(22, 22, 26, 0.75)',
-                    backdropFilter: isTitle ? 'none' : 'blur(24px)',
-                    WebkitBackdropFilter: isTitle ? 'none' : 'blur(24px)',
-                    borderRadius: isTitle ? 0 : 20,
-                    border: isTitle ? 'none' : `1px solid rgba(255,255,255,0.08)`,
-                    padding: isTitle ? 0 : '40px 44px',
+                    background: isHook ? 'none' : 'rgba(22, 22, 26, 0.7)',
+                    backdropFilter: isHook ? 'none' : 'blur(20px)',
+                    WebkitBackdropFilter: isHook ? 'none' : 'blur(20px)',
+                    borderRadius: isHook ? 0 : 16,
+                    border: isHook ? 'none' : '1px solid rgba(255,255,255,0.06)',
+                    padding: isHook ? 0 : '36px 40px',
                 }}>
                     <p style={{
                         fontFamily: FONT,
-                        fontSize: isTitle ? Math.round(fontSize * 1.6) : fontSize,
-                        fontWeight: isTitle ? 800 : 600,
+                        fontSize,
+                        fontWeight: isHook ? 800 : 600,
                         color: '#f8fafc',
                         margin: 0,
-                        lineHeight: 1.35,
-                        letterSpacing: isTitle ? '-1px' : '-0.5px',
-                        textShadow: '0 2px 12px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.95)',
+                        lineHeight: 1.3,
+                        letterSpacing: isHook ? '-1px' : '-0.3px',
+                        textShadow: '0 2px 16px rgba(0,0,0,0.95), 0 0 4px rgba(0,0,0,0.9)',
                     }}>
                         {text}
                     </p>
                 </div>
 
-                {/* Accent underline for title */}
-                {isTitle && (
+                {/* Accent underline under hook */}
+                {isHook && (
                     <div style={{
-                        height: 5, width: `${slideIn * 50}%`, margin: '30px auto 0',
-                        backgroundColor: ACCENT, boxShadow: `0 0 26px ${ACCENT}`, borderRadius: 4,
+                        width: `${slideIn * 40}%`, height: 4, margin: '28px auto 0',
+                        backgroundColor: ACCENT, boxShadow: `0 0 20px ${ACCENT}`, borderRadius: 2,
                     }} />
-                )}
-
-                {/* Subtle line counter for body cards */}
-                {!isTitle && !isLast && (
-                    <div style={{
-                        display: 'flex', gap: 6, marginTop: 16, justifyContent: 'flex-start',
-                    }}>
-                        {Array.from({ length: total - 1 }).map((_, j) => (
-                            <div key={j} style={{
-                                width: j === index ? 28 : 8, height: 4, borderRadius: 2,
-                                backgroundColor: j === index ? ACCENT : 'rgba(255,255,255,0.2)',
-                                transition: 'width 0.3s',
-                            }} />
-                        ))}
-                    </div>
                 )}
             </div>
         </AbsoluteFill>
     );
 };
 
-/* ── Logo watermark at top ── */
-const LogoWatermark: React.FC = () => {
-    const [failed, setFailed] = React.useState(false);
-    if (failed) return null;
+/* ── Progress Dots ── */
+const ProgressDots: React.FC<{ current: number; total: number; width: number; height: number }> = ({
+    current, total, width, height,
+}) => {
     return (
-        <Img
-            src={staticFile('assets/logo.png')}
-            onError={() => setFailed(true)}
-            style={{ height: 70, objectFit: 'contain', opacity: 0.85 }}
-        />
+        <AbsoluteFill style={{
+            justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 80,
+        }}>
+            <div style={{ display: 'flex', gap: 6 }}>
+                {Array.from({ length: total }).map((_, j) => (
+                    <div key={j} style={{
+                        width: j === current ? 24 : 8, height: 4, borderRadius: 2,
+                        backgroundColor: j === current ? ACCENT : 'rgba(255,255,255,0.2)',
+                    }} />
+                ))}
+            </div>
+        </AbsoluteFill>
     );
 };

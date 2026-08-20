@@ -3,10 +3,9 @@ import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || ''; // Add your key here or via env
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '';
 const HISTORY_FILE = path.join(process.cwd(), 'data', 'history.json');
 const SCRIPT_FILE = path.join(process.cwd(), 'data', 'script.json');
-const PUBLIC_SCRIPT_FILE = path.join(process.cwd(), 'public', 'script.json');
 
 const parser = new Parser();
 
@@ -51,7 +50,6 @@ async function fetchAllNews() {
             console.error(`Failed to fetch ${url}:`, error.message);
         }
     }
-    // Sort by most recent
     allNews.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
     return allNews;
 }
@@ -59,22 +57,27 @@ async function fetchAllNews() {
 async function generateContent(newsItems) {
     console.log("Calling OpenRouter to generate content...");
     const prompt = `
-You are an expert content creator for "Cohort Zero", a tech startup incubator/venture builder.
-Your goal is to grab the attention of aspiring founders, product developers, and entrepreneurs looking for funding and motivation.
+You are a sharp, insider content creator for "Cohort Zero" — a media brand about startups, venture capital, and the mechanics of how companies actually win or collapse. The audience is founders, operators, and tech people who want substance, not motivation.
 
-I will provide a list of recent tech/startup news headlines. Select the most impactful ONE or TWO headlines (preferably one global startup news and one Pakistan tech news if available). 
-Write an engaging Instagram/LinkedIn post (caption + script) about this news.
+RULES:
+- Pick EXACTLY ONE headline from the list below. The single most interesting one from a founder/business perspective. Do NOT combine multiple stories.
+- Write 4-5 punchy "script_lines" that break down WHY this news matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
+- The FIRST script_line is the hook. It must grab attention in under 2 seconds. No intros, no greetings, no "Hey founders". Start with the sharpest, most surprising angle.
+- Write a LinkedIn/Instagram caption (2-3 sentences max). Be analytical, not motivational. No guru fluff. No "we turn bold ideas into reality" energy. Think Bloomberg, not Tony Robbins.
+- Hashtags: 5-8, relevant to the specific news story and the startup ecosystem.
+- image_prompt: a REALISTIC, corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k", "close-up of founder hands on laptop in dark office, warm desk lamp, shallow depth of field". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate.
 
 News Headlines:
 ${newsItems.map((n, i) => `${i + 1}. [${n.source}] ${n.title}`).join('\n')}
 
-Format your output as a JSON object:
+Output valid JSON:
 {
-  "selected_news_titles": ["title1"],
-  "caption": "Your engaging caption with emojis...",
-  "hashtags": ["#startup", "#founder", "#tech"],
-  "script_lines": ["Line 1 of text to show on screen", "Line 2 to show on screen"],
-  "image_prompt": "A prompt for an AI background image (e.g. abstract neon startup office, cinematic lighting, 4k). Do not include any text, logos, or typography in the image prompt."
+  "selected_news_title": "the single headline you picked",
+  "hook": "the one-sentence hook for the reel (also used as script_lines[0])",
+  "caption": "LinkedIn/Instagram caption. Sharp, analytical, 2-3 sentences.",
+  "hashtags": ["#startup", "#founder", "#venturecapital"],
+  "script_lines": ["Hook line", "Context line", "Insight line", "Takeaway line"],
+  "image_prompt": "realistic corporate/startup scene, dark lighting, cinematic 4k, no text no logos"
 }
 `;
 
@@ -88,7 +91,7 @@ Format your output as a JSON object:
             "model": "openrouter/free",
             "response_format": { "type": "json_object" },
             "messages": [
-                { "role": "system", "content": "You output valid JSON." },
+                { "role": "system", "content": "You output valid JSON. You are analytical and sharp, never motivational." },
                 { "role": "user", "content": prompt }
             ]
         })
@@ -100,14 +103,20 @@ Format your output as a JSON object:
     }
 
     const data = await response.json();
-    return JSON.parse(data.choices[0].message.content);
+    const parsed = JSON.parse(data.choices[0].message.content);
+
+    // Normalize: ensure selected_news_titles is always an array for history
+    if (!parsed.selected_news_titles) {
+        parsed.selected_news_titles = [parsed.selected_news_title || ""];
+    }
+
+    return parsed;
 }
 
 async function run() {
     const history = await loadHistory();
     const rawNews = await fetchAllNews();
     
-    // Filter out old news
     const newItems = rawNews.filter(n => !history.includes(n.title));
     console.log(`Found ${newItems.length} new articles.`);
 
@@ -116,27 +125,25 @@ async function run() {
         return;
     }
 
-    // Pass top 20 new items to LLM to prevent prompt explosion
     const topItems = newItems.slice(0, 20);
 
     try {
         const generated = await generateContent(topItems);
         console.log("Content generated successfully!");
+        console.log("Selected:", generated.selected_news_title || generated.selected_news_titles?.[0]);
+        console.log("Hook:", generated.hook);
 
         // Add selected to history
-        generated.selected_news_titles.forEach(title => history.push(title));
+        const titles = generated.selected_news_titles || [generated.selected_news_title];
+        titles.forEach(title => { if (title) history.push(title); });
         await saveHistory(history);
 
-        // Save script in both data and public directories
+        // Save script
         if (!fs.existsSync(path.dirname(SCRIPT_FILE))) {
             fs.mkdirSync(path.dirname(SCRIPT_FILE), { recursive: true });
         }
-        if (!fs.existsSync(path.dirname(PUBLIC_SCRIPT_FILE))) {
-            fs.mkdirSync(path.dirname(PUBLIC_SCRIPT_FILE), { recursive: true });
-        }
         fs.writeFileSync(SCRIPT_FILE, JSON.stringify(generated, null, 2));
-        fs.writeFileSync(PUBLIC_SCRIPT_FILE, JSON.stringify(generated, null, 2));
-        console.log(`Saved generated script to ${SCRIPT_FILE} and ${PUBLIC_SCRIPT_FILE}`);
+        console.log(`Saved generated script to ${SCRIPT_FILE}`);
     } catch (err) {
         console.error("Failed during content generation:", err.message);
     }
