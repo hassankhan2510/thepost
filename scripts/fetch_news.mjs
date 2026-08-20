@@ -54,25 +54,36 @@ async function fetchAllNews() {
     return allNews;
 }
 
-async function generateContent(newsItems) {
+async function generateContent(newsItems, customTopic = null) {
     console.log("Calling OpenRouter to generate content...");
+    
+    let sourceContent = "";
+    let instructions = "";
+    
+    if (customTopic) {
+        sourceContent = `Custom Topic provided by user:\n"${customTopic}"`;
+        instructions = `- Write a script based EXACTLY on the custom topic provided above.`;
+    } else {
+        sourceContent = `News Headlines:\n${newsItems.map((n, i) => `${i + 1}. [${n.source}] ${n.title}`).join('\n')}`;
+        instructions = `- Pick EXACTLY ONE headline from the list below. The single most interesting one from a founder/business perspective. Do NOT combine multiple stories.`;
+    }
+
     const prompt = `
-You are a sharp, insider content creator for "Cohort Zero" — a media brand about startups, venture capital, and the mechanics of how companies actually win or collapse. The audience is founders, operators, and tech people who want substance, not motivation.
+You are a top 1% sharp, insider content creator for "Cohort Zero" — an elite media brand about startups, venture capital, and the mechanics of how companies actually win or collapse. The audience is veteran founders, technical operators, and investors who want high-signal substance, not entry-level motivation.
 
 RULES:
-- Pick EXACTLY ONE headline from the list below. The single most interesting one from a founder/business perspective. Do NOT combine multiple stories.
-- Write 4-5 punchy "script_lines" that break down WHY this news matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
-- The FIRST script_line is the hook. It must grab attention in under 2 seconds. No intros, no greetings, no "Hey founders". Start with the sharpest, most surprising angle.
-- Write a LinkedIn/Instagram caption (2-3 sentences max). Be analytical, not motivational. No guru fluff. No "we turn bold ideas into reality" energy. Think Bloomberg, not Tony Robbins.
-- Hashtags: 5-8, relevant to the specific news story and the startup ecosystem.
-- image_prompt: a REALISTIC, corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k", "close-up of founder hands on laptop in dark office, warm desk lamp, shallow depth of field". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate.
+${instructions}
+- Write 4-5 punchy "script_lines" that break down WHY this news/topic matters for founders. Each line is a separate screen in an Instagram reel. Think: hook → context → insight → takeaway.
+- The FIRST script_line is the hook. It must grab attention in under 1 second. No intros, no greetings, no "Hey founders". Start with the sharpest, most surprising angle or a bold claim.
+- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian. No guru fluff. No "we turn bold ideas into reality" energy. Think Bloomberg crossed with a highly technical VC memo.
+- Hashtags: 5-8, relevant to the specific topic and the deep-tech/startup ecosystem.
+- image_prompt: a REALISTIC, highly cinematic corporate/business/startup scene. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k", "close-up of founder hands on laptop in dark office, warm desk lamp, shallow depth of field". NEVER sci-fi, neon, futuristic, abstract, or fantasy. The brand is dark, clean, corporate, high-status.
 
-News Headlines:
-${newsItems.map((n, i) => `${i + 1}. [${n.source}] ${n.title}`).join('\n')}
+${sourceContent}
 
 Output valid JSON:
 {
-  "selected_news_title": "the single headline you picked",
+  "selected_news_title": "the headline or topic you are writing about",
   "hook": "the one-sentence hook for the reel (also used as script_lines[0])",
   "caption": "LinkedIn/Instagram caption. Sharp, analytical, 2-3 sentences.",
   "hashtags": ["#startup", "#founder", "#venturecapital"],
@@ -116,29 +127,43 @@ Output valid JSON:
 }
 
 async function run() {
-    const history = await loadHistory();
-    const rawNews = await fetchAllNews();
+    const customTopic = process.env.CUSTOM_TOPIC?.trim() || null;
     
-    const newItems = rawNews.filter(n => !history.includes(n.title));
-    console.log(`Found ${newItems.length} new articles.`);
+    let history = [];
+    if (!customTopic) {
+        history = await loadHistory();
+    }
+    
+    let topItems = [];
+    
+    if (customTopic) {
+        console.log(`Using custom topic from workflow input: "${customTopic}"`);
+        // We pass an empty array for newsItems since we have a custom topic
+        topItems = [];
+    } else {
+        const rawNews = await fetchAllNews();
+        const newItems = rawNews.filter(n => !history.includes(n.title));
+        console.log(`Found ${newItems.length} new articles.`);
 
-    if (newItems.length === 0) {
-        console.log("No new articles found. Exiting.");
-        return;
+        if (newItems.length === 0) {
+            console.log("No new articles found. Exiting.");
+            return;
+        }
+        topItems = newItems.slice(0, 20);
     }
 
-    const topItems = newItems.slice(0, 20);
-
     try {
-        const generated = await generateContent(topItems);
+        const generated = await generateContent(topItems, customTopic);
         console.log("Content generated successfully!");
         console.log("Selected:", generated.selected_news_title || generated.selected_news_titles?.[0]);
         console.log("Hook:", generated.hook);
 
-        // Add selected to history
-        const titles = generated.selected_news_titles || [generated.selected_news_title];
-        titles.forEach(title => { if (title) history.push(title); });
-        await saveHistory(history);
+        if (!customTopic) {
+            // Add selected to history only for RSS
+            const titles = generated.selected_news_titles || [generated.selected_news_title];
+            titles.forEach(title => { if (title) history.push(title); });
+            await saveHistory(history);
+        }
 
         // Save script
         if (!fs.existsSync(path.dirname(SCRIPT_FILE))) {

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:
+    inputs:
+      custom_topic:
+        description: 'Custom topic/headline (leave blank to auto-fetch RSS)'
+        required: false
+        type: string
 
 permissions:
   contents: write
@@ -35,6 +40,7 @@ jobs:
       - name: Fetch News & Generate Content
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          CUSTOM_TOPIC: ${{ inputs.custom_topic }}
         run: npm run fetch
         
       - name: Generate Assets

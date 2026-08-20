@@ -23,5 +23,10 @@
     "remotion": "^4.0.514",
     "rss-parser": "^3.13.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "typescript": "^7.0.2"
+  }
 }
