@@ -18,7 +18,7 @@ function run() {
     
     try {
         // Output format will be slide-00.png, slide-01.png, etc.
-        execSync(`npx remotion render src/index.ts Carousel out/carousel/slide-%02d.png --props=data/render_props.json --frames=${frames}`, { stdio: 'inherit' });
+        execSync(`npx remotion render src/index.ts Carousel out/carousel --sequence --image-format=png --props=data/render_props.json --frames=${frames}`, { stdio: 'inherit' });
         console.log("Carousel rendered successfully to out/carousel/");
     } catch (err) {
         console.error("Failed to render carousel");
