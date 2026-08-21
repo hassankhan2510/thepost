@@ -2,6 +2,7 @@ import React from 'react';
 import { Composition, staticFile } from 'remotion';
 import { Reel } from './Reel';
 import { Carousel } from './Carousel';
+import { TweetCard } from './TweetCard';
 
 // Default fallback data — overridden by --props at render time
 const DEFAULT_SCRIPT = {
@@ -14,6 +15,14 @@ const DEFAULT_SCRIPT = {
     ],
     selected_news_titles: ["Default"],
     image_prompt: "",
+};
+
+const DEFAULT_TWEET = {
+    displayName: "Hassan Khan",
+    username: "@Syedhassankhan_",
+    tweet: "The best founders don't have better ideas. They have better filters for killing bad ones early.",
+    avatarFile: "avatar.jpg",
+    verified: true,
 };
 
 export const RemotionRoot: React.FC = () => {
@@ -50,6 +59,17 @@ export const RemotionRoot: React.FC = () => {
                 height={1350}
                 defaultProps={{
                     scriptData: DEFAULT_SCRIPT,
+                }}
+            />
+            <Composition
+                id="TweetCard"
+                component={TweetCard}
+                durationInFrames={1}
+                fps={30}
+                width={1080}
+                height={1080}
+                defaultProps={{
+                    tweetData: DEFAULT_TWEET,
                 }}
             />
         </>

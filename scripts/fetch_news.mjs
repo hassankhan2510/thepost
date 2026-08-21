@@ -10,12 +10,29 @@ const SCRIPT_FILE = path.join(process.cwd(), 'data', 'script.json');
 const parser = new Parser();
 
 const RSS_FEEDS = [
+    // ── Tech & Startups ──
     'https://techcrunch.com/category/startups/feed/',
-    'https://propakistani.pk/category/technology/feed/',
-    'https://tribune.com.pk/technology/feed',
     'https://news.ycombinator.com/rss',
     'https://www.techjuice.pk/feed/',
-    'https://pakwired.com/feed/'
+    'https://pakwired.com/feed/',
+    'https://www.technologyreview.com/feed/',
+    'https://arstechnica.com/feed/',
+    // ── Finance & Money ──
+    'https://feeds.bloomberg.com/markets/news.rss',
+    'https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline',
+    // ── Health & Science ──
+    'https://www.sciencedaily.com/rss/health_medicine.xml',
+    'https://www.nature.com/nature.rss',
+    'https://rss.nytimes.com/services/xml/rss/nyt/Health.xml',
+    // ── World & Politics ──
+    'https://feeds.reuters.com/reuters/topNews',
+    'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
+    // ── Books & Ideas ──
+    'https://fs.blog/feed/',
+    'https://jamesclear.com/feed',
+    // ── Pakistan-specific ──
+    'https://propakistani.pk/category/technology/feed/',
+    'https://tribune.com.pk/technology/feed',
 ];
 
 async function loadHistory() {

@@ -11,7 +11,9 @@
     "render:reel": "remotion render src/index.ts Reel out/reel.mp4 --props=data/render_props.json",
     "render:post": "remotion render src/index.ts Post out/post.mp4 --props=data/render_props.json",
     "carousel": "node scripts/render_carousel.mjs",
-    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel"
+    "tweet": "node scripts/generate_tweet.mjs",
+    "render:tweets": "node scripts/render_tweets.mjs",
+    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel && npm run tweet && npm run render:tweets"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",
