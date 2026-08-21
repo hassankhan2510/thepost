@@ -13,7 +13,8 @@
     "carousel": "node scripts/render_carousel.mjs",
     "tweet": "node scripts/generate_tweet.mjs",
     "render:tweets": "node scripts/render_tweets.mjs",
-    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel && npm run tweet && npm run render:tweets"
+    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel",
+    "run:x": "npm run tweet && npm run render:tweets"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",

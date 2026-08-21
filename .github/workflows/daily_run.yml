@@ -9,10 +9,6 @@ on:
         description: 'Custom topic/headline (leave blank to auto-fetch RSS)'
         required: false
         type: string
-      tweet_topic:
-        description: 'Tweet topic (any subject: money, health, politics, startups, books...)'
-        required: false
-        type: string
 
 permissions:
   contents: write
@@ -60,15 +56,6 @@ jobs:
           
       - name: Generate Carousel Images
         run: npm run carousel
-
-      - name: Generate Tweet Content
-        env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          TWEET_TOPIC: ${{ inputs.tweet_topic }}
-        run: npm run tweet
-
-      - name: Render Tweet Images
-        run: npm run render:tweets
           
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
@@ -78,7 +65,6 @@ jobs:
             out/
             data/script.json
             data/thread.json
-            data/tweet.json
             
       - name: Commit Updated History
         run: |
@@ -87,3 +73,4 @@ jobs:
           git add data/history.json
           git commit -m "Auto-update history.json" || echo "No changes to commit"
           git push
+

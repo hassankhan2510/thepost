@@ -1,0 +1,61 @@
+name: X Personal — Tweet Images (@Syedhassankhan_)
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      tweet_topic:
+        description: 'Tweet topic (any subject: money, health, politics, startups, books, anything)'
+        required: false
+        type: string
+      tweet_count:
+        description: 'Number of tweets to generate (default: 3)'
+        required: false
+        default: '3'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  generate-tweets:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          
+      - name: Install Node dependencies
+        run: npm ci
+        
+      - name: Install system dependencies for Remotion
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libdbus-1-3 libatk1.0-0 libasound2t64 libxrandr2 libxkbcommon-dev libgbm-dev
+          
+      - name: Ensure Remotion Browser
+        run: npx remotion browser ensure
+        
+      - name: Generate Elite Tweet Content
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          TWEET_TOPIC: ${{ inputs.tweet_topic }}
+          TWEET_COUNT: ${{ inputs.tweet_count }}
+        run: npm run tweet
+
+      - name: Render Tweet Card Images
+        run: npm run render:tweets
+          
+      - name: Upload Tweet Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: x-tweet-images
+          path: |
+            out/tweets/
+            data/tweet.json

@@ -15,12 +15,40 @@
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
+import Parser from 'rss-parser';
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '';
 const TWEET_TOPIC = process.env.TWEET_TOPIC?.trim() || null;
 const TWEET_COUNT = parseInt(process.env.TWEET_COUNT || '3', 10);
-const SCRIPT_FILE = path.join(process.cwd(), 'data', 'script.json');
 const TWEET_FILE = path.join(process.cwd(), 'data', 'tweet.json');
+const TWEET_HISTORY = path.join(process.cwd(), 'data', 'tweet_history.json');
+
+// ── Broad multi-topic RSS feeds (independent of Cohort Zero) ──
+const PERSONAL_FEEDS = [
+    // Tech & Startups
+    'https://techcrunch.com/category/startups/feed/',
+    'https://news.ycombinator.com/rss',
+    'https://www.technologyreview.com/feed/',
+    'https://arstechnica.com/feed/',
+    // Finance & Money
+    'https://feeds.bloomberg.com/markets/news.rss',
+    'https://www.investopedia.com/feedbuilder/feed/getfeed?feedName=rss_headline',
+    // Health & Science
+    'https://www.sciencedaily.com/rss/health_medicine.xml',
+    'https://www.nature.com/nature.rss',
+    'https://rss.nytimes.com/services/xml/rss/nyt/Health.xml',
+    // World & Politics
+    'https://feeds.reuters.com/reuters/topNews',
+    'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
+    // Books & Ideas
+    'https://fs.blog/feed/',
+    'https://jamesclear.com/feed',
+    // Pakistan
+    'https://propakistani.pk/category/technology/feed/',
+    'https://tribune.com.pk/technology/feed',
+];
+
+const parser = new Parser();
 
 // ── Jina AI for deep context on any topic ──
 async function fetchContext(query, isUrl = false) {
@@ -136,22 +164,48 @@ async function run() {
         console.log(`  Topic: "${topic}"`);
         context = await fetchContext(topic, false);
     } else {
-        // ── Auto mode: use the script.json topic if available ──
-        console.log(`\n  Mode: AUTO (from script.json)`);
-        if (fs.existsSync(SCRIPT_FILE)) {
-            const script = JSON.parse(fs.readFileSync(SCRIPT_FILE, 'utf-8'));
-            topic = script.selected_news_title || script.selected_news_titles?.[0] || "technology and startups";
-            console.log(`  Auto-picked topic: "${topic}"`);
-            // Use existing twitter_thread if available, else generate fresh
-            if (script.twitter_thread && script.twitter_thread.length > 0 &&
-                script.twitter_thread[0] !== "Tweet 1") {
-                console.log(`  Found existing thread in script.json (${script.twitter_thread.length} tweets)`);
-                // Still regenerate with elite quality — the fetch_news thread is basic
+        // ── Auto mode: fetch from personal RSS feeds ──
+        console.log(`\n  Mode: AUTO (from RSS feeds)`);
+        
+        let history = [];
+        if (fs.existsSync(TWEET_HISTORY)) {
+            history = JSON.parse(fs.readFileSync(TWEET_HISTORY, 'utf-8'));
+        }
+
+        let selectedItem = null;
+        // Shuffle feeds for variety
+        const shuffledFeeds = PERSONAL_FEEDS.sort(() => 0.5 - Math.random());
+
+        for (const feedUrl of shuffledFeeds) {
+            try {
+                const feed = await parser.parseURL(feedUrl);
+                for (const item of feed.items) {
+                    if (!history.includes(item.link)) {
+                        selectedItem = item;
+                        break;
+                    }
+                }
+            } catch (e) {
+                console.log(`  [Skip] Failed to fetch feed ${feedUrl}: ${e.message}`);
             }
-            context = await fetchContext(topic, false);
+            if (selectedItem) break;
+        }
+
+        if (selectedItem) {
+            topic = selectedItem.title;
+            console.log(`  Auto-picked topic: "${topic}"`);
+            console.log(`  Source: ${selectedItem.link}`);
+            
+            // Add to history and keep last 200
+            history.push(selectedItem.link);
+            if (history.length > 200) history.shift();
+            fs.writeFileSync(TWEET_HISTORY, JSON.stringify(history, null, 2));
+
+            // Fetch deep context using Jina AI on the URL
+            context = await fetchContext(selectedItem.link, true);
         } else {
-            topic = "building startups in 2026";
-            console.log(`  No script.json found, using default topic: "${topic}"`);
+            topic = "The reality of building startups in 2026";
+            console.log(`  No fresh news found, using default topic: "${topic}"`);
             context = await fetchContext(topic, false);
         }
     }
