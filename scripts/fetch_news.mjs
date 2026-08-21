@@ -112,17 +112,17 @@ DEEP CONTEXT:
 ${contextMarkdown}
 
 RULES:
-- We are generating a single-page infographic/insight graphic.
-- You must write a HOOK that grabs attention in under 1 second (a bold claim, counterintuitive thought, or surprising angle).
-- You must write a CONTENT RICH SUMMARY that gives the reader the full context, explaining the news/matter completely so they get full value from this text alone. It should be rich, high-quality, and written like a sharp analyst.
+- We are generating a single-page graphic for Instagram to drive community engagement, networking, and discussion among small founders.
+- You must write a HOOK that grabs attention in under 1 second.
+- You must write a COMMUNITY ENGAGEMENT block (approx 50-80 words). Instead of just explaining the news, use it to start a conversation. Ask a question to the founders, encourage networking, or discuss a shared struggle. The goal is to make people comment, connect, and feel part of a community of builders.
 - Provide a cinematic image prompt for the background. NO TEXT IN THE IMAGE.
-- No generic motivation. Be highly analytical.
+- Keep the tone welcoming, collaborative, and networking-focused, but still premium.
 
 Output ONLY a JSON object with this exact structure:
 {
   "selected_news_title": "${topicOrTitle}",
   "hook": "The one-sentence scroll-stopping hook.",
-  "content_rich_summary": "The full context and explanation (approx 80-150 words).",
+  "content_rich_summary": "The community-focused discussion text, ending with a question for the founders.",
   "image_prompt": "dark oak boardroom table with financial term sheets, cinematic 4k"
 }
 `;
