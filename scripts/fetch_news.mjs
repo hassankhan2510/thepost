@@ -112,51 +112,18 @@ DEEP CONTEXT:
 ${contextMarkdown}
 
 RULES:
-- Use the deep context above to write 4-6 dynamic slides that break down WHY this news/topic matters for founders. Each slide is a separate screen in an Instagram reel and a carousel post.
-- The FIRST slide MUST be a "hook" type. It must grab attention in under 1 second with a bold claim or surprising angle.
-- Other slides can be "text", "stat", or "quote".
-- Include specific numbers, metrics, or quotes from the context if relevant. No generic platitudes.
-- Write a LinkedIn/Instagram caption (2-3 sentences max). Be deeply analytical and contrarian.
-- Hashtags: 5-8 relevant tags.
-- twitter_thread: An array of 3-5 tweets (strings) breaking down this topic mechanically.
-- chart_data: If the context contains a compelling comparison or metric (e.g. revenue growth, valuation over time), provide a title, 2-3 labels, and values. Otherwise, return null.
-- image_prompt: For EVERY slide, provide a unique, REALISTIC, highly cinematic corporate/business/startup scene that matches the slide's vibe. Examples: "dimly lit venture capital boardroom, dark oak table, term sheets, cinematic 4k". NEVER sci-fi, neon, or abstract. The brand is dark, clean, corporate, high-status. No text or logos in images.
+- We are generating a single-page infographic/insight graphic.
+- You must write a HOOK that grabs attention in under 1 second (a bold claim, counterintuitive thought, or surprising angle).
+- You must write a CONTENT RICH SUMMARY that gives the reader the full context, explaining the news/matter completely so they get full value from this text alone. It should be rich, high-quality, and written like a sharp analyst.
+- Provide a cinematic image prompt for the background. NO TEXT IN THE IMAGE.
+- No generic motivation. Be highly analytical.
 
-Output valid JSON:
+Output ONLY a JSON object with this exact structure:
 {
   "selected_news_title": "${topicOrTitle}",
-  "caption": "LinkedIn/Instagram caption.",
-  "hashtags": ["#startup", "#founder"],
-  "slides": [
-    {
-      "type": "hook",
-      "content": "The one-sentence hook.",
-      "image_prompt": "close-up of founder hands on laptop in dark office, warm desk lamp, cinematic 4k"
-    },
-    {
-      "type": "stat",
-      "highlight_number": "$13M",
-      "content": "They raised their Series A in 48 hours.",
-      "image_prompt": "dark oak boardroom table with financial term sheets, shallow depth of field, 4k"
-    },
-    {
-      "type": "quote",
-      "author": "Sam Altman",
-      "content": "AI will replace the bottom 90% of coding tasks.",
-      "image_prompt": "silhouette of a tech executive speaking on stage, dark moody lighting, cinematic"
-    },
-    {
-      "type": "text",
-      "content": "Here is the takeaway...",
-      "image_prompt": "wide shot of a modern dark mode startup office, minimal desk, cinematic lighting"
-    }
-  ],
-  "chart_data": {
-    "title": "Valuation Growth",
-    "labels": ["2023", "2024"],
-    "values": [100, 450]
-  },
-  "twitter_thread": ["Tweet 1", "Tweet 2", "Tweet 3"]
+  "hook": "The one-sentence scroll-stopping hook.",
+  "content_rich_summary": "The full context and explanation (approx 80-150 words).",
+  "image_prompt": "dark oak boardroom table with financial term sheets, cinematic 4k"
 }
 `;
 

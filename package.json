@@ -8,12 +8,10 @@
     "fetch": "node scripts/fetch_news.mjs",
     "assets": "node scripts/generate_assets.mjs",
     "wrap-props": "node scripts/wrap_props.mjs",
-    "render:reel": "remotion render src/index.ts Reel out/reel.mp4 --props=data/render_props.json",
-    "render:post": "remotion render src/index.ts Post out/post.mp4 --props=data/render_props.json",
-    "carousel": "node scripts/render_carousel.mjs",
+    "render:cohortzero": "remotion still src/index.ts CohortZeroCard out/cohortzero_post.png --props=data/render_props.json",
     "tweet": "node scripts/generate_tweet.mjs",
     "render:tweets": "node scripts/render_tweets.mjs",
-    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:reel && npm run render:post && npm run carousel",
+    "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:cohortzero",
     "run:x": "npm run tweet && npm run render:tweets"
   },
   "dependencies": {

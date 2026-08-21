@@ -49,13 +49,8 @@ jobs:
       - name: Wrap Props for Remotion
         run: npm run wrap-props
         
-      - name: Render Reel & Post
-        run: |
-          npm run render:reel
-          npm run render:post
-          
-      - name: Generate Carousel Images
-        run: npm run carousel
+      - name: Render Cohort Zero Graphic
+        run: npm run render:cohortzero
           
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4

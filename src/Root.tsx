@@ -3,17 +3,13 @@ import { Composition, staticFile } from 'remotion';
 import { Reel } from './Reel';
 import { Carousel } from './Carousel';
 import { TweetCard } from './TweetCard';
+import { CohortZeroCard } from './CohortZeroCard';
 
 // Default fallback data — overridden by --props at render time
 const DEFAULT_SCRIPT = {
-    caption: "Cohort Zero — Founders' Files",
-    script_lines: [
-        "Welcome to Cohort Zero.",
-        "The founders' files.",
-        "Real strategy. Real mechanics.",
-        "No guru fluff.",
-    ],
-    selected_news_titles: ["Default"],
+    hook: "The reality of building startups in 2026.",
+    content_rich_summary: "It takes more than a good idea to build a unicorn. You need mechanics, execution, and an unbreakable filter for bad ideas. Most founders fail because they optimize for funding instead of product-market fit.",
+    selected_news_title: "Default News Title",
     image_prompt: "",
 };
 
@@ -70,6 +66,17 @@ export const RemotionRoot: React.FC = () => {
                 height={1080}
                 defaultProps={{
                     tweetData: DEFAULT_TWEET,
+                }}
+            />
+            <Composition
+                id="CohortZeroCard"
+                component={CohortZeroCard}
+                durationInFrames={1}
+                fps={30}
+                width={1080}
+                height={1920}
+                defaultProps={{
+                    scriptData: DEFAULT_SCRIPT,
                 }}
             />
         </>
