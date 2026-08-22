@@ -52,7 +52,8 @@ function run() {
         fs.writeFileSync(TEMP_PROPS, JSON.stringify(props, null, 2));
 
         const outFile = path.join(OUT_DIR, `tweet_${i}.png`);
-        console.log(`  [${i + 1}/${tweets.length}] Rendering: ${tweetText.slice(0, 60)}...`);
+        const previewStr = typeof tweetText === 'string' ? tweetText : (tweetText.heading || tweetText.body || JSON.stringify(tweetText));
+        console.log(`  [${i + 1}/${tweets.length}] Rendering: ${String(previewStr).slice(0, 60).replace(/\n/g, ' ')}...`);
 
         try {
             execSync(
