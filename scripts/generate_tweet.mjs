@@ -151,6 +151,51 @@ async function generateTweets(topic, context) {
     return parsed;
 }
 
+async function formatExactText(rawText) {
+    console.log(`  Intelligently formatting custom text via AI...`);
+    const prompt = `You are a formatting assistant for visual social media cards.
+The user has provided a raw block of text. Your ONLY job is to format it beautifully for a visual graphic.
+- Do NOT change the words, tone, or meaning.
+- Extract or emphasize the heading/hook by separating it with line breaks.
+- Add line breaks (\\n) to break up dense paragraphs and make it highly readable.
+
+RAW TEXT:
+"${rawText}"
+
+Output valid JSON:
+{
+  "formatted_text": "The intelligently formatted text with \\n newlines"
+}`;
+
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "model": "openrouter/free",
+            "response_format": { "type": "json_object" },
+            "messages": [
+                {
+                    "role": "system",
+                    "content": "You output valid JSON. You are a precise formatter."
+                },
+                { "role": "user", "content": prompt }
+            ]
+        })
+    });
+
+    if (!response.ok) throw new Error(`OpenRouter API Error: ${await response.text()}`);
+
+    const data = await response.json();
+    let text = data.choices[0].message.content;
+    text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
+
+    const parsed = JSON.parse(text);
+    return parsed.formatted_text || rawText;
+}
+
 async function run() {
     console.log("╔══════════════════════════════════════════╗");
     console.log("║   X TWEET ENGINE — @Syedhassankhan_      ║");
@@ -161,14 +206,16 @@ async function run() {
     let result;
 
     if (EXACT_TWEET_TEXT) {
-        // ── Direct Framing Mode: Bypass AI completely ──
-        console.log(`\n  Mode: EXACT TEXT (Bypassing AI)`);
-        console.log(`  Text: "${EXACT_TWEET_TEXT.substring(0, 50)}..."`);
+        // ── Direct Framing Mode: Format exact text with AI ──
+        console.log(`\n  Mode: EXACT TEXT (Intelligent Formatting)`);
+        console.log(`  Raw Text: "${EXACT_TWEET_TEXT.substring(0, 50)}..."`);
+        
+        const formatted = await formatExactText(EXACT_TWEET_TEXT);
         
         topic = "Custom Input";
         result = {
             topic: topic,
-            tweets: [EXACT_TWEET_TEXT]
+            tweets: [formatted]
         };
     } else {
         if (topic) {
