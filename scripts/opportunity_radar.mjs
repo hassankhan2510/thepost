@@ -93,9 +93,9 @@ function buildDorkQueries(yesterday) {
         `site:linkedin.com/posts ("PhD" OR "postdoc" OR "research fellow") (AI OR machine-learning) (remote OR Pakistan OR virtual) after:${d}`,
 
         // ── Broad Discovery Sweeps ─────────────────────────────────────────────
-        `site:linkedin.com/posts ("founder" OR "startup") ("apply" OR "register" OR "open") (Pakistan OR Islamabad) after:${d}`,
-        `site:linkedin.com/posts ("social impact" OR "SDGs" OR "climate" OR "health tech") (grant OR fellowship OR challenge OR prize) (Pakistan OR remote OR virtual) after:${d}`,
-        `"open for applications" (startup OR founder OR fellowship OR grant OR accelerator) (Pakistan OR virtual OR remote) after:${d}`,
+        `site:linkedin.com/posts ("founder" OR "startup") ("apply" OR "register" OR "open") (Pakistan OR Islamabad OR "South Asia") after:${d}`,
+        `site:linkedin.com/posts ("social impact" OR "SDGs" OR "climate" OR "health tech") (grant OR fellowship OR challenge OR prize) after:${d}`,
+        `"open for applications" (startup OR founder OR fellowship OR grant OR accelerator) after:${d}`,
         `site:linkedin.com/posts ("virtual" OR "online") ("meetup" OR "networking" OR "summit") (founder OR entrepreneur OR builder) after:${d}`,
         `site:linkedin.com/posts ("cohort" OR "program") ("applications open" OR "apply now") (2026 OR 2027) after:${d}`,
         `site:linkedin.com/posts ("AI" OR "machine learning" OR "deep tech") (challenge OR competition OR prize) ("apply" OR "submit") after:${d}`,
@@ -279,14 +279,15 @@ ${JSON.stringify(allOpportunities, null, 2)}
 
 Your tasks:
 1. DEDUPLICATE: Merge or remove items that are clearly the same opportunity found via different queries
-2. SCORE each unique opportunity 1-5 for relevance to Hassan:
+2. GEO-FILTER (CRITICAL): If an event requires PHYSICAL attendance and is NOT located in Pakistan (e.g., India, UK, USA, Europe), YOU MUST SCORE IT 1 (Reject). ONLY accept physical events in Pakistan. You MAY accept global/virtual/online events, or global fellowships (like YC or UN) where remote participation or travel is standard.
+3. SCORE each unique opportunity 1-5 for relevance to Hassan:
    - 5 = Perfect match (AI incubator in Pakistan, UN fellowship for young founders, virtual event for MENA founders)
    - 4 = Strong match (global virtual startup event, tech grant open globally, AI hackathon)
    - 3 = Good match (general tech conference, broad fellowship, tangential tech event)
    - 2 = Weak match (tangentially related, very broad)
-   - 1 = Not relevant OR PHYSICAL EVENT OUTSIDE PAKISTAN (e.g., event in India, USA, UK requiring physical attendance)
-3. REMOVE all items scored 1 (STRICTLY filter out any physical events/opportunities in India or other countries unless they are fully virtual/remote or explicitly fund international travel)
-4. SORT by score descending (5 first)
+   - 1 = Not relevant (skip) or fails the GEO-FILTER
+4. REMOVE all items scored 1
+5. SORT by score descending (5 first)
 
 Output as JSON: { "opportunities": [...with "score" field added to each...] }`;
 
