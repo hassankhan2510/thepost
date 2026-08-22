@@ -93,9 +93,9 @@ function buildDorkQueries(yesterday) {
         `site:linkedin.com/posts ("PhD" OR "postdoc" OR "research fellow") (AI OR machine-learning) (remote OR Pakistan OR virtual) after:${d}`,
 
         // ── Broad Discovery Sweeps ─────────────────────────────────────────────
-        `site:linkedin.com/posts ("founder" OR "startup") ("apply" OR "register" OR "open") (Pakistan OR Islamabad OR "South Asia") after:${d}`,
-        `site:linkedin.com/posts ("social impact" OR "SDGs" OR "climate" OR "health tech") (grant OR fellowship OR challenge OR prize) after:${d}`,
-        `"open for applications" (startup OR founder OR fellowship OR grant OR accelerator) after:${d}`,
+        `site:linkedin.com/posts ("founder" OR "startup") ("apply" OR "register" OR "open") (Pakistan OR Islamabad) after:${d}`,
+        `site:linkedin.com/posts ("social impact" OR "SDGs" OR "climate" OR "health tech") (grant OR fellowship OR challenge OR prize) (Pakistan OR remote OR virtual) after:${d}`,
+        `"open for applications" (startup OR founder OR fellowship OR grant OR accelerator) (Pakistan OR virtual OR remote) after:${d}`,
         `site:linkedin.com/posts ("virtual" OR "online") ("meetup" OR "networking" OR "summit") (founder OR entrepreneur OR builder) after:${d}`,
         `site:linkedin.com/posts ("cohort" OR "program") ("applications open" OR "apply now") (2026 OR 2027) after:${d}`,
         `site:linkedin.com/posts ("AI" OR "machine learning" OR "deep tech") (challenge OR competition OR prize) ("apply" OR "submit") after:${d}`,
@@ -284,8 +284,8 @@ Your tasks:
    - 4 = Strong match (global virtual startup event, tech grant open globally, AI hackathon)
    - 3 = Good match (general tech conference, broad fellowship, tangential tech event)
    - 2 = Weak match (tangentially related, very broad)
-   - 1 = Not relevant (skip)
-3. REMOVE all items scored 1
+   - 1 = Not relevant OR PHYSICAL EVENT OUTSIDE PAKISTAN (e.g., event in India, USA, UK requiring physical attendance)
+3. REMOVE all items scored 1 (STRICTLY filter out any physical events/opportunities in India or other countries unless they are fully virtual/remote or explicitly fund international travel)
 4. SORT by score descending (5 first)
 
 Output as JSON: { "opportunities": [...with "score" field added to each...] }`;
