@@ -57,7 +57,7 @@ function run() {
 
         try {
             execSync(
-                `npx remotion still src/index.ts TweetCard "${outFile}" --props=data/tweet_props.json`,
+                `npx remotion still src/index.ts TweetCard "${outFile}" --props=data/tweet_props.json --scale=2`,
                 { stdio: 'inherit' }
             );
             console.log(`  ✓ Saved to ${outFile}`);
