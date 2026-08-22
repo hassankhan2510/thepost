@@ -109,11 +109,7 @@ export const TweetCard: React.FC<{
                             {username}
                         </span>
                     </div>
-                    
-                    {/* Twitter/X Logo Watermark */}
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill={TEXT_SECONDARY} opacity="0.3" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.244 2.25H21.552L14.325 10.51L22.827 21.75H16.17L10.956 14.933L4.99 21.75H1.68L9.41 12.915L1.254 2.25H8.08L12.793 8.481L18.244 2.25ZM17.083 19.77H18.916L7.084 4.126H5.117L17.083 19.77Z" />
-                    </svg>
+
                 </div>
 
                 {/* Tweet Body (Scrollable if absolutely necessary, but shouldn't be with smart scaling) */}
@@ -157,29 +153,6 @@ export const TweetCard: React.FC<{
                     )}
                 </div>
 
-                {/* Engagement Footer (Static/Aesthetic) */}
-                <div style={{
-                    display: 'flex', alignItems: 'center', gap: 40, marginTop: 'auto',
-                    borderTop: `1px solid ${CARD_BORDER}`, paddingTop: 24, color: TEXT_SECONDARY, flexShrink: 0
-                }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                        <span style={{ fontSize: 20, fontFamily: FONT }}>{Math.floor(Math.random() * 50) + 10}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 1l4 4-4 4"></path><path d="M3 11V9a4 4 0 0 1 4-4h14"></path><path d="M7 23l-4-4 4-4"></path><path d="M21 13v2a4 4 0 0 1-4 4H3"></path></svg>
-                        <span style={{ fontSize: 20, fontFamily: FONT }}>{Math.floor(Math.random() * 100) + 20}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        <span style={{ fontSize: 20, fontFamily: FONT }}>{Math.floor(Math.random() * 900) + 100}</span>
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
-                        <span style={{ fontSize: 20, fontFamily: FONT }}>
-                            {new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })} · {new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                        </span>
-                    </div>
-                </div>
 
             </div>
         </AbsoluteFill>
