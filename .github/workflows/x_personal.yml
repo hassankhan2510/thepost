@@ -1,8 +1,6 @@
 name: X Personal — Tweet Images (@Syedhassankhan_)
 
 on:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
     inputs:
       tweet_topic:
