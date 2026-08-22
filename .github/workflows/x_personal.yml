@@ -9,6 +9,10 @@ on:
         description: 'Tweet topic (any subject: money, health, politics, startups, books, anything)'
         required: false
         type: string
+      exact_tweet_text:
+        description: 'EXACT text to frame (bypasses AI generation). Leave blank to use AI.'
+        required: false
+        type: string
       tweet_count:
         description: 'Number of tweets to generate (default: 3)'
         required: false
@@ -46,6 +50,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           TWEET_TOPIC: ${{ inputs.tweet_topic }}
+          EXACT_TWEET_TEXT: ${{ inputs.exact_tweet_text }}
           TWEET_COUNT: ${{ inputs.tweet_count }}
         run: npm run tweet
 

@@ -19,6 +19,7 @@ import Parser from 'rss-parser';
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || '';
 const TWEET_TOPIC = process.env.TWEET_TOPIC?.trim() || null;
+const EXACT_TWEET_TEXT = process.env.EXACT_TWEET_TEXT?.trim() || null;
 const TWEET_COUNT = parseInt(process.env.TWEET_COUNT || '3', 10);
 const TWEET_FILE = path.join(process.cwd(), 'data', 'tweet.json');
 const TWEET_HISTORY = path.join(process.cwd(), 'data', 'tweet_history.json');
@@ -157,60 +158,73 @@ async function run() {
 
     let topic = TWEET_TOPIC;
     let context = "";
+    let result;
 
-    if (topic) {
-        // ── Manual mode: user gave a topic ──
-        console.log(`\n  Mode: MANUAL TOPIC`);
-        console.log(`  Topic: "${topic}"`);
-        context = await fetchContext(topic, false);
-    } else {
-        // ── Auto mode: fetch from personal RSS feeds ──
-        console.log(`\n  Mode: AUTO (from RSS feeds)`);
+    if (EXACT_TWEET_TEXT) {
+        // ── Direct Framing Mode: Bypass AI completely ──
+        console.log(`\n  Mode: EXACT TEXT (Bypassing AI)`);
+        console.log(`  Text: "${EXACT_TWEET_TEXT.substring(0, 50)}..."`);
         
-        let history = [];
-        if (fs.existsSync(TWEET_HISTORY)) {
-            history = JSON.parse(fs.readFileSync(TWEET_HISTORY, 'utf-8'));
-        }
-
-        let selectedItem = null;
-        // Shuffle feeds for variety
-        const shuffledFeeds = PERSONAL_FEEDS.sort(() => 0.5 - Math.random());
-
-        for (const feedUrl of shuffledFeeds) {
-            try {
-                const feed = await parser.parseURL(feedUrl);
-                for (const item of feed.items) {
-                    if (!history.includes(item.link)) {
-                        selectedItem = item;
-                        break;
-                    }
-                }
-            } catch (e) {
-                console.log(`  [Skip] Failed to fetch feed ${feedUrl}: ${e.message}`);
-            }
-            if (selectedItem) break;
-        }
-
-        if (selectedItem) {
-            topic = selectedItem.title;
-            console.log(`  Auto-picked topic: "${topic}"`);
-            console.log(`  Source: ${selectedItem.link}`);
-            
-            // Add to history and keep last 200
-            history.push(selectedItem.link);
-            if (history.length > 200) history.shift();
-            fs.writeFileSync(TWEET_HISTORY, JSON.stringify(history, null, 2));
-
-            // Fetch deep context using Jina AI on the URL
-            context = await fetchContext(selectedItem.link, true);
-        } else {
-            topic = "The reality of building startups in 2026";
-            console.log(`  No fresh news found, using default topic: "${topic}"`);
+        topic = "Custom Input";
+        result = {
+            topic: topic,
+            tweets: [EXACT_TWEET_TEXT]
+        };
+    } else {
+        if (topic) {
+            // ── Manual mode: user gave a topic ──
+            console.log(`\n  Mode: MANUAL TOPIC`);
+            console.log(`  Topic: "${topic}"`);
             context = await fetchContext(topic, false);
-        }
-    }
+        } else {
+            // ── Auto mode: fetch from personal RSS feeds ──
+            console.log(`\n  Mode: AUTO (from RSS feeds)`);
+            
+            let history = [];
+            if (fs.existsSync(TWEET_HISTORY)) {
+                history = JSON.parse(fs.readFileSync(TWEET_HISTORY, 'utf-8'));
+            }
 
-    const result = await generateTweets(topic, context);
+            let selectedItem = null;
+            // Shuffle feeds for variety
+            const shuffledFeeds = PERSONAL_FEEDS.sort(() => 0.5 - Math.random());
+
+            for (const feedUrl of shuffledFeeds) {
+                try {
+                    const feed = await parser.parseURL(feedUrl);
+                    for (const item of feed.items) {
+                        if (!history.includes(item.link)) {
+                            selectedItem = item;
+                            break;
+                        }
+                    }
+                } catch (e) {
+                    console.log(`  [Skip] Failed to fetch feed ${feedUrl}: ${e.message}`);
+                }
+                if (selectedItem) break;
+            }
+
+            if (selectedItem) {
+                topic = selectedItem.title;
+                console.log(`  Auto-picked topic: "${topic}"`);
+                console.log(`  Source: ${selectedItem.link}`);
+                
+                // Add to history and keep last 200
+                history.push(selectedItem.link);
+                if (history.length > 200) history.shift();
+                fs.writeFileSync(TWEET_HISTORY, JSON.stringify(history, null, 2));
+
+                // Fetch deep context using Jina AI on the URL
+                context = await fetchContext(selectedItem.link, true);
+            } else {
+                topic = "The reality of building startups in 2026";
+                console.log(`  No fresh news found, using default topic: "${topic}"`);
+                context = await fetchContext(topic, false);
+            }
+        }
+
+        result = await generateTweets(topic, context);
+    }
 
     // Build the tweet data with full metadata for the renderer
     const tweetData = {
