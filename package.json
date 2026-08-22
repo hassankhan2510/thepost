@@ -12,7 +12,8 @@
     "tweet": "node scripts/generate_tweet.mjs",
     "render:tweets": "node scripts/render_tweets.mjs",
     "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:cohortzero",
-    "run:x": "npm run tweet && npm run render:tweets"
+    "run:x": "npm run tweet && npm run render:tweets",
+    "radar": "node scripts/opportunity_radar.mjs"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",
