@@ -35,20 +35,26 @@ export const TweetCard: React.FC<{
     const tweetLen = isStructured ? (tweet.heading.length + tweet.body.length) : (tweet as string).length;
     
     // Aggressive Smart Text Scaling
-    let fontSize = 42;
+    let fontSize = 40;
     let lineHeight = 1.4;
     
-    if (tweetLen > 700) {
-        fontSize = 24;
+    if (tweetLen > 800) {
+        fontSize = 22;
         lineHeight = 1.5;
-    } else if (tweetLen > 500) {
-        fontSize = 28;
+    } else if (tweetLen > 600) {
+        fontSize = 26;
         lineHeight = 1.45;
-    } else if (tweetLen > 300) {
-        fontSize = 32;
+    } else if (tweetLen > 450) {
+        fontSize = 28;
         lineHeight = 1.4;
+    } else if (tweetLen > 300) {
+        fontSize = 30;
+        lineHeight = 1.4;
+    } else if (tweetLen > 200) {
+        fontSize = 36;
+        lineHeight = 1.35;
     } else if (tweetLen < 100) {
-        fontSize = 52;
+        fontSize = 50;
         lineHeight = 1.3;
     }
 
@@ -83,7 +89,7 @@ export const TweetCard: React.FC<{
                 borderRadius: 32,
                 border: `1px solid ${CARD_BORDER}`,
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-                padding: '50px 60px',
+                padding: '40px 50px',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: 24, // Tighter gap
@@ -128,7 +134,7 @@ export const TweetCard: React.FC<{
                         <>
                             {/* Intelligent AI Heading */}
                             <div style={{ 
-                                fontSize: fontSize * 1.3, 
+                                fontSize: fontSize * 1.15, 
                                 fontWeight: 800, 
                                 color: ACCENT, 
                                 lineHeight: 1.2,

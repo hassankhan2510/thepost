@@ -153,7 +153,8 @@ async function generateTweets(topic, context) {
 
 async function formatExactText(rawText) {
     console.log(`  Intelligently formatting custom text via AI...`);
-    const prompt = `You are an intelligent formatting assistant for visual social media cards.
+    try {
+        const prompt = `You are an intelligent formatting assistant for visual social media cards.
 The user has provided a raw block of text. Your ONLY job is to logically structure it.
 - Extract the most high-impact hook, title, or main idea from the text to serve as the "heading".
 - Format the rest of the text as the "body", adding line breaks (\\n) to break up dense paragraphs.
@@ -168,33 +169,45 @@ Output valid JSON exactly like this:
   "body": "The rest of the intelligently formatted text with \\n newlines"
 }`;
 
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            "model": "openrouter/free",
-            "response_format": { "type": "json_object" },
-            "messages": [
-                {
-                    "role": "system",
-                    "content": "You output valid JSON. You are a precise formatter."
-                },
-                { "role": "user", "content": prompt }
-            ]
-        })
-    });
+        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "model": "openrouter/free",
+                "response_format": { "type": "json_object" },
+                "messages": [
+                    {
+                        "role": "system",
+                        "content": "You output valid JSON. You are a precise formatter."
+                    },
+                    { "role": "user", "content": prompt }
+                ]
+            })
+        });
 
-    if (!response.ok) throw new Error(`OpenRouter API Error: ${await response.text()}`);
+        if (!response.ok) {
+            console.warn(`  ⚠ OpenRouter API returned ${response.status}. Falling back to raw text.`);
+            return rawText;
+        }
 
-    const data = await response.json();
-    let text = data.choices[0].message.content;
-    text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
+        const data = await response.json();
+        if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+            console.warn(`  ⚠ Unexpected API response shape. Falling back to raw text.`);
+            return rawText;
+        }
 
-    const parsed = JSON.parse(text);
-    return parsed.heading ? { heading: parsed.heading, body: parsed.body } : rawText;
+        let text = data.choices[0].message.content;
+        text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
+
+        const parsed = JSON.parse(text);
+        return parsed.heading ? { heading: parsed.heading, body: parsed.body } : rawText;
+    } catch (err) {
+        console.warn(`  ⚠ AI formatting failed: ${err.message}. Falling back to raw text.`);
+        return rawText;
+    }
 }
 
 async function run() {
