@@ -153,18 +153,19 @@ async function generateTweets(topic, context) {
 
 async function formatExactText(rawText) {
     console.log(`  Intelligently formatting custom text via AI...`);
-    const prompt = `You are a formatting assistant for visual social media cards.
-The user has provided a raw block of text. Your ONLY job is to format it beautifully for a visual graphic.
-- Do NOT change the words, tone, or meaning.
-- Extract or emphasize the heading/hook by separating it with line breaks.
-- Add line breaks (\\n) to break up dense paragraphs and make it highly readable.
+    const prompt = `You are an intelligent formatting assistant for visual social media cards.
+The user has provided a raw block of text. Your ONLY job is to logically structure it.
+- Extract the most high-impact hook, title, or main idea from the text to serve as the "heading".
+- Format the rest of the text as the "body", adding line breaks (\\n) to break up dense paragraphs.
+- Do NOT rewrite or change the underlying meaning.
 
 RAW TEXT:
 "${rawText}"
 
-Output valid JSON:
+Output valid JSON exactly like this:
 {
-  "formatted_text": "The intelligently formatted text with \\n newlines"
+  "heading": "The extracted high-impact heading",
+  "body": "The rest of the intelligently formatted text with \\n newlines"
 }`;
 
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -193,7 +194,7 @@ Output valid JSON:
     text = text.replace(/^\s*```(json)?\n?/, '').replace(/```\s*$/, '');
 
     const parsed = JSON.parse(text);
-    return parsed.formatted_text || rawText;
+    return parsed.heading ? { heading: parsed.heading, body: parsed.body } : rawText;
 }
 
 async function run() {
