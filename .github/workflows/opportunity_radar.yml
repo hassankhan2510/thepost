@@ -1,9 +1,11 @@
 name: 🎯 Opportunity Radar
 
 on:
-  schedule:
-    - cron: '0 3 * * *'   # Daily at 8:00 AM PKT (3:00 AM UTC)
-  workflow_dispatch: {}    # Manual trigger anytime from GitHub UI
+  # DISABLED 2026-08-23 — replaced by personal_radar.yml (Personal Radar v2).
+  # Daily schedule turned off so it no longer posts to Discord. Kept for manual runs only.
+  # schedule:
+  #   - cron: '0 3 * * *'   # Daily at 8:00 AM PKT (3:00 AM UTC)
+  workflow_dispatch: {}    # Manual trigger only (no automatic runs)
 
 jobs:
   scan:

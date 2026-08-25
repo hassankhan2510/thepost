@@ -13,10 +13,12 @@
     "render:tweets": "node scripts/render_tweets.mjs",
     "run:all": "npm run fetch && npm run assets && npm run wrap-props && npm run render:cohortzero",
     "run:x": "npm run tweet && npm run render:tweets",
-    "radar": "node scripts/opportunity_radar.mjs"
+    "radar": "node scripts/opportunity_radar.mjs",
+    "radar:v2": "node scripts/personal_radar.mjs"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.514",
+    "cheerio": "^1.0.0-rc.12",
     "feedparser": "^2.6.0",
     "node-fetch": "^3.3.2",
     "react": "^18.3.1",
