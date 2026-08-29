@@ -19,6 +19,7 @@ import { CONFIG } from './radar/config.mjs';
 import { DORK_POOL, sampleDorks } from './radar/dorks.mjs';
 import { runDorks, searchStats, PROVIDER } from './radar/search.mjs';
 import { fetchAllSources, sourceStats } from './radar/sources.mjs';
+import { fetchAllFeeds, feedStats } from './radar/feeds.mjs';
 import { preFilter, analyzeAll, llmStats } from './radar/intel.mjs';
 import { loadSeen, filterUnseen, updateSeen, saveSeen, mergeDuplicates } from './radar/dedup.mjs';
 import { deliver } from './radar/discord.mjs';
@@ -52,11 +53,12 @@ async function run() {
     const dorks = sampleDorks(CONFIG.DAILY_DORK_COUNT, dayOfYear());
     console.log(`📡 Phase 1: ${dorks.length} dorks (of ${DORK_POOL.length} pool) + free sources\n`);
 
-    const [dorkHits, apiHits] = await Promise.all([
+    const [dorkHits, apiHits, feedHits] = await Promise.all([
         runDorks(dorks),
         fetchAllSources(),
+        fetchAllFeeds(),
     ]);
-    const rawAll = [...dorkHits, ...apiHits];
+    const rawAll = [...dorkHits, ...apiHits, ...feedHits];
     console.log(`\n  ✓ Total raw scraped: ${rawAll.length} items`);
 
     // Save COMPLETE raw scrape (nothing lost) — committed to repo by the Action.
@@ -98,7 +100,8 @@ async function run() {
 }
 
 function healthLine(dorkCount) {
-    const src = Object.entries(sourceStats).map(([k, v]) => `${k}${v.ok ? '✓' : '✗'}(${v.count})`).join(' ');
+    const allStats = { ...sourceStats, ...feedStats };
+    const src = Object.entries(allStats).map(([k, v]) => `${k}${v.ok ? '✓' : '✗'}(${v.count})`).join(' ');
     const cse = `${PROVIDER} ${searchStats.ok}/${searchStats.attempted}${searchStats.quotaHit ? '⚠quota' : ''}`;
     const llm = `LLM ${llmStats.ok}/${llmStats.calls}(${llmStats.modelUsed})`;
     return `health: ${cse} · ${src} · ${llm}`;
