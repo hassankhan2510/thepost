@@ -443,73 +443,25 @@
     "source": "hackernews",
     "lane": "role",
     "group": "founder",
-    "title": "No Need for Retirement When Utopia Is Around the Corner",
-    "url": "https://news.ycombinator.com/item?id=50216775",
-    "text": "I&#x27;d thought it was all nonsense but there is actually a Times article with two named smokers: &gt;Avi Schiffmann, a 23-year-old AI founder living in San Francisco’s Bay Area, is among those embracing tobacco at a time when the habit has largely gone out of fashion among health-conscious young Americans... Schiffman runs Friend, a startup that has created a $249 pendant that functions as a wearable companion to cure loneliness. and &gt;Stephen Campbell, 27, the co-founder of Revamp AI, said smoking had become a networking opportunity for young entrepreneurs who, until now, had rarely left their desks. and &gt;Another San Francisco tech worker said: “My very strong belief is that AI is going to solve a lot of human healthcare issues and that we will see cancer cured over the next 20 years through an AI-powered breakthrough. This gives me no incentive to quit.” Seems more twenty someth"
+    "title": "\"Musk\" Documentary Pulled from Almost Every One of 472 Theaters After One Week",
+    "url": "https://news.ycombinator.com/item?id=50228994",
+    "text": "Ebay co-founder Pierre Omidyar is the guy that more or less bought off the reporters with access to the Snowden documents for $250M [0] back in 2013. The same guy just bought the company distributing the Musk film (checks notes) 9 days ago; it was then quickly pulled from theaters. Make of that what you will, as the Gizmodo piece says, the timing is certainly odd. [0] https:&#x2F;&#x2F;www.bbc.com&#x2F;news&#x2F;world-us-canada-24563445"
   },
   {
     "source": "hackernews",
     "lane": "role",
     "group": "founder",
-    "title": "Show HN: Balsio – a free European alternative to WhatsApp for work chats",
-    "url": "https://news.ycombinator.com/item?id=50209218",
-    "text": "Hi HN, I&#x27;m Rolands - cofounder of Balsio (previously BirdyChat). Some of you may remember us from January, when BirdyChat became the first app to go live with WhatsApp interoperability under the EU Digital Markets Act: https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=46746476 . Since then we renamed to Balsio, added workspaces for teams and made the app more agent-friendly. &#x2F; The problem we&#x27;re solving: Many small teams in Europe run their work on personal chat apps. They&#x27;re OK for critical communication, but they are not built for work - personal and work chats get mixed, other people see your personal phone number, group chats have no threads and they get noisy quickly, no schedule send, limited possibilities to integrate your tools, etc. We don&#x27;t think that personal chat apps will get any better for doing work in the future and so we decided to build Balsio."
+    "title": "Cerebras Deploys Trillion-Parameter AI Models",
+    "url": "https://news.ycombinator.com/item?id=50228166",
+    "text": "A few years old now, but their co-founder whiteboards how their chips work https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=7GV_OdqzmIU"
   },
   {
     "source": "hackernews",
     "lane": "role",
     "group": "founder",
-    "title": "Woman charged with computer fraud due to scam CashApp account being in her name",
-    "url": "https://news.ycombinator.com/item?id=50208521",
-    "text": "&gt;They know they are at fault but admitting they made a mistake is damaging to careers. This mentality is called &quot;prosecutor disease;&quot; I once said this to a former Atlanta-area DA (family-of-friend) and his first reaction was fake-revulsion; after I told him of my listenings-to-brothers&#x27; own lawfare, he conceded publishing conviction rates probably isn&#x27;t good PR (but is how it works in their little Bar club) . DA then asked my friend &quot;who is this blue collar guy?!&quot; (when I wasn&#x27;t around) – unfortunately, much of my insanity checks out ... ---- &gt;co-founder Aaron Swartz[&#x27;s crimes] Which was trying to free pay-walled, publicly-funded scientific journals; today, post-LLM-consumption, his alleged crimes seem so MickeyMouse (i.e: LLMs can reformulate all published text, across platforms, with minimal IP infringement claim). What an incredible human."
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "Show HN: CardSwipe – The right credit card in 2 seconds, no bank login",
-    "url": "https://news.ycombinator.com/item?id=50207625",
-    "text": "What if selecting the right credit card took just 2 seconds instead of math? This is the problem solved by our upcoming app CardSwipe, created by myself and co-founder Aarav. Each credit card rewards purchases in various categories, with rotating categories and bonuses capping at certain amounts. The card you currently have may not necessarily be the best one for you. CardSwipe is designed to show you the best card for any purchase, on your iPhone Lock Screen or even Apple Watch, with an estimation of points earned per $100 spent. Unlike any other card comparison apps, CardSwipe doesn&#x27;t require access to your financials and card numbers. Instead, you enter your cards into the app, and it utilizes the rewards structure of each card to give you the recommendations. We&#x27;ve spent days obsessing over the user interface design since a recommendation is pointless if you can&#x27;t do a"
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "Docker is weird",
-    "url": "https://news.ycombinator.com/item?id=50205464",
-    "text": "(Unikernel cofounder here) When acquiring our company, Solomon took us to a remote farm in France for a week for an offsite, fed us fantastic food and wine, and the first prototype of that Docker for Mac VM was working by the end of the week! It took a few months to hack together the shell. There&#x27;s a video of Solomon and the pinãta launch party on my blog ;-) https:&#x2F;&#x2F;anil.recoil.org&#x2F;notes&#x2F;cacm-docker-cover#getting-invo... There was a whole other slice of work we did for project Piñata too in the form of datakit ( https:&#x2F;&#x2F;github.com&#x2F;moby&#x2F;datakit ) that was well ahead of its time. I was looking at this archived code again just last week while thinking about agentic git workflows!"
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "Qwen3-Coder writes less secure code when told it's for a US persona",
-    "url": "https://news.ycombinator.com/item?id=50204329",
-    "text": "Yeah that&#x27;s terrible. I checked the founders of this company (Hirundo) and found that it&#x27;s basially an Israel company with 2 cofounders worked at Technion, an Israel university, before. So this stuff is totally a polical narrative BS."
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "Woman charged with computer fraud due to scam CashApp account being in her name",
-    "url": "https://news.ycombinator.com/item?id=50203575",
-    "text": "Carmen Ortiz, a prosecutor, was accused of driving reddit co-founder Aaron Swartz to his end with her plea-bargain tactics per this article [1][2] [1] https:&#x2F;&#x2F;www.forbes.com&#x2F;sites&#x2F;timothylee&#x2F;2013&#x2F;01&#x2F;17&#x2F;aaron-swa... [2] https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20260227061241&#x2F;https:&#x2F;&#x2F;www.forbe..."
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "Show HN: UI micro interactions prompts for AI",
-    "url": "https://news.ycombinator.com/item?id=50199994",
-    "text": "Thanks! Me and the co-founder of the project built Flowbite previously so we have some experience in the UI&#x2F;UX field. I think that as with anything you can copy it, but your agent will be pointed to an HTML+CSS structure, rather than the natural language structure of our prompts&#x2F;MCP context. Plus, you can support the work of two fellow humans."
-  },
-  {
-    "source": "hackernews",
-    "lane": "role",
-    "group": "founder",
-    "title": "eMudhra to exit global SSL/TLS certificate business",
-    "url": "https://news.ycombinator.com/item?id=50197929",
-    "text": "There is an interview here with the co-founder discussing the event: https:&#x2F;&#x2F;www.thehindu.com&#x2F;videos&#x2F;emudhra-incident-could-have-..."
+    "title": "Apple Music 404 Not Found",
+    "url": "https://news.ycombinator.com/item?id=50228042",
+    "text": "Nolan Bushnell (Atari co-founder) famously declined to invest in Apple early on too."
   },
   {
     "source": "hackernews",
@@ -584,28 +536,44 @@
     "text": "Elman (Deep Science Ventures) | Co-founder &amp; CTO | London, UK-based preferred &#x2F; REMOTE considered | Full-time | Pre-seed We&#x27;re building AI to predict clinical trial and drug development outcomes, and quantify how much confidence those predictions deserve. By linking the evidence available at a decision to the judgement made and what happened next, we aim to learn which experimental findings predict outcomes in which therapeutic settings. The platform is already running, with work from an Allen Institute collaboration described in this preprint https:&#x2F;&#x2F;elman.ai&#x2F;preprint . We want a hands-on technical co-founder to lead development, build the evaluation programme and hire the first technical team once funded. Benchmark design, applied statistics and production LLM systems. The modelling approach is open. Biology experience useful, not required. Founder equity. "
   },
   {
-    "source": "hackernews",
+    "source": "remoteok",
     "lane": "role",
-    "group": "founder",
-    "title": "Ask HN: Who wants to be hired? (October 2026)",
-    "url": "https://news.ycombinator.com/item?id=49936152",
-    "text": "Location: USA Remote: Yes Willing to relocate: No Technologies: Python, C, C++, JavaScript, TypeScript, Node, Ruby, Rails, Django, Express, Next.js, React, Vercel, PostgreSQL, Linux, Bash, AWS, HTML, CSS, Claude Code, LLMs, agentic. Resume&#x2F;CV: 20 years experience as a full-stack engineer (web, native, frontend&#x2F;backend, firmware, devops). Contact for resume. Email: ptx2 at-sign ptx2 dot net Product-minded full-stack engineer with 20 years experience. Recent technical write-up and open-source project I made that reached #1 on HackerNews: https:&#x2F;&#x2F;ptx2.net&#x2F;posts&#x2F;unbricking-a-bike-with-a-raspberry-pi Some things I&#x27;ve designed&#x2F;built&#x2F;launched&#x2F;maintained professionally: high-traffic web frontend&#x2F;backends, realtime interactive graphics apps, data visualizations, computer vision apps, firmware, reverse engineering, video&#x2F;image processing,"
+    "group": "ai_ml",
+    "title": "Solutions Engineer — Onebrief",
+    "url": "https://remoteOK.com/remote-jobs/remote-solutions-engineer-onebrief-1137568",
+    "text": "design, ansible, grafana, sys admin, infosec, python, docker, technical, recruiter, customer support, dev, testing, marketing, travel, finance, cloud, exec, senior, ops, sales, golang, engineer, digital nomad. Consequential Work. Dedicated People. About Onebrief Onebrief builds collaboration and AI-powered workflow software for military planning and operational coordination. Military planning is complex by nature, requiring teams to coordinate information, people, and decisions across systems and locations. Onebrief brings planning, collaboration, simulation, and AI into one connected environment, helping teams test strategies, adapt to changing conditions, and make decisions with greater cl"
   },
   {
-    "source": "hackernews",
+    "source": "remoteok",
     "lane": "role",
-    "group": "founder",
-    "title": "Ask HN: Who is hiring? (October 2026)",
-    "url": "https://news.ycombinator.com/item?id=49930260",
-    "text": "lovable | stockholm, london (in-person) | full-stack, frontend, backend, infra design, and ai research we sponsor visas and have very generous relocation packages. lovable is building an agentic technical co-founder, we are the best way for non-technical people go from idea to a real software business with paying users. we need the best engineers in the world to join us and will compensate you accordingly. learn more at: https:&#x2F;&#x2F;lovable.dev&#x2F;careers , https:&#x2F;&#x2F;lovable.dev&#x2F;blog , or ping me on https:&#x2F;&#x2F;x.com&#x2F;cviktore"
+    "group": "ai_ml",
+    "title": "Sales Development Representative German Speaking — Huzzle",
+    "url": "https://remoteOK.com/remote-jobs/remote-sales-development-representative-german-speaking-huzzle-1137563",
+    "text": "saas, sys admin, dev, marketing, finance, c, exec, sales, medical, ecommerce, digital nomad. About Huzzle At Huzzle, we connect exceptional talent with top opportunities at leading companies across the UK, US, Canada, Europe, and Australia. Our clients include fast-growing startups, digital agencies, SaaS companies, and tech-enabled businesses across industries such as MarTech, FinTech, EdTech, and eCommerce. Unlike traditional outsourcing agencies, we place you directly with innovative companies where you become a valued member of the team. About the company Our client is a fast-growing PropTech company revolutionizing the real estate market by bridging the gap between property seekers and "
   },
   {
-    "source": "hackernews",
+    "source": "remoteok",
     "lane": "role",
-    "group": "founder",
-    "title": "Ask HN: Who wants to be hired? (October 2026)",
-    "url": "https://news.ycombinator.com/item?id=49927009",
-    "text": "Location: Atlanta, GA, USA Remote: Absolutely Willing to relocate: Probably not Technologies: LLMs (because of course), Ruby&#x2F;Rails, JavaScript (Node.js, React, Express, Next.js, TypeScript), Python, SQL, Java, PHP, HTML, CSS, PostgreSQL, MySQL, PostGIS, Redis, DHIS2, Metabase, ODK, CommCare, Mapbox, Leaflet, Amazon Web Services (EC2, ECS&#x2F;Fargate, RDS, S3, Lambda, SES, CloudFormation, ElastiCache), Google Cloud (Compute Engine, Cloud SQL), Docker, Terraform, Heroku, Nginx CV: https:&#x2F;&#x2F;adamwilson.dev&#x2F;cv.html Email: adam@bastion.dev I&#x27;ve run a small consultancy building data management and reporting technologies in the public health and supply chain area for almost a decade now and am open to contracting&#x2F;fractional opportunities. If you&#x27;re in the non-profit, privacy, or public health space and need a technical advisor or co-founder I&#x27;d love to cha"
+    "group": "ai_ml",
+    "title": "Senior Frontend Engineer — B2spin",
+    "url": "https://remoteOK.com/remote-jobs/remote-senior-frontend-engineer-b2spin-1137562",
+    "text": "front end, design, react, embedded, sys admin, game dev, technical, dev, testing, marketing, web dev, javascript, finance, css, html, typescript, seo, mobile, senior, stats, engineer, backend, digital nomad. About B2Spin We are B2Spin, and we are dedicated to delivering the best Free-to-Play Social Casino and gaming experiences by creating captivating, engaging, and unique products that are accessible to everyone. We have built a team of talented professionals from all over the globe, who are working to continually improve the experiences of our players. We are not looking to just be part of the industry, but to revolutionize it. AI-Driven Engineering Culture We are actively building an AI-d"
+  },
+  {
+    "source": "remoteok",
+    "lane": "role",
+    "group": "ai_ml",
+    "title": "Sales Development Representative B2B — Huzzle",
+    "url": "https://remoteOK.com/remote-jobs/remote-sales-development-representative-b2b-huzzle-1137561",
+    "text": "saas, salesforce, education, customer support, marketing, finance, exec, sales, full time. About Huzzle At Huzzle, we connect exceptional talent with top opportunities at leading companies across the UK, US, Canada, Europe, and Australia. Our clients include fast-growing startups and established businesses in SaaS, MarTech, FinTech, and EdTech. Unlike traditional outsourcing, youâll be placed directly with a client as a core member of their teamâgiving you real ownership, career progression, and long-term stability. Role Type: Full-time Engagement: Independent Contractor Job Summary We are hiring experienced and results-driven Sales Development Representatives (SDRs) for full-time remote"
+  },
+  {
+    "source": "remoteok",
+    "lane": "role",
+    "group": "ai_ml",
+    "title": "Accounting and Implementation Manager — Aprio",
+    "url": "https://remoteOK.com/remote-jobs/remote-accounting-and-implementation-manager-aprio-1137560",
+    "text": "exec, accounting, design, sys admin, education, consulting, customer support, testing, marketing, payroll, finance, ops, stats, sales, golang, full time, digital nomad. Work with a Top 20 CPA and advisory firm that Accounts for Anything. &nbsp;Aprio has 40 U.S. office locations, as well as international office locations and more than 3,200 team members that speak 60+ languages across the globe. &nbsp;By bringing together proven expertise, deep understanding, and strategic foresight for fast-growing industries, Aprio ensures clients are prepared for wherever life or business may take them. Discover a top-rated culture, vast growth opportunities and your next big career move with Aprio. Aprio "
   },
   {
     "source": "remoteok",
@@ -685,7 +653,7 @@
     "group": "ai_ml",
     "title": "Senior Software Engineer — Sothebyâs",
     "url": "https://remoteOK.com/remote-jobs/remote-senior-software-engineer-sothebys-1137545",
-    "text": "golang, dev, senior, sales, engineer, digital nomad. Remote - Established in 1744, Sothebyâs promotes access and ownership of exceptional art and luxury objects through auctions, private sales and retail. Our deep expertise across 70 selling categories is supported by a leading technology platform and a global network of special... Please mention the word **EVALUATIVE** and tag RMjAuODMuMTU5LjUy when applying to show you read the job post completely (#RMjAuODMuMTU5LjUy). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
+    "text": "golang, dev, senior, sales, engineer, digital nomad. Remote - Established in 1744, Sothebyâs promotes access and ownership of exceptional art and luxury objects through auctions, private sales and retail. Our deep expertise across 70 selling categories is supported by a leading technology platform and a global network of special... Please mention the word **EVALUATIVE** and tag RMjAuMTYzLjYzLjI0OA== when applying to show you read the job post completely (#RMjAuMTYzLjYzLjI0OA==). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
   },
   {
     "source": "remoteok",
@@ -693,7 +661,7 @@
     "group": "ai_ml",
     "title": "Senior Backend Engineer — Rain",
     "url": "https://remoteOK.com/remote-jobs/remote-senior-backend-engineer-rain-1137544",
-    "text": "golang, finance, mobile, senior, medical, engineer, backend. Remote - Rain is the world's first AI Financial Health Platform, serving 3.5 million employees at leading organizations like McDonald's, Marriott, and T-Mobile. Rain works in the background to optimize every employee's financial life to prevent shortfalls and build long-term sta... Please mention the word **COVENANT** and tag RMjAuODMuMTU5LjUy when applying to show you read the job post completely (#RMjAuODMuMTU5LjUy). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
+    "text": "golang, finance, mobile, senior, medical, engineer, backend. Remote - Rain is the world's first AI Financial Health Platform, serving 3.5 million employees at leading organizations like McDonald's, Marriott, and T-Mobile. Rain works in the background to optimize every employee's financial life to prevent shortfalls and build long-term sta... Please mention the word **COVENANT** and tag RMjAuMTYzLjYzLjI0OA== when applying to show you read the job post completely (#RMjAuMTYzLjYzLjI0OA==). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
   },
   {
     "source": "remoteok",
@@ -725,7 +693,7 @@
     "group": "ai_ml",
     "title": "Commercial Account Manager LATAM — Apryse",
     "url": "https://remoteOK.com/remote-jobs/remote-commercial-account-manager-latam-apryse-1137539",
-    "text": "exec. Apryse - Commercial Account Manager, LATAM (English/Spanish). Location: Remote. Team: Americas - Expand. Apply: https://jobs.lever.co/apryse/622653aa-dcad-41a2-86bf-0bf9950d4eb9/apply Please mention the word **LEVERAGE** and tag RMjAuODMuMTU5LjUy when applying to show you read the job post completely (#RMjAuODMuMTU5LjUy). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
+    "text": "exec. Apryse - Commercial Account Manager, LATAM (English/Spanish). Location: Remote. Team: Americas - Expand. Apply: https://jobs.lever.co/apryse/622653aa-dcad-41a2-86bf-0bf9950d4eb9/apply Please mention the word **LEVERAGE** and tag RMjAuMTYzLjYzLjI0OA== when applying to show you read the job post completely (#RMjAuMTYzLjYzLjI0OA==). This is a beta feature to avoid spam applicants. Companies can search these words to find applicants that read this and see they're human."
   },
   {
     "source": "remoteok",
@@ -888,46 +856,6 @@
     "text": "work from home, sys admin, education, exec, finance. This is a remote financial-services seat built around warm leads and a training system. If you are competitive and willing to be coached, it can become a long-term career. If you want a job with no conversations, it will not. Daily work â¢ Speak with people who asked for information â¢ Map needs to available protection options â¢ Run a simple enrollment flow â¢ Build and service a client list Provided â¢ Pre-qualified warm leads â¢ Step-by-step onboarding â¢ Remote tools â¢ Flexible hours â¢ Ongoing mentorship Good fit Self-starters who like helping families and can handle a performance environment. Bad fit Anyone who will not tak"
   },
   {
-    "source": "remoteok",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Principal Software Engineer — Vytalize Health",
-    "url": "https://remoteOK.com/remote-jobs/remote-principal-software-engineer-vytalize-health-1137508",
-    "text": "dev, design, infosec, python, docker, technical, recruiter, customer support, testing, marketing, quality assurance, finance, java, c, cloud, api, exec, content writing, senior, ops, stats, sys admin, golang, medical, engineer, backend, digital nomad. Your Opportunity As a Principal Engineer , you will help design, build, and operate the clinical decision support and API-driven data delivery platform that enables Vytalize Health to embed timely, actionable clinical insights directly into provider workflows. Working cross-functionally with Data Engineering, Product, Clinical Operations, and EMR partners, your solutions will transform how clinicians access dataâmoving from external tools and"
-  },
-  {
-    "source": "remoteok",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Graphic Designer & Video Editor — BlueTuskr",
-    "url": "https://remoteOK.com/remote-jobs/remote-graphic-designer-video-editor-bluetuskr-1137507",
-    "text": "design, designer, customer support, testing, marketing, web dev, video, mobile, photoshop, stats, sales, illustrator, ecommerce, shopify, part time, digital nomad. Description BlueTuskr is a full-service e-commerce growth agency built exclusively for e-commerce brands. We combine paid media, owned media, creative, and analytics to help our clients scale profitably. Our team is made up of specialists who are deeply invested in their craft â and in the success of the brands they serve. This isn't a \"jack of all trades\" environment. We hire people who are exceptional at what they do, then give them the resources and autonomy to do it well. The Opportunity We're looking for a Graphic Designer "
-  },
-  {
-    "source": "remoteok",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Technical Customer Support — QuickMail",
-    "url": "https://remoteOK.com/remote-jobs/remote-technical-customer-support-quickmail-1137506",
-    "text": "customer support. QuickMail is a cold email and LinkedIn outreach platform for markets you can't afford to burn. Our customers can't easily replace leads that land in spam, which is why deliverability matters more to us than anything else. We have been running since 2014, and we pioneered deliverability technology such as Inbox rotationâ¢ and deliverability AIâ¢. The Role We are hiring a technical customer support person with an owner's mentality. You will own support for QuickMail and Mailflow, our deliverability add-on. There is no first or second line. You are the first and last person our customers talk to. Customers count on you to solve their problems and find the real cause when som"
-  },
-  {
-    "source": "remoteok",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Senior Sales Executive Central Region — SimSpace Corporation",
-    "url": "https://remoteOK.com/remote-jobs/remote-senior-sales-executive-central-region-simspace-corporation-1137498",
-    "text": "saas, embedded, sys admin, infosec, education, customer support, testing, marketing, finance, cloud, exec, content writing, senior, stats, legal, sales, medical, engineer. SimSpace serves as an AI Proving Ground where organizations can confidently train, test, and outmaneuver adversaries in any environment. Trusted by allied governments, militaries, enterprises, and research institutions worldwide, SimSpace enables adaptive, AI-ready defenses that stay ahead of evolving threats. Founded in 2015 by experts from U.S. Cyber Command and MIT Lincoln Laboratory, the platform unifies training, testing, and validation in a realistic, live-fire simulationâhelping teams evaluate security investments"
-  },
-  {
-    "source": "remoteok",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Product Design Director — Midnite",
-    "url": "https://remoteOK.com/remote-jobs/remote-product-design-director-midnite-1137497",
-    "text": "design, exec, sys admin, game dev, testing, marketing, web dev, scheme, medical, engineer, digital nomad. ð Why Midnite? Midnite is a next-generation sports betting and gaming platform built for a new wave of players. We combine sharp product thinking, bold brand, and fast execution to create experiences that feel modern, intuitive, and built for how people actually play today. Over 400,000 players have already made the move, and weâre only just getting started. Weâre a high-performance team operating at pace. High ownership. Constant iteration. No hiding behind processes. We move quickly, test relentlessly, and turn ambitious ideas into real impact. If youâre driven, creative, and "
-  },
-  {
     "source": "remotive",
     "lane": "role",
     "group": "ai_ml",
@@ -1331,161 +1259,169 @@
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Content Strategist — Hook + Ladder Digital",
-    "url": "https://himalayas.app/companies/hook-ladder-digital/jobs/content-strategist-8810514095?utm_source=api",
-    "text": "Content-Strategist, Digital-Marketing-Strategist, Content-Marketing-Manager, Social-Media-Strategist, Brand-Content-Strategist, Content-Marketing-Strategist, Marketing-Content-Strategist, Content-Strategy-Specialist, SEO-Content-Strategist, Digital-Content-Strategist, Creative-Content-Strategist, Freelance-Content-Strategist. We’re Hiring a Content Strategist ✍️ We don't just run marketing. We scale restaurant brands. Hook + Ladder is a fast-growing fractional marketing agency that helps multi-location restaurant brands, think QSRs with 100-500 locations, fast casual concepts, and regional chains, grow revenue, drive foot traffic, and win local markets. We operate as a true extension of thei"
+    "title": "Senior Product Designer — Cavallo",
+    "url": "https://himalayas.app/companies/cavallo/jobs/senior-product-designer?utm_source=api",
+    "text": "Product-Designer, UX-Designer, UI-Designer, Interaction-Designer, Senior-Staff-Product-Designer, Senior-Product-Design, Senior-Product-Designer-II. Cavallo is looking for a Product Designer to create intuitive, high-impact experiences for distributors navigating complex operational challenges. You will partner closely with product managers, engineers, customers, and fellow designers to turn ambiguity into clear, useful, and scalable product experiences. This role is ideal for a designer who combines strong product thinking with exceptional craft. You are curious about how emerging technologies can improve both the products we build and the way design work gets done. You will help shape intel"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Automation Engineer — Veriday",
-    "url": "https://himalayas.app/companies/veriday/jobs/senior-automation-engineer?utm_source=api",
-    "text": "Automation-Engineer, QA-Automation-Engineer, Automation-Testing, SDET, Quality-Assurance-Engineer, Senior-Principal-Automation-Engineer, Senior-Automation-Developer, Senior-QA-Automation-Engineer, Senior-Automation-Test-Engineer, Senior-Automation-QA-Engineer, Senior-Automation-Specialist, Senior-Industrial-Automation-Engineer, Senior-Manufacturing-Automation-Engineer. Veriday Inc. is seeking a Senior QA Automation Engineer with strong hands-on experience in Playwright-based test automation within Agile delivery environments. As an Automation Engineer, you will build and maintain a reliable, automated regression test suite using Playwright and Node.js, with test management and reporting thro"
+    "title": "Account Manager, Commercial Lines — Mitchell & Whale Insurance Brokers",
+    "url": "https://himalayas.app/companies/mitchell-whale-insurance-brokers/jobs/account-manager-commercial-lines?utm_source=api",
+    "text": "Commercial-Lines-Account-Manager, Commercial-Account-Manager, Insurance-Account-Manager, Commercial-Insurance-Broker, Commercial-Insurance-Account-Manager, Senior-Commercial-Lines-Account-Manager, Senior-Account-Executive-Commercial-Lines. Commercial Lines Account Manager Mitch is a leading insurance brokerage on a mission to make insurance lovable through exceptional experiences. We’vebeen recognized as Brokerage and Innovator of the Year, and have been named one of Canada’s Top Growing Companies by The Globe and Mail’s Report on Business magazine multiple times. Commercial Lineshas become an important part of our success, delivering more than 30% year-over-year growth for the past seven ye"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Lead Data Scientist, AdTech — Launch Potato",
-    "url": "https://himalayas.app/companies/launch-potato/jobs/lead-data-scientist-adtech-1215660509?utm_source=api",
-    "text": "Data-Scientist, Machine-Learning-Scientist, Applied-Data-Scientist, Quantitative-Analyst, AdTech-Data-Science, Senior-Data-Scientist-Lead, Senior-Marketing-Data-Scientist, AdTech-Team-Lead, Lead-Machine-Learning-Scientist. WHO ARE WE? Launch Potato is the discovery and conversion company. We reach tens of millions of people every month through our brands, including FinanceBuzz, All About Cookies, and OnlyInYourState. We turn that attention into real outcomes for our partners, some of the world's leading companies. Our mission: create predictable, high-value customer acquisition at scale by connecting discovery, intent, and performance across category-leading consumer brands in finance, trave"
+    "title": "Sr. Engineer — Xage Security",
+    "url": "https://himalayas.app/companies/xage-security/jobs/sr-engineer-6059434754?utm_source=api",
+    "text": "Technical-Customer-Success, Solutions-Engineering, Cybersecurity, Industrial-Automation, Customer-Success-Management, Senior-Engineer, Senior-Staff-Engineer, Senior-Principal-Engineer, Senior-Lead-Engineer, Senior-Engineering, Senior-Staff-Engineering, Senior-R&D-Engineer. The Role &amp; The Candidate Profile Xage is looking for a Technical Customer Success Manager with in-depth knowledge of Industrial Control System, Industrial networking, Identity and Access Management, Privilege Access, and experience of working in large projects. The successful candidate will have a strong background in developing cybersecurity solutions and services, with a focus on ICS environments, network security de"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior iOS Developer (IC) — DVT",
-    "url": "https://himalayas.app/companies/dvt-co/jobs/senior-ios-developer-ic-2240485316?utm_source=api",
-    "text": "Senior-IOS-Developer, iOS-Developer, Mobile-Software-Developer, Senior-IOS-Engineer. Job Title: Senior iOS Developer ROLE OVERVIEW The employed individual will be challenged with access to a range of projects at clients across industries, working with other experienced technologists whose single pursuit is optimal value creation for our customers through the construction of peerless solutions. This dynamic self- starting individual will be involved in the definition of development best practices and serve as team’s authority on creation of code quality and development of sound front-end architecture to ensure successful delivery on hundreds of software development assignments. You would have"
+    "title": "Techniker (m/w/d) als 2nd Level & Remote Support Automation & Software (Markt Sc — Körber",
+    "url": "https://himalayas.app/companies/korber/jobs/techniker-m-w-d-als-2nd-level-remote-support-automation-software-markt-sc?utm_source=api",
+    "text": "2nd-Level-Support, Remote-Support, Technical-Support, Automation-Support, Customer-Support, German-Speaking-Remote-Technical-Support-Specialist, Remote-German-Technical-Support-Specialist, German-Speaking-Technical-Support-Specialist, Remote-Automation-Support-Specialist. Ihre Rolle in unserem Team Sie verantworten den Bereich des technischen Kundensupports (2nd Level &amp; Remote Support) Zudem gehört zu Ihren Aufgaben die Steuerung, Kontrolle und das Nachhalten des technischen Kundensupports mit Hilfe von KPI-Dashboards Von der Spezifizierung, über die Analyse von Supportanfragen bis hin zum Verifizieren von Lösungsvorschlägen - die Betreuung unserer Kunden gehört zu Ihrem Arbeitsalltag Si"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Process Improvement Professional (Procurement Digital & AI Enablement) — Humana",
-    "url": "https://himalayas.app/companies/humana/jobs/senior-process-improvement-professional-procurement-digital-ai-enablement-4870925161?utm_source=api",
-    "text": "Process-Improvement-Specialist, Business-Process-Manager, Procurement-Technology-Manager, Procurement-Systems-Specialist, Digital-Transformation-Manager, Senior-Process-Improvement-Specialist, Value-Stream-and-AI-Transformation-Lead, Process-Improvement-Lead, Senior-Business-Process-Analyst, Senior-Business-Process-Consultant. Become a part of our caring community The Senior Process Improvement Professional plays a critical role within the Procurement Systems Optimization team, leading enterprise-wide procurement systems, processes, digital transformation, and AI-driven initiatives across procurement and supplier management platforms. This role requires expertise in digital transformation, A"
+    "title": "Technical Analyst — Malbek",
+    "url": "https://himalayas.app/companies/malbek/jobs/technical-analyst-8328962976?utm_source=api",
+    "text": "Technical-Analyst, Business-Analyst, Implementation-Consultant, Integration-Consultant, Contract-Management-Consultant, Technical-Analysis-Specialist, Technical-Analytics, Technical-Data-Analyst, Technical-analysis, IT-Technical-Analyst, Tech-Analyst. Malbek is seeking a highly motivated and energetic individual with a passion for ensuring customer success and experience in enterprise software implementation to join our Customer Experience team as a Business Analyst. The Malbek team is passionate about maintaining our customer commitments and allowing all team members to contribute actively to executing our vision. This role is ideal for a business analyst with strong Contract Lifecycle Mana"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "QA Tester, Data Integration - Canada Remote 12 Month Contract — Circular Materials",
-    "url": "https://himalayas.app/companies/circular-materials/jobs/qa-tester-data-integration-canada-remote-12-month-contract?utm_source=api",
-    "text": "QA-Tester, Quality-Assurance-Engineer, Data-Integration-Tester, Software-Test-Engineer, Data-Quality-Analyst, Data-QA-Engineer, Integration-QA-Engineer, Remote-QA-Engineer, QA-Testing-Associate. OVERVIEW Reporting to Manager, IT Quality Assurance and working closely with the QA Lead, the 12-month Contract position of QA Tester performs hands-on testing for a new enterprise data platform that integrates and consolidates data from multiple source systems, including SAP and CRM, into a single, centralized source on AWS. This role focuses on integration testing across source systems and detailed data validation to confirm the completeness, accuracy, and integrity of integrated data across QA and"
+    "title": "🍭👾 UX/UI DIGITAL PRODUCT DESIGNER — Jupe",
+    "url": "https://himalayas.app/companies/jupe/jobs/ux-ui-digital-product-designer?utm_source=api",
+    "text": "Product-Designer, UX-Designer, UI-Designer, Digital-Designer, Web-Designer, Digital-Product-Designer, Remote-Digital-Product-Designer, Digital-Product-Design, UI-UX-Designer, Product-Design-(UX-UI). 👋 Why we're doing this… We’ll make this brief. 1.5B humans don't have adequate housing and Jupe is working towards a long-term vision to shelter as many of them as possible. The problem is compounded by the fact that rents keep going up and more and more folks are affected by climate and political disasters every year. If we’re going to overtake the problem, we need to build a magical user experience. We’re starting with a magical digital experience to match our go-to-market Jupe nature hospital"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Sr. Manager, Customer Success — McKesson",
-    "url": "https://himalayas.app/companies/mckesson/jobs/sr-manager-customer-success?utm_source=api",
-    "text": "Customer-Success-Manager, Account-Manager, Implementation-Manager, Healthcare-Customer-Success-Manager, Sr.-Manager-Of-Customer-Success, Senior-Manager-Customer-Success. McKesson is an impact-driven, Fortune 10 company that touches virtually every aspect of healthcare. We are known for delivering insights, products, and services that make quality care more accessible and affordable. Here, we focus on the health, happiness, and well-being of you and those we serve – we care. What you do at McKesson matters. We foster a culture where you can grow, make an impact, and are empowered to bring new ideas. Together, we thrive as we shape the future of health for patients, our communities, and our pe"
+    "title": "Client Experience Manager - SMB — Slang.ai",
+    "url": "https://himalayas.app/companies/slang-ai/jobs/client-experience-manager-smb-2406266288?utm_source=api",
+    "text": "Client-Experience, Customer-Success-Management, Account-Management, SMB-Customer-Success, Customer-Retention, Client-Experience-Manager, Manager-Of-SMB-Customer-Success, Customer-Experience-Manager, Manager-Client-Experience, B2B-Customer-Experience-Manager, Client-Experience-Management. Company Summary: Slang AI is redefining customer engagement through conversational AI, making every interaction seamless and efficient. Our mission is to transform the restaurant industry by providing the ultimate voice AI solution for consistently outstanding customer experiences. At Slang AI, we foster a culture of innovation, inclusivity, and growth, ensuring that every \"Slangsta\" (employee) feels valued "
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "SAP S/4HANA MM CONSULTANT (PHARMA) — Vrinda International",
-    "url": "https://himalayas.app/companies/vrinda-international/jobs/sap-s-4hana-mm-consultant-pharma?utm_source=api",
-    "text": "SAP-Consultant, SAP-Materials-Management-Consultant, SAP-S-4HANA-Consultant, SAP-Supply-Chain-Consultant, SAP-WM-Consultant, SAP-S-4HANA-MM-Consultant, SAP-S-4HANA-Functional-Consultant, SAP-S-4HANA-Senior-Consultant, SAP-S-4HANA-Implementation-Consultant. SAP S/4HANA MM Consultant (Pharma) Summary We are seeking an experienced professional to serve as an SAP S/4HANA MM Consultant specializing in the pharmaceutical sector. This pivotal role involves leading the end-to-end implementation and configuration of the Materials Management module within the SAP S/4HANA environment. The ideal candidate will leverage extensive industry knowledge to ensure compliance with strict regulatory standards, m"
+    "title": "National Sales Director (Arktura) Job (Remote,  Remote, US) — Armstrong World Industries",
+    "url": "https://himalayas.app/companies/armstrong-world-industries/jobs/national-sales-director-arktura-job-remote-remote-us?utm_source=api",
+    "text": "National-Sales-Director, Sales-Director, Sales-Manager, Sales-Executive, Remote-Director-Of-Sales, Remote-Sales-Director, North-America-Sales-Director. ​Primary location: Remote (Los Angeles area preferred) Relocation offered: No Employment status: Full-Time Travel: &gt;50% Non-compete: No The estimated base salary range for this role is $160,000 to $200,000 per year plus additional incentives Individual pay is based upon location, skills and expertise, experience and other relevant factors ​What does it mean to work at Arktura LLC, a subsidiary of Armstrong World Industries ? It means being immersed in a supportive culture that recognizes you as a key player in Armstrong's future. We are a "
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Licensed Mental Health Counselor (LMHC) - Brookline, MA — OptiMindHealth",
-    "url": "https://himalayas.app/companies/optimindhealth/jobs/licensed-mental-health-counselor-lmhc-brookline-ma?utm_source=api",
-    "text": "Licensed-Mental-Health-Counselor, Mental-Health-Counselor, Clinical-Therapist, Psychotherapist, Licensed-Clinical-Social-Worker, Licensed-Mental-Health-Counselor-(LMHC), Licensed-Clinical-Mental-Health-Counselor, Licensed-Mental-Health-Therapist, Licensed-Clinical-Mental-Health-Counseling, Licensed-Mental-Health-Counseling, Licensed-Mental-Health-Clinician, Licensed-Clinical-Mental-Health-Clinician. Licensed Mental Health Counselor (LMHC) $70 K-85K/yr Position Requirement: Remote Full-Time and Part-time Positions Available If you are looking for a new opportunity to grow with a clinician founded and clinician led organization, look no further! As an authentic, unique, and skilled counselor, "
+    "title": "Cloud Solution Architect — Lingaro",
+    "url": "https://himalayas.app/companies/lingaro/jobs/cloud-solution-architect?utm_source=api",
+    "text": "Cloud-Solution-Architect, Solutions-Architect, Cloud-Architecture, Data-Engineering, Enterprise-Architecture, Senior-Cloud-Solutions-Architect, Cloud-Architect, Cloud-Solutions-Architect, Cloud-Infrastructure-Solutions-Architect, AWS-Cloud-Solutions-Architect, Azure-Cloud-Solutions-Architect. 1 Key Task: Leading delivery of Data Integration and Analytics solutions for our customers provided within major cloud platforms (Azure/AWS/GCP) Preparing a complete solution design Taking responsibility for critical technological decisions Providing continuous architectural and technical design support to the application development team-Leading application development at all lifecycle stages – POC, MV"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Social Media Manager — Growth Leads",
-    "url": "https://himalayas.app/companies/growth-leads/jobs/senior-social-media-manager-9004865317?utm_source=api",
-    "text": "Social-Media-Manager, Digital-Marketing-Manager, Content-Marketing-Manager, Community-Manager, Affiliate-Marketing-Manager, Senior-Social-Media-Manager, Senior-Social-Media-Specialist, Senior-Social-Media-Operations-Manager, Senior-Social-Media-Strategist, Senior-Paid-Social-Media-Manager, Senior-Social-Media-Marketing, Social-Media-Marketing-Manager, Social-Media-Communications-Manager. Senior Social Media Manager We are looking for a creative and highly organised Senior Social Media Manager to lead our digital marketing and audience growth across PlayersBest and our portfolio of digital assets. You will be responsible for developing and executing digital marketing strategies, growing audie"
+    "title": "Campaign Manager, Music Partnerships — Low Battery",
+    "url": "https://himalayas.app/companies/low-battery/jobs/campaign-manager-music-partnerships-5116446460?utm_source=api",
+    "text": "Campaign-Manager, Account-Manager, Brand-Partnerships-Manager, Music-Industry-Manager, Digital-Marketing-Manager, Music-Industry-Marketing-Manager, Sponsorship-Campaign-Manager, Marketing-Partnerships-Manager, Partnerships-Marketing-Manager. Low Battery Vision We will be the definitive home for next-generation superfans of music &amp; culture. A leader in social first brand-building, obsession drives perfection in tailoring content to audience passion points transforming followers into fiercely loyal community members. Bridging the gap from the digital to physical world we provide our communities with unforgettable experiences and products. Our artist-first approach makes us a magnet for tal"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Food & Beverage Partnerships Manager – Italian Speaker — SiGMA Group",
-    "url": "https://himalayas.app/companies/sigma-group/jobs/food-beverage-partnerships-manager-italian-speaker-1540103336?utm_source=api",
-    "text": "Partnerships-Manager, Business-Development-Manager, Account-Manager, Sales-Manager, Account-Manager-Food-and-Beverage, Regional-Food-Partnerships-Manager, B2B-Partnerships-Manager. Food&amp;Beverage Partnerships Manager – Italian Speaker Location: Italy, remote Employment Type: Full-time / Freelance? About SiGMA SiGMA is a global events and media company bringing together businesses and professionals across the iGaming, technology, and emerging industries. Our events connect leading brands, suppliers, operators, and industry professionals across multiple international markets. As we continue to expand our presence in Italy, we are looking for aF&amp;B Partnerships Manager to help us build a "
+    "title": "Account Executive II — Slang.ai",
+    "url": "https://himalayas.app/companies/slang-ai/jobs/account-executive-ii-4877185023?utm_source=api",
+    "text": "Account-Executive, SaaS-Sales, B2B-Sales, Business-Development, Sales, Sales-Executive-II. Company Summary: Slang is redefining customer engagement through conversational AI, making every interaction seamless and efficient. Our mission is to transform the restaurant industry by providing the ultimate voice AI solution for consistently outstanding customer experiences. At Slang, we foster a culture of innovation, inclusivity, and growth, ensuring that every \"Slangsta\" (employee) feels valued and connected to our broader AI driven impact What Your Experience Will Be: As an Account Executive at Slang, you will play a pivotal role in driving our business forward. Collaborating closely with the H"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Customer Operations Specialist - German Speaker — Lyfegen",
-    "url": "https://himalayas.app/companies/lyfegen/jobs/customer-operations-specialist-german-speaker-8732194172?utm_source=api",
-    "text": "Customer-Operations-Specialist, Customer-Support-Specialist, Customer-Success-Specialist, Technical-Support-Specialist, SaaS-Operations-Specialist, Customer-Operations, Operations-Specialist, Customer-Service, Operations. Möchtest du Teil eines Unternehmens sein, das das Gesundheitswesen transformiert? Lyfegen ermöglicht einen schnelleren und intelligenteren Zugang zur Gesundheitsversorgung – mit Lösungen für Preisgestaltung, Marktzugang und Rabattmanagement. Unsere Plattform wird weltweit von Krankenversicherungen, Regierungen, Krankenhäusern und Pharmaunternehmen genutzt, um die Komplexität von Preisvereinbarungen zu vereinfachen, Rabatte zu optimieren und einen höheren Mehrwert zu schaffe"
+    "title": "Senior Fullstack Engineer (TypeScript) — JetBridge",
+    "url": "https://himalayas.app/companies/jetbridge/jobs/senior-fullstack-engineer-typescript?utm_source=api",
+    "text": "Full-Stack-Engineering, TypeScript-Development, Frontend-Engineer, Analytics-Engineering, Backend-Engineering, Senior-Full-Stack-Engineer-(TypeScript-Angular-Node), Senior-Full-Stack-Engineer-(React-Node.Js), Full-Stack-Engineer, Senior-Full-Stack-Engineer-(Angular-Node.Js), ¿Senior-Fullstack-Engineering, Senior-Full-Stack-Engineering, Senior-Fullstack-Developer, Senior-Fullstack-+-DevOps-Engineer. Referring a Candidate for a bounty? Please visit Refer a Dev to submit. -- Build high-performance analytics software used by leading eCommerce brands to make real revenue decisions. Our Client is scaling one of the most advanced marketing intelligence platforms in the market. Their product gives b"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Lead Senior Specialist, Payroll — ConnectCPA",
-    "url": "https://himalayas.app/companies/connectcpa/jobs/lead-senior-specialist-payroll?utm_source=api",
-    "text": "Payroll-Specialist, Payroll-Advisor, Payroll-Team-Lead, Payroll-Manager, Payroll-Specialist-Lead, Senior-EMEA-Payroll-Specialist, Senior-Payroll-Tax-Specialist, Senior-Payroll-Analyst, Senior-APAC-Payroll-Specialist, Senior-Payroll-Accounting, Senior-Japan-Payroll-Specialist, Senior-Payroll-Specialist-Germany. This posting is for future opportunities and general networking. If a role opens that aligns with your background, we may reach out. Please note that the work location can be anywhere in Canada (remote working out of your home office). Who we are At ConnectCPA , we’re not your traditional accounting firm. We are an online/virtual firm, paperless, and tech-savvy. We are growing rapidly "
+    "title": "Future Zusers — Zus Health",
+    "url": "https://himalayas.app/companies/zus-health/jobs/future-zusers-2456319870?utm_source=api",
+    "text": "Healthcare-Technology, General-Applications, Future-Opportunities, Health-Tech, Future-Zusers. Who we are Zus is a shared health data platform designed to accelerate healthcare data interoperability by providing easy-to-use patient data via API, embedded components, and direct EHR integrations. Founded in 2021 by Jonathan Bush, co-founder and former CEO of athenahealth, Zus partners with HIEs and other data networks to aggregate patient clinical history and then translates that history into user-friendly information at the point of care. Zus's mission is to catalyze healthcare's greatest inventors by maximizing the value of patient insights - so that they can build up, not around. Send us yo"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Registered Nurse (RN) Clinical Compliance Auditor- Remote — Guidehealth",
-    "url": "https://himalayas.app/companies/guidehealth/jobs/registered-nurse-rn-clinical-compliance-auditor-remote?utm_source=api",
-    "text": "Clinical-Compliance-Auditor, Registered-Nurse, Healthcare-Auditor, Utilization-Management-Auditor, Compliance-Auditor, Nursing-Compliance-Auditor, Remote-Registered-Nurse, RN-Remote-Healthcare, Remote-Clinical-Nurse, Healthcare. The Clinical Compliance Auditor II is responsible for ensuring Guidehealth ’s clinical operations, utilization management activities, and delegated services comply with regulatory requirements, client contractual obligations, and internal clinical standards. This role serves as a senior clinical compliance subject matter expert and performs advanced auditing, monitoring, and compliance validation activities to ensure adherence to Utilization Management (UM) and Popul"
+    "title": "Principal Engineer, Probabilistic Risk Assessments - Remote Based (Cranberry Tow — Westinghouse Electric Company",
+    "url": "https://himalayas.app/companies/westinghouse-electric-company/jobs/principal-engineer-probabilistic-risk-assessments-remote-based-cranberry-tow?utm_source=api",
+    "text": "Nuclear-Safety-Engineer, Risk-Analyst, Principal-Engineer, Nuclear-Engineer, Principal-Risk-Engineer, Risk-Assessment-Engineer, Senior-Risk-Engineer. Are you interested in being part of an innovative team that supports Westinghouse's mission to provide clean energy solutions? At Westinghouse, we recognize that our employees are our most valuable asset and we seek to identify, attract and recruit the most qualified talent while recognizing and encouraging the value of diversity in the global workplace. About the role: If this sounds like an environment you would excel in, we have an exciting opportunity for a Principal Engineer in our Risk Analysis team. This is a US-based remote opportunity."
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Chief Executive Officer (CEO) — TheHiveCareers",
-    "url": "https://himalayas.app/companies/thehivecareers/jobs/chief-executive-officer-ceo-960470387?utm_source=api",
-    "text": "Chief-Executive-Officer, Managing-Director, Chief-Operating-Officer, Executive-Director, Chief-Executive-Officer-(CEO), CEO, Chief-Executives, CEO-Executive, Office-Of-CEO, Office-Of-The-CEO, CEO-General-Management, CEO-Administration. About the Role We are seeking an accomplished and commercially driven Chief Executive Officer (CEO) to lead the strategic growth, operational performance, and long-term value creation of a diversified Construction &amp; Real Estate business. The CEO will have overall responsibility for the organization's strategy, P&amp;L, business development, construction operations, real estate development, investment decisions, people leadership, and stakeholder management"
+    "title": "Overnight Neuroradiologist Partner-Track 10p-7a MST, 7 on/14 off — Diversified Radiology",
+    "url": "https://himalayas.app/companies/diversified-radiology/jobs/overnight-neuroradiologist-partner-track-10p-7a-mst-7-on-14-off?utm_source=api",
+    "text": "Neuroradiology, Radiology, Teleradiology, Medical-Imaging, Physician, Overnight-Radiologist, Night-Shift-Radiologist, Night-Radiologist, Remote-Neuroradiologist. Join Diversified Radiology 's Sub-Specialized Overnight Neuroradiology Section Diversified Radiology is seeking a board-certified or board-eligible fellowship-trained Neuroradiologist to join our fully remote overnight neuroradiology section. This is a unique opportunity to join a highly collaborative, subspecialized team without the need to relocate. We provide 24/7 subspecialty coverage for hospital partners nationwide through structured shift scheduling that supports both daytime and overnight hours. All partner sites are covered"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Enterprise Account Executive, EMEA — TrueContext",
-    "url": "https://himalayas.app/companies/truecontext/jobs/enterprise-account-executive-emea-7822323602?utm_source=api",
-    "text": "Enterprise-Account-Executive, Account-Executive, B2B-Sales-Executive, Enterprise-Sales-Executive, Enterprise-Sales-Account-Executive, Senior-Enterprise-Account-Executive, Enterprise-Sales-EMEA, Strategic-Enterprise-Account-Executive. Location: London, UK (remote). North America considered with a commitment to EMEA-shifted hours. Reports to: VP, Sales About TrueContext #CareersThatKickSaaS! TrueContext is a field intelligence platform that connects frontline workers to enterprise systems of record, so teams in the field can capture, act on, and learn from structured data in real time. We serve enterprise customers in Med Tech, Building Systems, Utilities, and Oil and Gas. Backed by Battery Ve"
+    "title": "Senior Technical Consultant - Network Cloud — AHEAD",
+    "url": "https://himalayas.app/companies/ahead/jobs/senior-technical-consultant-network-cloud?utm_source=api",
+    "text": "Cloud-Networking, Network-Consulting, Network-Architecture, Technical-Consulting, Network-Engineer, Senior-Network-Consultant, Senior-Cloud-Consultant, Senior-Cloud-Infrastructure-Consultant, Senior-Cloud-Technical-Lead, Senior-Technical-Consultant, Principal-Technical-Specialist-Cloud, Senior-Cloud-Solutions-Architect. AHEAD builds platforms for digital business. By weaving together advances in cloud infrastructure, automation and analytics, and software delivery, we help enterprises deliver on the promise of digital transformation. At AHEAD , we prioritize creating a culture of belonging, where all perspectives and voices are represented, valued, respected, and heard. We create spaces to e"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Insegnante per Aiuto Compiti e Dopo Scuola | Scuole Elementari — LeTueLezioni",
-    "url": "https://himalayas.app/companies/letuelezioni/jobs/insegnante-per-aiuto-compiti-e-dopo-scuola-scuole-elementari?utm_source=api",
-    "text": "Tutor, Private-Tutor, Homework-Help-Tutor, Elementary-Tutor, Subject-Specific-Tutor, Tutoría-Escolar, Tutoría-Educativa, Profesor-De-Apoyo-Escolar, Primary-School-Tutor. Stiamo cercando una persona innovativa ed energica da inserire nel nostro eccellente team di insegnanti privati. Cerchiamo un insegnante qualificato da inserire nel nostro team di tutor professionisti per il nuovo anno scolastico (scuole elementari). In Letuelezioni ti offriamo l'opportunità di entrare a far parte del nostro team di insegnanti per supportare i nostri studenti nei loro studi, formazione ed educazione. Stiamo cercando tutori di: Lingue: Inglese, Italiano, Francese, Spagnolo, Tedesco, Giapponese... Materie scie"
+    "title": "SAP Data & Analytics Developer — Lingaro",
+    "url": "https://himalayas.app/companies/lingaro/jobs/sap-data-analytics-developer?utm_source=api",
+    "text": "SAP-Data-and-Analytics-Developer, SAP-Analytics-Cloud-Developer, BI-Developer, SAP-BW-Developer, Data-Engineering, SAP-Analytics-Developer, SAP-Data-Developer, SAP-Data-Analytics-Consultant, SAP-Business-Intelligence-Developer, SAP-Analytics-Engineer. Growth through diversity, equity, and inclusion. As an ethical business, we do what is right — including ensuring equal opportunities and fostering a safe, respectful workplace for each of us. We believe diversity fuels both personal and business growth. We're committed to building an inclusive community where all our people thrive regardless of their backgrounds, identities, or other personal characteristics. What You’ll Be Doing Preparation o"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Director, Consumer Digital Product Operations — Humana",
-    "url": "https://himalayas.app/companies/humana/jobs/director-consumer-digital-product-operations?utm_source=api",
-    "text": "Director-Of-Product-Operations, Product-Operations-Lead, Senior-Director-of-Product-Operations. Become a part of our caring community The Director, Consumer Digital Product Operations, oversees the design and execution of transformation strategies that advance organizational priorities and operational excellence. Leads cross-functional teams in identifying opportunities, defining objectives, and implementing initiatives that deliver measurable business impact. Develops transformation frameworks, governance models, and performance metrics to guide execution and accountability. Partners with executives and senior leaders to ensure initiatives are aligned with enterprise strategy and long-term "
+    "title": "Join our Talent Community! — ContactOut",
+    "url": "https://himalayas.app/companies/contactout/jobs/join-our-talent-community?utm_source=api",
+    "text": "Product-Management, Growth-Marketing, Sales, Engineering, Join-Our-Talent-Network!, Talent-Community, Join-Our-Talent-Pipeline!, We-Are-Always-Looking-For-Talent, Talent-Pool:-Apply-To-Be-Considered-For-Future-Opportunities, Join-Druva'S-Talent-Community, Tech-Talent-Community, IT-Talent-Community. We’re ContactOut . We’re here to help recruiters connect with the right candidates the way they want. Thousands of companies — including Microsoft, McKinsey, and Netflix buy our product each year for their recruitment teams. But we’re dreaming bigger. Our vision is to be a system that empowers B2B professionals to do cold outreach that both they and the recipient enjoy. What’s missing — You. We're"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Principal Engineer, Solutions Architecture - Networking — dell",
-    "url": "https://himalayas.app/companies/dell/jobs/principal-engineer-solutions-architecture-networking?utm_source=api",
-    "text": "Network-Solutions-Architect, Solutions-Architect, Principal-Network-Engineer, Network-Engineer, Principal-Solutions-Engineer, Networking-Solutions-Architect, Senior-Network-Architect, Lead-Network-Architect, Senior-Network-Engineering, Principal-Engineer. Principal Engineer, Solutions Architecture - Networking Dell Services is growing, and we are seeking seasoned network professionals with expertise in AI infrastructure planning, high-performance networking, data center fabrics, and enterprise network transformation . Dell provides a complete end-to-end suite of products, services, and support for modern IT environments, including AI factories, accelerated computing platforms, HPC environmen"
+    "title": "Account Manager – North America — Docsumo",
+    "url": "https://himalayas.app/companies/docsumo/jobs/account-manager-north-america-7498921696?utm_source=api",
+    "text": "Account-Management, B2B-Sales, Enterprise-Sales, Customer-Success, Expansion-Sales, Account-Manager, Regional-Account-Manager, National-Account-Sales-Manager, National-Sales-Account-Manager, National-Accounts-Manager, Sales-Account-Manager, Global-Account-Manager. Account Manager – North America Location India (Remote) Working Hours: 5:30 PM – 2:30 AM IST (8am to 5pm EST overlap) About Docsumo : Docsumo is your go-to Document AI solution for streamlining business operations. We turn complex documents like bank statements, policies, and financial statements into valuable, actionable data. Our cutting-edge technology helps businesses make smarter decisions faster. We are backed by marquee inve"
   },
   {
     "source": "himalayas",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Network Administrator — Pella Windows & Doors",
-    "url": "https://himalayas.app/companies/pella-windows-doors/jobs/senior-network-administrator?utm_source=api",
-    "text": "Network-Administrator, Network-Engineer, Infrastructure-Engineer, Senior-Network-Technician, Senior-Network-Engineer, Senior-Systems-Administrator, Senior-Network-Systems-Engineer, Senior-Infrastructure-Administrator, Senior-Network-Infrastructure-Engineer, Senior-Network-Architect, Senior-System-Administrator, Senior-Network-Engineering. Senior Network Administrator Remote | United States Travel: Approximately 5% Build the network that keeps the business connected. Pella Corporation is now hiring a Senior Network Administrator who enjoys solving complex infrastructure challenges, improving network performance, and building reliable solutions that make a real difference to our business. In t"
+    "title": "Video Editor (Contractual) — One Impression",
+    "url": "https://himalayas.app/companies/one-impression/jobs/video-editor-contractual-2478321291?utm_source=api",
+    "text": "Video-Editor, Content-Creator, Video-Editing, Social-Media-Content-Creator, Motion-Graphics-Designer, Contract-Video-Editor, Freelance-Video-Editor, Part-Time-Video-Editor, Video-Content-Editor. About HexCoded HexCoded is an AI video studio: you should be able to make anything you can imagine. We are a small, fast-moving team building the tools that are reshaping how video, image and audio get made. This role is for our own content — the work that goes out under our name, not client delivery. You will turn that capability into a relentless stream of video. What you'll do Create at volume. Produce a steady, high-output stream of short-form video for Instagram and YouTube — hooks, reels, short"
+  },
+  {
+    "source": "weworkremotely",
+    "lane": "role",
+    "group": "ai_ml",
+    "title": "Webflow: Senior Infrastructure Engineer",
+    "url": "https://weworkremotely.com/remote-jobs/webflow-senior-infrastructure-engineer",
+    "text": "Headquarters: Argentina Remote Webflow is the agentic web marketing platform for modern marketing teams, helping organizations build, manage, and optimize high-performing web experiences that drive predictable growth and strengthen brand trust. Building at Webflow will need grit, because we move fast, without ever sacrificing craft or quality. About the Role We’re looking for a Senior Infrastructure Engineer to improve reliability and stability of Webflow’s customer-facing, production infrastructure, serving millions of page views per hour. Our product is used by over 2 million users world-wid"
   },
   {
     "source": "weworkremotely",
@@ -1643,9 +1579,17 @@
     "source": "weworkremotely",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Air Apps: Framer Website Designer",
-    "url": "https://weworkremotely.com/remote-jobs/air-apps-framer-website-designer-1",
-    "text": "Headquarters: Helsinki URL: http://airapps.com Framer Website Designer (Onsite – Presidio, San Francisco) About Air Apps At Air Apps, we believe in thinking bigger and moving faster. We’re a family-founded company on a mission to create the world’s first AI-powered Personal & Entrepreneurial Resource Planner (PRP), and we need your passion and ambition to help us change how people plan, work, and live. Born in Lisbon, Portugal in 2018 and now with offices in both Lisbon and San Francisco, we’ve remained self-funded while reaching over 100 million downloads worldwide. Our long-term focus drives"
+    "title": "Keeper Security: Communications Intern",
+    "url": "https://weworkremotely.com/remote-jobs/keeper-security-communications-intern",
+    "text": "Headquarters: Remote, US Description Keeper is hiring a bright and talented Communications Intern to assist Keeper’s Global Communications team this Fall/Winter. This is a 100% remote internship from select locations with an opportunity to work a hybrid schedule for candidates based in the Chicago, IL metro area. Keeper’s cybersecurity software is trusted by millions of people and thousands of organizations, globally. Keeper is published in 23 languages and is sold in over 150 countries. Join one of the fastest-growing cybersecurity companies and gain valuable skills assisting our communicatio"
+  },
+  {
+    "source": "weworkremotely",
+    "lane": "role",
+    "group": "ai_ml",
+    "title": "Keeper Security: Bilingual Channel Sales Engineer, French (EMEA)",
+    "url": "https://weworkremotely.com/remote-jobs/keeper-security-bilingual-channel-sales-engineer-french-emea",
+    "text": "Headquarters: Remote, Ireland; Remote, UK Description Keeper Security is hiring an experienced Bilingual (French) Channel Sales Engineer to work with our EMEA channel sales team. This is a remote position and qualified candidates must permanently reside in Ireland or the UK. Keeper’s cybersecurity software is trusted by millions of people and thousands of organisations, globally. Keeper is published in 23 languages and is sold in over 150 countries. Join one of the fastest-growing cybersecurity companies and be responsible for navigating our customers through the technical landscape of our pro"
   },
   {
     "source": "weworkremotely",
@@ -1790,22 +1734,6 @@
     "title": "Abnormal: Director, Renewals",
     "url": "https://weworkremotely.com/remote-jobs/abnormal-director-renewals",
     "text": "Headquarters: Remote - USA About the Role Abnormal AI is looking for a Director of Renewals to own the strategy, performance, and operating model for our global renewals function. Reporting to the VP of Customer Success, you will lead the renewals organization and own revenue retention across Abnormal's multi-product behavioral security platform. You will build the renewals engine that makes retention and cross-product expansion predictable at scale, set the standard for how Abnormal renews and expands its customers, and turn customer obsession into measurable retention outcomes. What you will"
-  },
-  {
-    "source": "weworkremotely",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "PagerDuty: Principal Solutions Consultant",
-    "url": "https://weworkremotely.com/remote-jobs/pagerduty-principal-solutions-consultant",
-    "text": "Headquarters: Remote (USA) PagerDuty, Inc. (NYSE: PD) is the global leader in AI-first digital operations. By automatically detecting, diagnosing, and remediating issues, the PagerDuty Platform orchestrates AI agents and automated workflows with context from over 750 integrations. Trusted by approximately two-thirds of the Fortune 100 and nearly half of the Fortune 500, PagerDuty is the industry standard for organizations scaling resilient, autonomous operations. Notable customers include Chipotle, Cloudflare, Docusign, Fox, Nvidia, Salesforce, Spotify, Zoom and more. We are growing rapidly an"
-  },
-  {
-    "source": "weworkremotely",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "LaunchDarkly: Engineering Manager, Cloud Engineering",
-    "url": "https://weworkremotely.com/remote-jobs/launchdarkly-engineering-manager-cloud-engineering",
-    "text": "Headquarters: Remote - US About the Job: We’re looking for an Engineering Manager to lead LaunchDarkly’s Cloud Engineering team, the team responsible for the foundational infrastructure our products and engineering teams depend on. Cloud Engineering owns LaunchDarkly’s AWS accounts and networking, multi-region Kubernetes infrastructure, Terraform and GitOps workflows, CockroachDB operations, disaster-recovery capabilities, and FedRAMP infrastructure posture. The team is small, senior, and recently rebuilt. This is a frontline leadership role for a manager who treats operational health as a top"
   },
   {
     "source": "weworkremotely",
@@ -1971,6 +1899,46 @@
     "source": "rss:OpportunityDesk",
     "lane": "opp",
     "group": "fellowships",
+    "title": "IDM-Africa Fellowship Programme 2027",
+    "url": "https://opportunitydesk.org/2026/10/24/idm-africa-fellowship-programme-2027/",
+    "text": "Deadline: October 30, 2026 Applications are open for the IDM-Africa Fellowship Programme 2027. IDM-Africa invites applications from early- and mid-career scientists in sub-Saharan Africa (SSA) for its annual Fellowship Programme in infectious-disease modelling. The Fellowship supports scientists who already have foundational training and practical experience in infectious-disease modelling to develop an applied, policy-relevant modelling project [...]"
+  },
+  {
+    "source": "rss:OpportunityDesk",
+    "lane": "opp",
+    "group": "fellowships",
+    "title": "Anthropic STEM Fellowship 2027 (up to $167,000)",
+    "url": "https://opportunitydesk.org/2026/10/24/anthropic-stem-fellowship-2027/",
+    "text": "Deadline: October 28, 2026 Applications are open for the Anthropic STEM Fellowship 2027. The Anthropic STEM Fellows Program brings researchers and experts from across science and engineering into Anthropic for four months to take on the grand challenges of their fields with Claude. Working in small pods of Fellows from related fields, you will pair [...]"
+  },
+  {
+    "source": "rss:OpportunityDesk",
+    "lane": "opp",
+    "group": "fellowships",
+    "title": "Atlantic Council GeoEconomics Center Young Global Professionals Program – Spring 2027",
+    "url": "https://opportunitydesk.org/2026/10/24/geoeconomics-center-young-global-professionals-program-spring-2027/",
+    "text": "Deadline: November 8, 2026 Applications are open for the Atlantic Council GeoEconomics Center Young Global Professionals Program – Spring 2027. At the intersection of economics, finance, and foreign policy, the GeoEconomics Center (GeoEcon Center) is a translation hub with the goal of helping shape a better global economic future. Their interns are an integral part [...]"
+  },
+  {
+    "source": "rss:OpportunityDesk",
+    "lane": "opp",
+    "group": "fellowships",
+    "title": "Congressional Coalition on Adoption Institute (CCAI) Foster Youth Internship Program 2027",
+    "url": "https://opportunitydesk.org/2026/10/24/ccai-foster-youth-internship-program-2027/",
+    "text": "Deadline: November 1, 2026 Applications are open for the Congressional Coalition on Adoption Institute (CCAI) Foster Youth Internship Program 2027. The CCAI Foster Youth Internship (FYI) Program is a competitive national internship for students and recent graduates with lived experience in foster care who are interested in federal policy and advocacy. Participants write a federal [...]"
+  },
+  {
+    "source": "rss:OpportunityDesk",
+    "lane": "opp",
+    "group": "fellowships",
+    "title": "Swedish Institute Pioneering Women in STEM Scholarship 2027 (Fully-funded)",
+    "url": "https://opportunitydesk.org/2026/10/24/si-pioneering-women-in-stem-scholarship-2027/",
+    "text": "Deadline: January 15, 2027 Applications are open for the Swedish Institute Pioneering Women in STEM Scholarship 2027. The Pioneering Women in STEM scholarship supports women who want to lead innovation, strengthen their professional capacity, tackle complex challenges, and contribute to more inclusive and sustainable societies. The scholarship is awarded for master’s studies in Sweden to [...]"
+  },
+  {
+    "source": "rss:OpportunityDesk",
+    "lane": "opp",
+    "group": "fellowships",
     "title": "Global Changemakers Media Impact Academy 2026/2027",
     "url": "https://opportunitydesk.org/2026/10/23/global-changemakers-media-impact-academy-2026-2027/",
     "text": "Deadline: Unspecified Applications for the Global Changemakers Media Impact Academy 2026/2027 are now open. The Media Impact Academy is a Nationwide initiative engaging 500 youth (ages 18–24) across the United States. Designed for young adults navigating early financial independence, this 90-day challenge equips you with practical financial skills, project management tools, and storytelling capabilities to [...]"
@@ -2008,124 +1976,100 @@
     "text": "Deadline: December 4, 2026 Applications are open for the Columbia University Italian Academy Fellowship Program 2027-2028. The multi-disciplinary Fellowship Program is the heart of the work of the Italian Academy. Fellowships are open to scholars who wish to devote a semester or a full academic year to genuinely innovative work in the humanities, sciences, or [...]"
   },
   {
-    "source": "rss:OpportunityDesk",
+    "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "Asia-Pacific Forum on Sustainable Development (APFSD) Youth Forum 2027",
-    "url": "https://opportunitydesk.org/2026/10/23/apfsd-youth-forum-2027/",
-    "text": "Deadline: November 16, 2026 Applications are open for the Asia-Pacific Forum on Sustainable Development (APFSD) Youth Forum 2027. The Asia-Pacific Forum on Sustainable Development (APFSD) is an annual, inclusive, intergovernmental forum to support the follow-up and review of progress on the 2030 Agenda for Sustainable Development and the Sustainable Development Goals (SDGs) at the regional level. [...]"
-  },
-  {
-    "source": "rss:OpportunityDesk",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "Raisina Young Fellows Programme 2027 (Fully-funded)",
-    "url": "https://opportunitydesk.org/2026/10/23/raisina-young-fellows-programme-2027/",
-    "text": "Deadline: November 2, 2026 Applications are open for the Raisina Young Fellows Programme 2027. The Raisina Young Fellows Programme convenes emerging leaders from around the world to discuss current political, economic, and social issues, with a particular focus on Asia. Fellows engage directly with senior political, business, and academic figures, gaining insights and building networks [...]"
-  },
-  {
-    "source": "rss:OpportunityDesk",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "25 Hot Job Opportunities  at Google and Apple Currently Open – October 22, 2026",
-    "url": "https://opportunitydesk.org/2026/10/22/25-hot-job-opportunities-at-google-and-apple/",
-    "text": "1. Program Manager, Strategy and Operations, Google Arts and Culture (Goo gle)Google is recruiting for this Program Manager, Strategy and Operations, Google Arts and Culture position based in London, United Kingdom. Coordinate strategic planning, budgets, partnerships and operational performance for Google Arts & Culture, working with cultural institutions and cross-functional teams. This opportunity sits within [...]"
-  },
-  {
-    "source": "rss:OpportunityDesk",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "50 Scholarships, Grants, Fellowships and Other Opportunities Currently Open – October 22, 2026 ",
-    "url": "https://opportunitydesk.org/2026/10/22/50-scholarships-grants-fellowships-and-other-opportunities-currently-open-october-22-2026/",
-    "text": "1. Maria Rosario Lazzati Niada Scholarship for Afghan Women 2027-2028 The Maria Rosario Lazzati Niada Scholarship supports Afghan women who already hold a university degree and want to pursue a two-year master’s programme at the Geneva Graduate Institute. The scholarship is designed to widen access to advanced study in international relations and development and create [...]"
-  },
-  {
-    "source": "rss:OpportunityDesk",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "What Is a Master’s by Research? Everything You Need to Know Before Applying",
-    "url": "https://opportunitydesk.org/2026/10/22/what-is-a-masters-by-research-everything-you-need-to-know-before-applying/",
-    "text": "When most people think about studying for a master’s degree, they imagine attending lectures, completing assignments, taking examinations and writing a dissertation. But did you know that you can earn a master’s degree primarily through independent research? A Master’s by Research offers a different route to postgraduate education. Instead of spending most of your time in classrooms, [...]"
+    "title": "Capgemini UK Early Careers Opportunities 2026: Graduate Programmes, Apprenticeships and Work Experience.",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/capgemini-uk-early-careers-opportunities-2026-graduate-programmes-apprenticeships-and-work-experience/",
+    "text": "Are you looking for an opportunity to begin your professional career in technology, engineering, consulting, business transformation, or digital innovation? Capgemini UK’s Early & Emerging Talent Community offers aspiring professionals several pathways to develop their skills, gain practical experience, and explore future career opportunities with a global technology and consulting organisation. Through its graduate programmes, […] The post Capgemini UK Early Careers Opportunities 2026: Graduate Programmes, Apprenticeships and Work Experience. appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "ACMER Foundation Leadership Development Program Summer 2027 Internship in Washington, DC | Paid Congressional Internship with $5,000 Stipend",
-    "url": "https://opportunitiesforyouth.org/2026/10/24/acmer-foundation-leadership-development-program-summer-2027-internship-in-washington-dc-paid-congressional-internship-with-5000-stipend/",
-    "text": "For students and young professionals seeking meaningful experience in public policy, foreign affairs, human rights, and congressional engagement, the ACMER Foundation Leadership Development Program Summer 2027 Internship offers a unique opportunity to gain firsthand experience inside the U.S. policymaking process while building a strong professional network. Hosted by the American Committee for Middle East Rights […] The post ACMER Foundation Leadership Development Program Summer 2027 Internship in Washington, DC | Paid Congressional Internship with $5,000 Stipend appeared first on Opportunities for Youth."
+    "title": "UN Women SAFE Project Call for Proposals 2026: Community-Led Advocacy and Digital Safety for Women and Girls in West Africa",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/un-women-safe-project-call-for-proposals-2026-community-led-advocacy-and-digital-safety-for-women-and-girls-in-west-africa/",
+    "text": "The United Nations Entity for Gender Equality and the Empowerment of Women (UN Women) has announced a Call for Proposals under its SAFE project, focusing on community-led advocacy and the creation of safer digital spaces for women and girls in West Africa. This opportunity aims to strengthen the capacity of feminist organizations and women’s rights […] The post UN Women SAFE Project Call for Proposals 2026: Community-Led Advocacy and Digital Safety for Women and Girls in West Africa appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "WAAW Foundation Scholarship 2026/2027: $500 Undergraduate Scholarship for African Women Studying STEM – Applications Open October 30, 2026",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/waaw-foundation-scholarship-2026-2027/",
-    "text": "The WAAW Foundation Scholarship 2026/2027 is an undergraduate scholarship opportunity designed to support African women pursuing degrees in Science, Technology, Engineering, and Mathematics (STEM) at universities and colleges across Africa. Offered by the WAAW Foundation, the scholarship provides financial assistance to eligible female students who demonstrate academic excellence, financial need, leadership potential, and a commitment […] The post WAAW Foundation Scholarship 2026/2027: $500 Undergraduate Scholarship for African Women Studying STEM – Applications Open October 30, 2026 appeared first on Opportunities for Youth."
+    "title": "UKUDLA Master’s Scholarships 2027 in South Africa: DAAD-Funded Postgraduate Study in Data Science, Agriculture and Sustainable Food Systems",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/ukudla-masters-scholarships-2027-in-south-africa-daad-funded-postgraduate-study-in-data-science-agriculture-and-sustainable-food-systems/",
+    "text": "UKUDLA Master’s Scholarships 2027 in South The African German Centre for Sustainable and Resilient Food Systems and Applied Agricultural and Food Data Science (UKUDLA) is inviting applications for its Cohort 3 Master’s Scholarship programme for African candidates seeking to pursue full-time postgraduate studies in South Africa. The scholarship supports academically qualified graduates who want to […] The post UKUDLA Master’s Scholarships 2027 in South Africa: DAAD-Funded Postgraduate Study in Data Science, Agriculture and Sustainable Food Systems appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "NobleReach Scholars Program 2027: Apply for a One-Year Paid Fellowship Paying $70,000-$90,000 Plus an $18,000 Stipend",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/noblereach-scholars-program-2027-apply-for-a-one-year-paid-fellowship-paying-70000-90000-plus-an-18000-stipend/",
-    "text": "Overview of the NobleReach Scholars Program Recent graduates seeking a paid professional opportunity in technology, engineering, cybersecurity, or public-sector innovation can apply for the NobleReach Scholars Program, a one-year, full-time fellowship that places eligible graduates in federal, state, or local government agencies. The programme allows Scholars to work on practical challenges, including testing artificial intelligence […] The post NobleReach Scholars Program 2027: Apply for a One-Year Paid Fellowship Paying $70,000-$90,000 Plus an $18,000 Stipend appeared first on Opportunities for Youth."
+    "title": "MAMA HOPE Localization Development Accelerator (LDA) 2027: Applications Open for East African Community-Based Organizations",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/mama-hope-localization-development-accelerator-lda-2027-applications-open-for-east-african-community-based-organizations/",
+    "text": "Application Deadline: 15 November 2026 at 11:59 PM East Africa Time (EAT) MAMA HOPE is accepting applications for the 2027 cohort of its Localization Development Accelerator (LDA), a nine-month organizational development programme designed to strengthen locally led organizations across East Africa. The programme is intended for organizations seeking to improve their internal systems, organizational strategies, […] The post MAMA HOPE Localization Development Accelerator (LDA) 2027: Applications Open for East African Community-Based Organizations appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "Intra-Africa Academic Mobility Scheme 2022–2027: EU-Funded Scholarships and International Study Opportunities for African Students, Trainees and University Staf",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/intra-africa-academic-mobility-scheme-2022-2027-eu-funded-scholarships-and-international-study-opportunities-for-african-students-trainees-and-university-staff/",
-    "text": "The Intra-Africa Academic Mobility Scheme 2022–2027 is a European Union (EU)-supported initiative designed to strengthen higher education, promote international academic exchanges, and expand learning mobility opportunities across Africa. The programme supports partnerships between African higher education institutions and creates scholarship opportunities for students, trainees, and academic and administrative staff seeking to participate in international learning […] The post Intra-Africa Academic Mobility Scheme 2022–2027: EU-Funded Scholarships and International Study Opportunities for African Students, Trainees and University Staff appeared first on Opportunities for Youth."
+    "title": "EIDU Is Hiring: Learning Data Analyst, Head of Research, and Head of Measurement & Evaluation – Full-Time Permanent Jobs",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/eidu-is-hiring-learning-data-analyst-head-of-research-and-head-of-measurement-evaluation-full-time-permanent-jobs/",
+    "text": "Professionals seeking meaningful career opportunities in education, data analytics, research, monitoring and evaluation, and international development should explore three full-time, permanent positions with EIDU e.V. The organisation is recruiting for a Learning Data Analyst, Head of Research, and Head of Measurement & Evaluation to strengthen its Impact team and help improve educational outcomes for children […] The post EIDU Is Hiring: Learning Data Analyst, Head of Research, and Head of Measurement & Evaluation – Full-Time Permanent Jobs appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "World Vasectomy Day (WVD) Zambia Country Director Job 2026: Requirements, Responsibilities, Salary Benefits, and How to Apply",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/world-vasectomy-day-wvd-zambia-country-director-job-2026-requirements-responsibilities-salary-benefits-and-how-to-apply/",
-    "text": "Are you an experienced leader in public health, international development, social programmes, or health systems management looking for a senior leadership opportunity in Zambia? World Vasectomy Day (WVD) is inviting applications for the position of Zambia Country Director, a strategic in-country leadership role for a professional who can lead national programmes, build government and donor […] The post World Vasectomy Day (WVD) Zambia Country Director Job 2026: Requirements, Responsibilities, Salary Benefits, and How to Apply appeared first on Opportunities for Youth."
+    "title": "WomenLeaders India Fellowship 2026–27: Fully Funded Leadership Fellowship for 50 Indian Women Leaders",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/womenleaders-india-fellowship-2026-27-fully-funded-leadership-fellowship-for-50-indian-women-leaders/",
+    "text": "The WomenLeaders India Fellowship 2026–27, powered by Reliance Foundation in partnership with Vital Voices Global Partnership, is offering an exciting opportunity for Indian women leaders who are committed to driving social change, advancing women’s empowerment, and contributing to the United Nations Sustainable Development Goals (SDGs). The fellowship aims to support 50 exceptional women leaders in […] The post WomenLeaders India Fellowship 2026–27: Fully Funded Leadership Fellowship for 50 Indian Women Leaders appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "WHO Europe Summer School 2027 in France: Free Public Health Training on Systems Thinking, NCD Prevention and Healthy Ageing",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/who-europe-summer-school-2027-in-france-free-public-health-training-on-systems-thinking-ncd-prevention-and-healthy-ageing/",
-    "text": "The World Health Organization (WHO) Regional Office for Europe is inviting applications for its 2027 Summer School on Systems Thinking and Innovation for the Prevention of Noncommunicable Diseases and a Healthy Ageing Population in the WHO European Region. This specialised summer school will bring together PhD students and early- and mid-career professionals to explore innovative […] The post WHO Europe Summer School 2027 in France: Free Public Health Training on Systems Thinking, NCD Prevention and Healthy Ageing appeared first on Opportunities for Youth."
+    "title": "Justice First Fellowship 2027 in the UK: Applications Open for Two-Year Fellowships Supporting Access to Justice",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/justice-first-fellowship-2027-in-the-uk-applications-open-for-two-year-fellowships-supporting-access-to-justice/",
+    "text": "Applications are open for the Justice First Fellowship 2027, an opportunity for people passionate about access to justice, supporting marginalised communities, and creating positive change within the legal community. Successful applicants will begin working with their host organisations in April 2027 and undertake a two-year fellowship. The fellowship offers an opportunity to work within organisations […] The post Justice First Fellowship 2027 in the UK: Applications Open for Two-Year Fellowships Supporting Access to Justice appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "UNIDIR Research Consultant and Associate Researcher Jobs 2026: Remote UN Opportunities in Conflict Research, Data Analysis and Peacebuilding",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/unidir-research-consultant-and-associate-researcher-jobs-2026-remote-un-opportunities-in-conflict-research-data-analysis-and-peacebuilding/",
-    "text": "The United Nations Institute for Disarmament Research (UNIDIR) is inviting applications for two temporary consultancy and research positions under its Managing Exits from Armed Conflict (MEAC) Project. These opportunities are designed for qualified professionals with experience in research, data analysis, conflict prevention, peacebuilding, public policy and the reintegration of people formerly associated with armed groups. […] The post UNIDIR Research Consultant and Associate Researcher Jobs 2026: Remote UN Opportunities in Conflict Research, Data Analysis and Peacebuilding appeared first on Opportunities for Youth."
+    "title": "NIST Summer Undergraduate Research Fellowship (SURF) 2027: Apply for a Paid STEM Research Internship in the United States",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/nist-summer-undergraduate-research-fellowship-surf-2027-apply-for-a-paid-stem-research-internship-in-the-united-states/",
+    "text": "The National Institute of Standards and Technology (NIST) has opened applications for its 2027 Summer Undergraduate Research Fellowship (SURF), a research programme designed to inspire undergraduate students to pursue careers in science, technology, engineering and mathematics (STEM). The programme offers participants the opportunity to gain hands-on research experience, work alongside experienced scientists and researchers, and […] The post NIST Summer Undergraduate Research Fellowship (SURF) 2027: Apply for a Paid STEM Research Internship in the United States appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "IOM Ghana Procurement Opportunities 2026: Technical Assistance for the CSSM Round 3 Programme-Level Indicator Survey",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/iom-ghana-procurement-opportunities-2026-technical-assistance-for-the-cssm-round-3-programme-level-indicator-survey/",
-    "text": "The International Organization for Migration (IOM) provides procurement opportunities for vendors, companies, consultants, and service providers interested in supporting its humanitarian, development, and migration-related activities. Through its procurement notices, IOM invites qualified suppliers and service providers to explore opportunities to deliver goods, works, and services that contribute to the organization’s programmes and operational objectives. These […] The post IOM Ghana Procurement Opportunities 2026: Technical Assistance for the CSSM Round 3 Programme-Level Indicator Survey appeared first on Opportunities for Youth."
+    "title": "IDM-Africa Fellowship Programme in Infectious Disease Modelling 2026: Eligibility, Requirements, Benefits and How to Apply.",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/idm-africa-fellowship-programme-in-infectious-disease-modelling-2026-eligibility-requirements-benefits-and-how-to-apply/",
+    "text": "The IDM-Africa Fellowship Programme in Infectious Disease Modelling 2026 is an opportunity for qualified early- and mid-career scientists in sub-Saharan Africa to strengthen their expertise in infectious-disease modelling, conduct applied research and develop evidence that can inform public-health policies and interventions. The programme is designed for researchers who already have foundational training and practical experience […] The post IDM-Africa Fellowship Programme in Infectious Disease Modelling 2026: Eligibility, Requirements, Benefits and How to Apply. appeared first on Opportunities for Youth."
   },
   {
     "source": "rss:Opps4Youth",
     "lane": "opp",
     "group": "fellowships",
-    "title": "University of Lincoln Global Leaders Scholarship 2027–2028: 50% Tuition Fee Scholarship for International Students in the UK",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/university-of-lincoln-global-leaders-scholarship-2027-2028-50-tuition-fee-scholarship-for-international-students-in-the-uk/",
-    "text": "The University of Lincoln Global Leaders Scholarship is an opportunity for outstanding international students who wish to pursue undergraduate or postgraduate taught studies in the United Kingdom. The scholarship recognises applicants who demonstrate excellent academic achievement alongside personal development, leadership potential, and meaningful extracurricular involvement. It is designed to support talented students from around the […] The post University of Lincoln Global Leaders Scholarship 2027–2028: 50% Tuition Fee Scholarship for International Students in the UK appeared first on Opportunities for Youth."
+    "title": "University of Cambridge Peace, Conflict and Religion Early Career Fellowship 2026: Eligibility, Research Areas, Funding and How to Apply.",
+    "url": "https://opportunitiesforyouth.org/2026/10/24/university-of-cambridge-peace-conflict-and-religion-early-career-fellowship-2026-eligibility-research-areas-funding-and-how-to-apply/",
+    "text": "The University of Cambridge, through its Cambridge Interfaith Programme (CIP), is inviting applications from outstanding early-career researchers interested in exploring the relationships between peace, conflict, religion, political violence and society. This funding opportunity supports researchers who wish to develop an independent research project that contributes to academic understanding of how individuals and communities experience conflict, […] The post University of Cambridge Peace, Conflict and Religion Early Career Fellowship 2026: Eligibility, Research Areas, Funding and How to Apply. appeared first on Opportunities for Youth."
   },
   {
-    "source": "rss:Opps4Youth",
+    "source": "rss:Oyaop",
     "lane": "opp",
     "group": "fellowships",
-    "title": "Columbia University Italian Academy Fellowship Program 2027–2028: Fully Funded Research Fellowship in the United States",
-    "url": "https://opportunitiesforyouth.org/2026/10/23/columbia-university-italian-academy-fellowship-program-2027-2028-fully-funded-research-fellowship-in-the-united-states/",
-    "text": "Scholars, researchers, and academics from around the world are invited to apply for the prestigious Italian Academy Fellowship Program 2027–2028 at Columbia University in New York City, United States. Hosted by the renowned Italian Academy for Advanced Studies, this highly competitive fellowship provides an exceptional opportunity for postdoctoral researchers, mid-career academics, and senior scholars to […] The post Columbia University Italian Academy Fellowship Program 2027–2028: Fully Funded Research Fellowship in the United States appeared first on Opportunities for Youth."
+    "title": "Columbia University Italian Academy Fellowship 2027 in the USA (Fully Funded)",
+    "url": "https://oyaop.com/opportunity/scholarships-and-fellowships/columbia-university-italian-academy-fellowship-2027-in-the-usa-fully-funded/",
+    "text": "The Italian Academy at Columbia University is inviting applications for its 2027–2028 Fellowship Program in the United States. This prestigious opportunity is designed for outstanding researchers and experienced scholars seeking dedicated time to pursue innovative, interdisciplinary research in the humanities, sciences, and social sciences. Hosted by Columbia University in New York City, the program welcomes […] The post Columbia University Italian Academy Fellowship 2027 in the USA (Fully Funded) appeared first on OYA Opportunities."
+  },
+  {
+    "source": "rss:Oyaop",
+    "lane": "opp",
+    "group": "fellowships",
+    "title": "Pioneering Scholarship 2027 in Sweden | Fully Funded",
+    "url": "https://oyaop.com/opportunity/scholarships-and-fellowships/pioneering-scholarship-2027-in-sweden-fully-funded/",
+    "text": "Are you a woman aspiring to pursue a master’s degree in science, technology, engineering, or mathematics? The Pioneering Women in STEM Scholarship offered by the Swedish Institute (SI) provides an opportunity for eligible international students to pursue higher education in Sweden and develop their expertise in STEM fields. This scholarship initiative aims to empower women, […] The post Pioneering Scholarship 2027 in Sweden | Fully Funded appeared first on OYA Opportunities."
   },
   {
     "source": "rss:Oyaop",
@@ -2190,22 +2134,6 @@
     "title": "Paid Traineeship in Germany 2028",
     "url": "https://oyaop.com/opportunity/internships/paid-traineeship-in-germany-2028/",
     "text": "The Deutsche Welle (DW) Traineeship 2028 is an exciting opportunity for aspiring journalists, media professionals, and graduates interested in building an international career in journalism. Organized by DW, Germany’s international broadcaster, this 18-month bilingual journalism training programme combines professional instruction with practical newsroom experience. The programme begins on January 3, 2028, and runs until June […] The post Paid Traineeship in Germany 2028 appeared first on OYA Opportunities."
-  },
-  {
-    "source": "rss:Oyaop",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "UNU Junior Fellows Paid Internship 2027 in Japan",
-    "url": "https://oyaop.com/opportunity/internships/unu-junior-fellows-paid-internship-2027-in-japan/",
-    "text": "The United Nations University (UNU) Junior Fellows Internship Spring 2027 is an excellent opportunity for postgraduate students and recent graduates to gain practical experience within a United Nations institution. Organized by the Office of the Rector at UNU headquarters in Tokyo, Japan, this competitive internship provides professional training, research experience, and opportunities to contribute to […] The post UNU Junior Fellows Paid Internship 2027 in Japan appeared first on OYA Opportunities."
-  },
-  {
-    "source": "rss:Oyaop",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "University of Tokyo Scholarship 2027 in Japan | Fully Funded MEXT Scholarship",
-    "url": "https://oyaop.com/opportunity/scholarships-and-fellowships/university-of-tokyo-scholarship-2027-in-japan-fully-funded-mext-scholarship/",
-    "text": "University of Tokyo Scholarship 2027 in Japan | Fully Funded MEXT Scholarship for International Students The University of Tokyo Scholarship 2027 offers an excellent opportunity for international students seeking to pursue postgraduate studies in Japan. The Graduate School of Science at the University of Tokyo is accepting applications for the 2027 Japanese Government (MEXT) Scholarship […] The post University of Tokyo Scholarship 2027 in Japan | Fully Funded MEXT Scholarship appeared first on OYA Opportunities."
   },
   {
     "source": "rss:Mladiinfo",
@@ -2307,6 +2235,14 @@
     "source": "rss:OppsForAfricans",
     "lane": "opp",
     "group": "fellowships",
+    "title": "NNPC/Renaissance JV Sabbatical and Postgraduate Research Internship Programme 2027 for Nigerian University Students and Lecturers.",
+    "url": "https://www.opportunitiesforafricans.com/nnpc-renaissance-jv-sabbatical-and-postgraduate-research-internship-programme-2027/",
+    "text": "Application Deadline: November 6, 2026 Applications are now open for the 2027 NNPC/Renaissance JV Sabbatical and Postgraduate Research Internship Programme. Renaissance Africa Energy Company Limited (Renaissance), operator of the Nigerian… The post NNPC/Renaissance JV Sabbatical and Postgraduate Research Internship Programme 2027 for Nigerian University Students and Lecturers. appeared first on Opportunities For Africans."
+  },
+  {
+    "source": "rss:OppsForAfricans",
+    "lane": "opp",
+    "group": "fellowships",
     "title": "The World Food Forum Youth Policy Board 2027/2028 for emerging leaders.",
     "url": "https://www.opportunitiesforafricans.com/the-world-food-forum-youth-policy-board-2027-2028-for-emerging-leaders/",
     "text": "Application Deadline: November 30, 2026 Applications are now open for the 2027/2028 World Food Forum Youth Policy Board. The World Food Forum (WFF) is an open and inclusive global platform… The post The World Food Forum Youth Policy Board 2027/2028 for emerging leaders. appeared first on Opportunities For Africans."
@@ -2376,331 +2312,323 @@
     "text": "Application Deadline: 22 November 2026 Applications are now open for the 2026/2027 Ye! Youth Ecopreneurs Programme. a global initiative by ITC and the UNCCD-G20 Global Land Initiative supporting young entrepreneurs… The post The Ye! Youth Ecopreneurs Programme (YECO) 2026/2027 for young Green Entrepreneurs ($100,000 prize & All-Expenses-Paid Trip to International Conference) appeared first on Opportunities For Africans."
   },
   {
-    "source": "rss:OppsForAfricans",
-    "lane": "opp",
-    "group": "fellowships",
-    "title": "The University of Edinburgh Mastercard Foundation on-campus and online postgraduate Scholars Program 2027/2028 for young Africans (Fully Funded)",
-    "url": "https://www.opportunitiesforafricans.com/university-of-edinburgh-mastercard-foundation-on-campus-and-online-postgraduate-scholars-program-2027-2028/",
-    "text": "Application Deadline: 26 October 2026, 5pm Applications are now open for the 2027/2028 University of Edinburgh Mastercard Foundation on-campus and online postgraduate Scholars Program. Scholars will pursue a one year… The post The University of Edinburgh Mastercard Foundation on-campus and online postgraduate Scholars Program 2027/2028 for young Africans (Fully Funded) appeared first on Opportunities For Africans."
+    "source": "rss:Jobicy",
+    "lane": "role",
+    "group": "ai_ml",
+    "title": "Support Engineer I – UK",
+    "url": "https://jobicy.com/jobs/154015-support-engineer-i-uk",
+    "text": "At ExtraHop, we’re on a mission to protect and empower the connected enterprise. We reveal what is happening in the very infrastructure that sustains businesses, lives, and communities, and ensure..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Solutions Engineer – Critical Infrastructure",
-    "url": "https://jobicy.com/jobs/156681-solutions-engineer-critical-infrastructure",
-    "text": "Radar Reinvented. Echodyne offers the world’s first compact solid-state true beam-steering radar for a wide range of industries and applications. Our high-performance radars work in all weather and are designed..."
+    "title": "Technical Accountant",
+    "url": "https://jobicy.com/jobs/154057-technical-accountant",
+    "text": "What We’re Up To Kalshi has defined a new category: prediction markets. Kalshi allows people to trade on the outcome of any events and turn any question about the future..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Billing Operations Lead",
-    "url": "https://jobicy.com/jobs/156686-billing-operations-lead",
-    "text": "We’re transforming the grocery industry At Instacart, we invite the world to share love through food because we believe everyone should have access to the food they love and more..."
+    "title": "Director – Specialty Fibers",
+    "url": "https://jobicy.com/jobs/154017-director-specialty-fibers",
+    "text": "ABOUT QUINCE Quince is a destination for builders, creators, innovators, and operators who want to come together and challenge the status quo. Our mission is simple: make really high quality..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Associate Manager, Influencer Marketing",
-    "url": "https://jobicy.com/jobs/156678-associate-manager-influencer-marketing",
-    "text": "We’re transforming the grocery industry At Instacart, we invite the world to share love through food because we believe everyone should have access to the food they love and more..."
+    "title": "Enterprise Solutions Architect",
+    "url": "https://jobicy.com/jobs/154059-enterprise-solutions-architect",
+    "text": "Navan is looking for a travel specialist to partner with our US Enterprise sales team. We are looking for someone who is capable of influencing prospects, building strong relationships and..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Android Engineer",
-    "url": "https://jobicy.com/jobs/156680-senior-android-engineer-4",
-    "text": "About Medium Medium is one of the world’s most influential writing platforms, connecting millions of readers with ideas that matter. We’re a small, dedicated team that cares deeply and takes..."
+    "title": "Staff Software Engineer – Curated Data",
+    "url": "https://jobicy.com/jobs/154051-staff-software-engineer-curated-data",
+    "text": "About Dune Dune’s mission is to make onchain finance observable. We’re the industry standard for onchain data: a blockchain data and intelligence provider that institutions, protocols, and analysts trust to..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Bilingual CX Specialist (French)",
-    "url": "https://jobicy.com/jobs/156682-bilingual-cx-specialist-french",
-    "text": "We’re transforming the grocery industry At Instacart, we invite the world to share love through food because we believe everyone should have access to the food they love and more..."
+    "title": "Design Engineer – EU",
+    "url": "https://jobicy.com/jobs/154021-design-engineer-eu",
+    "text": "Hi 👋🏾 I’m Abhik, Ashby’s Co-Founder and VP of Engineering. This role is close to my heart because, as someone who can both design and code, it’s where I’ve always..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Staff Product Designer",
-    "url": "https://jobicy.com/jobs/156685-staff-product-designer-6",
-    "text": "About Medium Medium is one of the world’s most influential writing platforms, connecting millions of readers with ideas that matter. We’re a small, dedicated team that cares deeply and takes..."
+    "title": "Senior Strategic Implementation Specialist – EMEA",
+    "url": "https://jobicy.com/jobs/154019-senior-strategic-implementation-specialist-emea",
+    "text": "Senior Strategic Implementation Specialist Hi! I’m Morgan, the Manager of Strategic Implementations here at Ashby. Our customers are at the center of everything we do, and that’s especially true during..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Project Manager",
-    "url": "https://jobicy.com/jobs/156677-project-manager-6",
-    "text": "Radar Reinvented. Echodyne offers the world’s first compact solid-state true beam-steering radar for a wide range of industries and applications. Our high-performance radars work in all weather and are designed..."
+    "title": "Account Manager",
+    "url": "https://jobicy.com/jobs/154046-account-manager-8",
+    "text": "Who We Are: SOCi is redefining how multi-location enterprises achieve local and AI search visibility with the world’s first agentic workforce. Built specifically for distributed brands, SOCi’s brand-trained agents are..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Paralegal",
-    "url": "https://jobicy.com/jobs/156683-senior-paralegal",
-    "text": "About Us: Homebound is on a mission to make it possible for anyone, anywhere, to build a home using technology. Created by an experienced team of construction, real estate, design,..."
+    "title": "Chief Actuary",
+    "url": "https://jobicy.com/jobs/154040-chief-actuary",
+    "text": "The Finance team at Clover Health is a group of strategic partners providing financial and operational insights that drive informed decision-making and efficient capital allocation. Guided by our core values..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Administrative Assistant",
-    "url": "https://jobicy.com/jobs/156679-administrative-assistant-2",
-    "text": "About Us: Homebound is on a mission to make it possible for anyone, anywhere, to build a home using technology. Created by an experienced team of construction, real estate, design,..."
+    "title": "Telemedicine Physician Consultant",
+    "url": "https://jobicy.com/jobs/154026-telemedicine-physician-consultant",
+    "text": "About Carrot: Carrot is the leading global fertility and family care platform, built on intelligent care orchestration: the right clinical guidance, at the right moment, in the context of each..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Principal Product Manager, HTS API Marketplace",
-    "url": "https://jobicy.com/jobs/156674-principal-product-manager-hts-api-marketplace",
-    "text": "About the Role We are seeking an exceptional Principal Product Manager to build the HTS API Marketplace — the commercial and developer-facing layer through which enterprise partners access Hopper’s lodging..."
+    "title": "Payments Lead",
+    "url": "https://jobicy.com/jobs/154054-payments-lead",
+    "text": "Kalshi is defining a new category Kalshi has defined a new category: prediction markets. Kalshi allows people to trade on the outcome of any events and turn any question about..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Enablement Consultant",
-    "url": "https://jobicy.com/jobs/156669-enablement-consultant",
-    "text": "Who we are Samsara (NYSE: IOT) is the pioneer of the Connected Operations™ Cloud, which is a platform that enables organizations that depend on physical operations to harness Internet of..."
+    "title": "Business Travel Consultant – English – Remote Portugal",
+    "url": "https://jobicy.com/jobs/154053-business-travel-consultant-english-remote-portugal",
+    "text": "Join Navan in Powering In-Person Connections with Relentless Innovation At Navan, our mission is to make travel seamless and empowering, so travelers can focus on being there, not getting there...."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Adoption Strategist – LATAM",
-    "url": "https://jobicy.com/jobs/156670-adoption-strategist-latam",
-    "text": "About ElevenLabs ElevenLabs is an AI research and product company transforming how we interact with technology. We launched in January 2023 with the first human-like AI voice model. Today, we..."
+    "title": "Account Manager (Property)",
+    "url": "https://jobicy.com/jobs/154049-account-manager-property",
+    "text": "Who We Are: SOCi is redefining how multi-location enterprises achieve local and AI search visibility with the world’s first agentic workforce. Built specifically for distributed brands, SOCi’s brand-trained agents are..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Cloud Alliances Business Development Lead",
-    "url": "https://jobicy.com/jobs/156675-cloud-alliances-business-development-lead",
-    "text": "Canonical is a leading provider of open source software and operating systems to the global enterprise and technology markets. Our platform, Ubuntu, is very widely used in breakthrough enterprise initiatives..."
+    "title": "Lead Product Manager",
+    "url": "https://jobicy.com/jobs/154045-lead-product-manager",
+    "text": "Hims & Hers is the leading health and wellness platform, on a mission to help the world feel great through the power of better health. We are redefining healthcare by..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Management Consulting Matcher",
-    "url": "https://jobicy.com/jobs/156667-management-consulting-matcher",
-    "text": "About Toptal Toptal is a global network of top talent in business, design, and technology that enables companies to scale their teams, on-demand. With $200+ million in annual revenue and..."
+    "title": "Director, Product Communications (Hers)",
+    "url": "https://jobicy.com/jobs/154042-director-product-communications-hers",
+    "text": "Hims & Hers is the leading health and wellness platform, on a mission to help the world feel great through the power of better health. We are redefining healthcare by..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Onboarding Specialist (Remote – Mexico)",
-    "url": "https://jobicy.com/jobs/156668-onboarding-specialist-remote-mexico",
+    "title": "Account Manager (Remote – Mexico)",
+    "url": "https://jobicy.com/jobs/154041-account-manager-remote-mexico",
     "text": "Why Housecall Pro? Help us build solutions that build better lives. At Housecall Pro, we show up to work every day to make a difference for real people: the home..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Product Designer (Fully Remote – anywhere in South America)",
-    "url": "https://jobicy.com/jobs/156673-senior-product-designer-fully-remote-anywhere-in-south-america",
-    "text": "The Role We Need: PadSplit is hiring a Senior Product Designer to shape and improve experiences across our two-sided housing marketplace. Working on a growth-focused product team, you’ll tackle meaningful,..."
+    "title": "Contract Software Engineer – WebCompat Tooling (Dashboards and Reporting), Firefox",
+    "url": "https://jobicy.com/jobs/154032-contract-software-engineer-webcompat-tooling-dashboards-and-reporting-firefox",
+    "text": "The role You will build and improve the WebCompat team’s internal tooling, the dashboards and the broken-site-report screenshot pipeline the team relies on to triage and prioritize site breakage. This..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Installation Coordinator",
-    "url": "https://jobicy.com/jobs/156676-installation-coordinator",
-    "text": "Who we are Samsara (NYSE: IOT) is the pioneer of the Connected Operations™ Cloud, which is a platform that enables organizations that depend on physical operations to harness Internet of..."
+    "title": "Software Engineer",
+    "url": "https://jobicy.com/jobs/154031-software-engineer-11",
+    "text": "We’re Capital on Tap 👋💳 Capital on Tap started because small businesses were underserved. Big banks were slow, their products weren’t fit for purpose, and small business owners often couldn’t..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Information Security Engineer",
-    "url": "https://jobicy.com/jobs/156672-senior-information-security-engineer-2",
-    "text": "Zscaler (NASDAQ: ZS) accelerates digital transformation so customers can be more agile, efficient, resilient, and secure. The Zscaler Zero Trust Exchange platform protects thousands of customers from cyberattacks and data..."
+    "title": "Telemedicine Registered Nurse (RN), Consultant",
+    "url": "https://jobicy.com/jobs/154030-telemedicine-registered-nurse-rn-consultant",
+    "text": "About Carrot: Carrot is the leading global fertility and family care platform, built on intelligent care orchestration: the right clinical guidance, at the right moment, in the context of each..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Vice President, Deputy General Counsel",
-    "url": "https://jobicy.com/jobs/156658-vice-president-deputy-general-counsel",
-    "text": "HackerOne is a global leader in Continuous Threat Exposure Management (CTEM). The HackerOne Platform unites agentic AI solutions with the ingenuity of the world’s largest community of security researchers to..."
+    "title": "Lead Automation Engineer",
+    "url": "https://jobicy.com/jobs/154027-lead-automation-engineer",
+    "text": "We’re Capital on Tap 👋💳 Capital on Tap started because small businesses were underserved. Big banks were slow, their products weren’t fit for purpose, and small business owners often couldn’t..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Forward Deployed Engineer – EMEA",
-    "url": "https://jobicy.com/jobs/156665-forward-deployed-engineer-emea",
-    "text": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50..."
+    "title": "Business Development Representative",
+    "url": "https://jobicy.com/jobs/153993-business-development-representative-16",
+    "text": "What you’ll be part of Garner is on a mission to transform the U.S. healthcare system — and we’re the only proven player doing exactly that. We partner with employers..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Engineering Manager, Tenant Scale: Gitaly",
-    "url": "https://jobicy.com/jobs/156662-engineering-manager-tenant-scale-gitaly",
-    "text": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50..."
+    "title": "Account Executive – Northeast",
+    "url": "https://jobicy.com/jobs/153986-account-executive-northeast",
+    "text": "What you’ll be part of Garner is on a mission to transform the U.S. healthcare system — and we’re the only proven player doing exactly that. We partner with employers..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Customer Success Manager – Technical Account Manager",
-    "url": "https://jobicy.com/jobs/156659-senior-customer-success-manager-technical-account-manager",
-    "text": "About Zip Zip is the AI platform for enterprise procurement — built for humans and agents working together. By orchestrating procurement across teams, tools, and suppliers with the help of..."
+    "title": "Business Travel Consultant – Hebrew – Portugal",
+    "url": "https://jobicy.com/jobs/154056-business-travel-consultant-hebrew-portugal",
+    "text": "Join Navan in Powering In-Person Connections with Relentless Innovation At Navan, our mission is to make travel seamless and empowering, so travelers can focus on being there, not getting there...."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Engineering Manager, Switchboard",
-    "url": "https://jobicy.com/jobs/156660-engineering-manager-switchboard",
-    "text": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50..."
+    "title": "Account Executive – Southwest",
+    "url": "https://jobicy.com/jobs/153989-account-executive-southwest",
+    "text": "What you’ll be part of Garner is on a mission to transform the U.S. healthcare system — and we’re the only proven player doing exactly that. We partner with employers..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Solutions Manager- (German Fluency)",
-    "url": "https://jobicy.com/jobs/156663-solutions-manager-german-fluency",
-    "text": "About Zip Zip is the AI platform for enterprise procurement — built for humans and agents working together. By orchestrating procurement across teams, tools, and suppliers with the help of..."
+    "title": "Senior Product Designer",
+    "url": "https://jobicy.com/jobs/154008-senior-product-designer-14",
+    "text": "Fully Remote (UK based) | Competitive Salary + Bonus + Generous Equity | B Corp Certified TrustedHousesitters is a fast growing, direct-to-consumer marketplace that is redefining pet care and travel...."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Cybersecurity Engineer",
-    "url": "https://jobicy.com/jobs/156647-cybersecurity-engineer",
-    "text": "At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare..."
+    "title": "Sr. Manager, Data Engineering",
+    "url": "https://jobicy.com/jobs/154001-sr-manager-data-engineering",
+    "text": "About Carrot: Carrot is the leading global fertility and family care platform, built on intelligent care orchestration: the right clinical guidance, at the right moment, in the context of each..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Mobile Principal Software Engineer",
-    "url": "https://jobicy.com/jobs/156651-mobile-principal-software-engineer",
-    "text": "At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare..."
+    "title": "Associate Director / Director, Data Strategy & Measurement",
+    "url": "https://jobicy.com/jobs/154007-associate-director-director-data-strategy-measurement",
+    "text": "Associate Director / Director, Data Strategy & Measurement Location: Remote — this is a remote, work-from-home role, as are all positions at Acceleration Partners. Some travel is required for client..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Manager, Professional Services Federal",
-    "url": "https://jobicy.com/jobs/156648-manager-professional-services-federal",
-    "text": "Joining Collibra’s Professional Services Team At Collibra Public Sector (CPS), the Manager, Federal Professional Services is responsible for leading all services roles and functions to ensure the long-term success, adoption,..."
+    "title": "Technical Product Analyst",
+    "url": "https://jobicy.com/jobs/154002-technical-product-analyst",
+    "text": "CentralReach is a leading provider of autism and IDD care software for Applied Behavior Analysis (ABA), multidisciplinary therapy, and special education. Trusted by more than 200,000 users, we enable therapy..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior FP&A Analyst",
-    "url": "https://jobicy.com/jobs/156654-senior-fpa-analyst-2",
-    "text": "At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare..."
+    "title": "Product Design Lead",
+    "url": "https://jobicy.com/jobs/153996-product-design-lead",
+    "text": "About Carrot: Carrot is the leading global fertility and family care platform, built on intelligent care orchestration: the right clinical guidance, at the right moment, in the context of each..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Customer Engineer – Collibra Public Sector",
-    "url": "https://jobicy.com/jobs/156655-senior-customer-engineer-collibra-public-sector",
-    "text": "Joining Collibra’s Public Sector team The Federal Customer Engineer (CE) serves as the guiding force behind bringing Collibra Public Sector’s (CPS) product and vision to customers and prospects. Senior Customer..."
+    "title": "Sr. Quality Engineer",
+    "url": "https://jobicy.com/jobs/153999-sr-quality-engineer",
+    "text": "CentralReach is a leading provider of autism and IDD care software for Applied Behavior Analysis (ABA), multidisciplinary therapy, and special education. Trusted by more than 200,000 users, we enable therapy..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Account Executive – New Markets",
-    "url": "https://jobicy.com/jobs/156649-account-executive-new-markets",
-    "text": "The Company Medely is a high-growth series-C technology start-up reimagining the future of healthcare work by providing an on-demand marketplace and workforce management tools. With the support of top-tier investors,..."
+    "title": "International Data Acquisition Manager",
+    "url": "https://jobicy.com/jobs/154016-international-data-acquisition-manager",
+    "text": "Why Socure? Socure is building the identity trust infrastructure for the digital economy — verifying 100% of good identities in real time and stopping fraud before it starts. The mission..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Content Designer II (Remote Eligible – Costa Rica)",
-    "url": "https://jobicy.com/jobs/156653-content-designer-ii-remote-eligible-costa-rica",
-    "text": "For over 20 years, Smartsheet has empowered teams to manage work seamlessly and scale solutions smarter. Now, in our most ambitious chapter yet, we are uniting human teams with AI..."
+    "title": "Freelance – Spanish Data Annotation Specialist (100% Remote within Europe)",
+    "url": "https://jobicy.com/jobs/154012-freelance-spanish-data-annotation-specialist-100-remote-within-europe",
+    "text": "How You’ll Contribute As a Freelance Spanish Data Annotation Specialist at Docplanner, your main focus will be preparing and curating linguistically and medically oriented datasets in Spanish to power our..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Commercial Account Executive (Remote Eligible – Costa Rica)",
-    "url": "https://jobicy.com/jobs/156650-commercial-account-executive-remote-eligible-costa-rica",
-    "text": "For over 20 years, Smartsheet has empowered teams to manage work seamlessly and scale solutions smarter. Now, in our most ambitious chapter yet, we are uniting human teams with AI..."
+    "title": "Engineering Manager – MLOps & Analytics",
+    "url": "https://jobicy.com/jobs/149521-engineering-manager-mlops-analytics",
+    "text": "The role of an Engineering Manager at CanonicalAs an Engineering Manager at Canonical, you must be technically strong, but your main responsibility is to run an effective team and develop..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Account Executive II",
-    "url": "https://jobicy.com/jobs/156652-senior-account-executive-ii-3",
-    "text": "Join Collibra’s Sales team as a Senior Account Executive II, Enterprise – East Coast Make an impact at Collibra by fueling Collibra’s growth in your assigned East Coast territory and..."
+    "title": "Operations Associate",
+    "url": "https://jobicy.com/jobs/153997-operations-associate",
+    "text": "CoinGecko is a global leader in tracking cryptocurrency data. Operating since 2014, CoinGecko has built the world’s largest cryptocurrency data platform, tracking over 10,000 tokens across more than 400 exchanges,..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "IT Lead",
-    "url": "https://jobicy.com/jobs/156646-it-lead",
-    "text": "ClassDojo’s goal is to give every child on Earth an education they love. We started by building a powerful network for communication. ClassDojo’s flagship app is the #1 communication app..."
+    "title": "Underwriter",
+    "url": "https://jobicy.com/jobs/153998-underwriter",
+    "text": "About Us At Resilience, we’re creating a new category that integrates cybersecurity, cyber insurance, and cyber risk management. Founded in 2016 by experts from across the highest tiers of the..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Engineering Leader, Platform Engineering",
-    "url": "https://jobicy.com/jobs/156640-engineering-leader-platform-engineering",
-    "text": "ClassDojo’s goal is to give every child on Earth an education they love. We started by building a communication network that connects teachers, children, and families. Today, ClassDojo is used..."
+    "title": "Staff Security Architect",
+    "url": "https://jobicy.com/jobs/144336-staff-security-architect",
+    "text": "Building the Future of Crypto Our Krakenites are a world-class team with crypto conviction, united by our desire to discover and unlock the potential of crypto and blockchain technology.What makes us..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Senior Software Engineer, Developer Experience & AI Platform team",
-    "url": "https://jobicy.com/jobs/156643-senior-software-engineer-developer-experience-ai-platform-team",
-    "text": "ClassDojo’s goal is to give every child on Earth an education they love. We started by building a powerful network for communication. ClassDojo’s flagship app is the #1 communication app..."
+    "title": "Design Engineer – UK",
+    "url": "https://jobicy.com/jobs/154023-design-engineer-uk",
+    "text": "Hi 👋🏾 I’m Abhik, Ashby’s Co-Founder and VP of Engineering. This role is close to my heart because, as someone who can both design and code, it’s where I’ve always..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Growth Product Lead, Kids",
-    "url": "https://jobicy.com/jobs/156637-growth-product-lead-kids",
-    "text": "ClassDojo’s goal is to give every child on Earth an education they love. We started by building a powerful network for communication. ClassDojo’s flagship app is the #1 communication app..."
+    "title": "Full-Stack Engineer",
+    "url": "https://jobicy.com/jobs/154022-full-stack-engineer-2",
+    "text": "About ElevenLabs ElevenLabs is an AI research and product company transforming how we interact with technology. We launched in January 2023 with the first human-like AI voice model. Today, we..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Critical Facilities Lead, Compute Infrastructure",
-    "url": "https://jobicy.com/jobs/156638-critical-facilities-lead-compute-infrastructure",
-    "text": "About the Team OpenAI, in close collaboration with our capital partners, is embarking on a journey to build the world’s most advanced AI infrastructure ecosystem. The Infrastructure team is central..."
+    "title": "Sales Engineer, EMEA",
+    "url": "https://jobicy.com/jobs/151047-sales-engineer-emea",
+    "text": "About UsSocket helps devs and security teams ship faster by cutting out security busywork. Thousands of orgs use Socket to safely find, audit, and manage open source code. Our customers..."
   },
   {
     "source": "rss:Jobicy",
     "lane": "role",
     "group": "ai_ml",
-    "title": "Risk Intelligence Manager",
-    "url": "https://jobicy.com/jobs/156642-risk-intelligence-manager",
-    "text": "At Signifyd, we help merchants confidently grow their businesses by building trusted relationships with their customers. Our advanced technology, combined with a team genuinely invested in our clients’ success, creates..."
-  },
-  {
-    "source": "rss:Jobicy",
-    "lane": "role",
-    "group": "ai_ml",
-    "title": "Senior Commercial Counsel",
-    "url": "https://jobicy.com/jobs/156645-senior-commercial-counsel-3",
-    "text": "At Signifyd, we help merchants confidently grow their businesses by building trusted relationships with their customers. Our advanced technology, combined with a team genuinely invested in our clients’ success, creates..."
+    "title": "Senior Workday Platform Engineer",
+    "url": "https://jobicy.com/jobs/149595-senior-workday-platform-engineer",
+    "text": "We are seeking a hands-on Senior Workday Platform Engineer within the G&A IT Applications team to serve as the primary technical owner of the Workday platform across HCM, Payroll, Recruiting,..."
   }
 ]
